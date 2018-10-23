@@ -59,7 +59,7 @@ theme = "hugo-universal-theme-cata"
     defaultDescription = "Site template made by devcows using hugo"
 
     # Google Maps API key (if not set will default to not passing a key.)
-    googleMapsApiKey = "AIzaSyCFhtWLJcE30xOAjcbSFi-0fnoVmQZPb1Y"
+    #googleMapsApiKey = "AIzaSyCFhtWLJcE30xOAjcbSFi-0fnoVmQZPb1Y"
 
     # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
     style = "vallejos2018"
@@ -77,9 +77,9 @@ theme = "hugo-universal-theme-cata"
     # - you're done. Happy mailing!
     #
     # Enable the contact form by entering your Formspree.io email
-    email = "your@email.com"
+    #email = "your@email.com"
 
-    about_us = "<p>Biological Data Science based at the MRC Human Genetics Unit.</p>"
+    about_us = "<p>Biological Data Science, MRC Human Genetics Unit.</p>"
     copyright = "Copyright (c) 2018, Vallejos Group; all rights reserved."
 
     # Format dates with Go's time formatting
@@ -136,7 +136,7 @@ theme = "hugo-universal-theme-cata"
     # All testimonials are defined in their own files. You can find example items
     # at 'exampleSite/data/testimonials'.
     # For more informtion take a look at the README.
-    #title = "Testimonials"
+    title = "Group members"
     #subtitle = "We have worked with many clients and we always like to hear they come out from the cooperation happy and satisfied. Have a look what our clients said about us."
 
 [params.see_more]
