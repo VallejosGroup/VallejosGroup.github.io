@@ -235,7 +235,7 @@ ul.list-style-none {
   }
 }
 #top {
-  background: #555555;
+  background: #00b3ba;
   color: #eeeeee;
   padding: 10px 0;
 }
@@ -248,7 +248,7 @@ ul.list-style-none {
   text-align: right;
 }
 #top .social a {
-  color: #999999;
+  color: #f9f7f7;
   display: inline-block;
   width: 24px;
   height: 24px;
@@ -1778,6 +1778,11 @@ fieldset[disabled] .btn-template-primary.active {
   background-attachment: fixed;
   background-size: cover;
 }
+.bar.background-image-fixed-3 {
+  background: url('../img/VallejosGroup_SimpleBackground.png') center top no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 .bar.color-white h1,
 .bar.color-white h2,
 .bar.color-white h3,
@@ -2505,9 +2510,9 @@ fieldset[disabled] .btn-template-primary.active {
   margin: 0 0 20px;
 }
 #footer {
-  background: #555555;
+  background: #00b3ba;
   padding: 50px 0;
-  color: #999999;
+  color: #f9f7f7;
 }
 #footer h1,
 #footer h2,
