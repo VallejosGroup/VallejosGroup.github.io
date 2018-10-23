@@ -10,5 +10,54 @@
 	<atom:link href="https://VallejosGroup.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Contact us</title>
+      <link>https://VallejosGroup.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://VallejosGroup.github.io/contact/</guid>
+      <description>Do you have a background in statistics, machine learning, data science, mathematics, bioinformatics, computational biology or related? We are often looking for motivated students and postdocs that want to join our group and work in exciting biomedical problems. If you want to discuss potential opportunities, contact us!    
+
+We also welcome enquiries from potential collaborators!</description>
+    </item>
+    
+    <item>
+      <title>Contact us</title>
+      <link>https://VallejosGroup.github.io/findus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://VallejosGroup.github.io/findus/</guid>
+      <description>Do you have a background in statistics, machine learning, data science, mathematics, bioinformatics, computational biology or related? We are often looking for motivated students and postdocs that want to join our group and work in exciting biomedical problems. If you want to discuss potential opportunities, contact us!    
+
+We also welcome enquiries from potential collaborators!</description>
+    </item>
+    
+    <item>
+      <title>Our research</title>
+      <link>https://VallejosGroup.github.io/research/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://VallejosGroup.github.io/research/</guid>
+      <description>While biomedical data sometimes classifies as &#34;big data&#34;&#34; (where the number of samples and/or variables is large), complexity is its most prominent feature. This arises from a combination of different sources of heterogeneity: heterogeneity across individuals in a population (e.g. response to treatment), heterogeneity in terms of the type of data we collect (e.g. health records &amp; genomics) and heterogeneity that is introduced by the data collection process (e.g. measurement error).</description>
+    </item>
+    
+    <item>
+      <title>People</title>
+      <link>https://VallejosGroup.github.io/people/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://VallejosGroup.github.io/people/</guid>
+      <description>Page under construction</description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>https://VallejosGroup.github.io/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://VallejosGroup.github.io/publications/</guid>
+      <description>Peer-reviewed  CA Vallejos, D Risso, A Scialdone, S Dudoit, JC Marioni (2017). Normalizing single-cell RNA sequencing data: challenges and opportunities. Nature Methods 14, 565571. CP Martinez-Jimenez, N Eling, H Chen, CA Vallejos, AA Kolodziejczyk, F Connor, L Stojic, TF Rayner, MJT Stubbington, SA Teichmann, M de la Roche, JC Marioni and DT Odom (2017). Aging increases cell-to-cell transcriptional variability upon immune stimulation. Science 355: 1433-1436 CA Vallejos and MFJ Steel (2017) Incorporating unobserved heterogeneity in Weibull survival models: A Bayesian approach.</description>
+    </item>
+    
   </channel>
 </rss>
