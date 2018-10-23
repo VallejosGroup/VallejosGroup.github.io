@@ -125,8 +125,8 @@ theme = "hugo-universal-theme-cata"
     # at 'exampleSite/data/carousel'.
     # For more informtion take a look at the README.
 
-#[params.features]
-#    enable = true
+[params.features]
+    enable = true
     # All features are defined in their own files. You can find example items
     # at 'exampleSite/data/features'.
     # For more informtion take a look at the README.

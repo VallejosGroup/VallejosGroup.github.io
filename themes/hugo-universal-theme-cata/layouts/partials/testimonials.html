@@ -23,9 +23,10 @@
                                 <p>{{ .text | markdownify }}</p>
                             </div>
                             <div class="bottom">
-  <a href="{{ .web }}" target="_blank" style="opacity: 1;"><i class={{ .weblogo }}></i></a>
-  <a href="{{ .github }}" target="_blank" style="opacity: 1;"><i class={{ .githublogo }}></i></a>
-  <a href="{{ .twitter }}" target="_blank" style="opacity: 1;"><i class={{ .twitterlogo }}></i></a>                       
+  <a href="{{ .web }}"><i class={{ .weblogo }}></i></a>
+  <a href="{{ .github }}"><i class={{ .githublogo }}></i></a>
+  <a href="{{ .twitter }}"><i class={{ .twitterlogo }}></i></a>  
+  <a href="{{ .scholar }}"><i class={{ .scholarlogo }}></i></a>  
                                 <div class="name-picture">
                                     <img class="" alt="" src="{{ .avatar | absURL }}">
                                     <h5>{{ .name }}</h5>

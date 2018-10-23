@@ -10,12 +10,24 @@
 		{{ end }}
 				<div class="col-md-4">
                     <div class="box-simple">
-                        <div class="icon">
-                            <i class="{{ .icon }}"></i>
+                        <div class="name-picture">
+                            <img class="" alt="" height="100" src="{{ .avatar | absURL }}">
+                            
                         </div>
                         <h3>{{ $element.name }}</h3>
-                        <p>{{ $element.description | markdownify }}</p>
+                        
+                        <p>{{ $element.description }}</p>
+                        
+                        <a href="{{ .web }}"><i class={{ .weblogo }}></i></a>
+                        <a href="{{ .github }}"><i class={{ .githublogo }}></i></a>
+                        <a href="{{ .twitter }}"><i class={{ .twitterlogo }}></i></a>  
+                        <a href="{{ .scholar }}"><i class={{ .scholarlogo }}></i></a> 
+                        
+                        
+                        
+
                     </div>
+ 
                 </div>
 		{{ if or (eq (mod $index 3) 2) (eq $index (sub (len $.Site.Data.features) 1 )) }}
 			</div>
