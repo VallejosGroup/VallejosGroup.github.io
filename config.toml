@@ -17,7 +17,7 @@ theme = "hugo-universal-theme-cata"
 
 [[menu.main]]
     name = "People"
-    #identifier = "people"
+    identifier = "people"
     url  = "/people/"
     weight = 3
 
@@ -25,7 +25,7 @@ theme = "hugo-universal-theme-cata"
     name = "Contact"
     url  = "/contact/"
     weight = 4
-
+    
 # Top bar social links menu
 
 [[menu.topbar]]
@@ -133,7 +133,7 @@ theme = "hugo-universal-theme-cata"
 
 [params.testimonials]
     enable = true
-    # All testimonials are defined in their own files. You can find example items
+    # All profiles are defined in their own files. You can find example items
     # at 'exampleSite/data/testimonials'.
     # For more informtion take a look at the README.
     title = "Group members"

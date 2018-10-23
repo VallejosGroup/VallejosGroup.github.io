@@ -1,6 +1,4 @@
 +++
 title = "People"
-id = "testimonials"
+id = "profiles"
 +++
-
-Page under construction
