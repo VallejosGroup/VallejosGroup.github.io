@@ -1,7 +1,19 @@
-baseURL = "https://VallejosGroup.github.io"
+baseurl = "https://example.org"
+title = "Universal"
+theme = "hugo-universal-theme"
+themesDir = "../.."
 languageCode = "en-us"
-title = "Vallejos Group - Biomedical Data Science"
-theme = "hugo-universal-theme-cata"
+# Site language. Available translations in the theme's `/i18n` directory.
+defaultContentLanguage = "en"
+# Enable comments by entering your Disqus shortname
+disqusShortname = "devcows"
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = ""
+
+# Define the number of posts per page
+paginate = 10
+
+[menu]
 
 # Main menu
 
@@ -11,14 +23,14 @@ theme = "hugo-universal-theme-cata"
     weight = 1
 
 [[menu.main]]
-    name = "Publications"
-    url  = "/publications/"
+    name = "Blog"
+    url  = "/blog/"
     weight = 2
 
 [[menu.main]]
-    name = "People"
-    #identifier = "people"
-    url  = "/people/"
+    name = "FAQ"
+    identifier = "faq"
+    url  = "/faq/"
     weight = 3
 
 [[menu.main]]
@@ -31,25 +43,25 @@ theme = "hugo-universal-theme-cata"
 [[menu.topbar]]
     weight = 1
     name = "GitHub"
-    url = "https://github.com/VallejosGroup"
+    url = "https://github.com/devcows/hugo-universal-theme"
     pre = "<i class='fa fa-2x fa-github'></i>"
-
-#[[menu.topbar]]
-#    weight = 2
-#    name = "Facebook"
-#    url = "http://facebook.com"
-#    pre = "<i class='fa fa-2x fa-facebook'></i>"
 
 [[menu.topbar]]
     weight = 2
-    name = "Twitter"
-    url = "https://twitter.com/CataVallejosM"
-    pre = "<i class='fa fa-2x fa-twitter'></i>"
+    name = "Facebook"
+    url = "http://facebook.com"
+    pre = "<i class='fa fa-2x fa-facebook'></i>"
 
 [[menu.topbar]]
     weight = 3
+    name = "Twitter"
+    url = "http://twitter.com"
+    pre = "<i class='fa fa-2x fa-twitter'></i>"
+
+[[menu.topbar]]
+    weight = 4
     name = "Email"
-    url = "mailto:catalina.vallejos@igmm.ed.ac.uk"
+    url = "mailto:your@email.com"
     pre = "<i class='fa fa-2x fa-envelope'></i>"
 
 [params]
@@ -61,8 +73,8 @@ theme = "hugo-universal-theme-cata"
     # Google Maps API key (if not set will default to not passing a key.)
     googleMapsApiKey = "AIzaSyCFhtWLJcE30xOAjcbSFi-0fnoVmQZPb1Y"
 
-    # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
-    style = "vallejos2018"
+    # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
+    style = "default"
 
     # Since this template is static, the contact form uses www.formspree.io as a
     # proxy. The form makes a POST request to their servers to send the actual
@@ -76,27 +88,25 @@ theme = "hugo-universal-theme-cata"
     # - click the confirm link in the email from www.formspree.io
     # - you're done. Happy mailing!
     #
-    # Enable the contact form by entering your Formspree.io email
+    # Enable the contact form by entering your Formspree.io email
     email = "your@email.com"
 
-    about_us = "<p>Biological Data Science based at the MRC Human Genetics Unit.</p>"
-    copyright = "Copyright (c) 2018, Vallejos Group; all rights reserved."
+    about_us = "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>"
+    copyright = "Copyright (c) 2015 - 2016, YourCompany; all rights reserved."
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
 
     logo = "img/logo.png"
     logo_small = "img/logo-small.png"
-    address = """<p><strong>MRC Human Genetics Unit</strong>
-        <br>Institute of Genetics and Molecular Medicine
-        <br>University of Edinburgh 
-        <br>Western General Hospital
-        <br>Crewe Road
-        <br>EH4 2XY
-        <br>Edinburgh
+    address = """<p><strong>Universal Ltd.</strong>
+        <br>13/25 New Avenue
+        <br>Newtown upon River
+        <br>45Y 73J
+        <br>England
         <br>
-        <strong>United Kingdom</strong>
-        </p>
+        <strong>Great Britain</strong>
+      </p>
       """
     latitude = "-12.043333"
     longitude = "-77.028333"
@@ -107,11 +117,11 @@ theme = "hugo-universal-theme-cata"
 # Enable or disable top bar with social icons
 [params.topbar]
     enable = true
-    text = """ <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>
+    text = """<p class="hidden-sm hidden-xs">Contact us on +420 777 555 333 or hello@universal.com.</p>
+      <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>
       <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
       </p>
       """
-#<p class="hidden-sm hidden-xs">Contact us on +420 777 555 333 or hello@universal.com.</p>
 
 # Enable and disable widgets for the right sidebar
 [params.widgets]
@@ -119,14 +129,14 @@ theme = "hugo-universal-theme-cata"
     tags = true
     search = true
 
-#[params.carousel]
-#    enable = true
+[params.carousel]
+    enable = true
     # All carousel items are defined in their own files. You can find example items
     # at 'exampleSite/data/carousel'.
     # For more informtion take a look at the README.
 
-#[params.features]
-#    enable = true
+[params.features]
+    enable = true
     # All features are defined in their own files. You can find example items
     # at 'exampleSite/data/features'.
     # For more informtion take a look at the README.
@@ -136,27 +146,26 @@ theme = "hugo-universal-theme-cata"
     # All testimonials are defined in their own files. You can find example items
     # at 'exampleSite/data/testimonials'.
     # For more informtion take a look at the README.
-    #title = "Testimonials"
-    #subtitle = "We have worked with many clients and we always like to hear they come out from the cooperation happy and satisfied. Have a look what our clients said about us."
+    title = "Testimonials"
+    subtitle = "We have worked with many clients and we always like to hear they come out from the cooperation happy and satisfied. Have a look what our clients said about us."
 
 [params.see_more]
     enable = true
-    icon = "fa fa-university"
-    title = "Biomedical Data Science"
-    subtitle = "Understanding heterogeneity in complex biomedical data"
-    link_url = "/research/" # "#"
-    link_text = "Our research"
+    icon = "fa fa-file-code-o"
+    title = "Do you want to see more?"
+    subtitle = "We have prepared for you more than 40 different HTML pages, including 5 variations of homepage."
+    link_url = "#"
+    link_text = "Check other homepages"
 
-#[params.clients]
-#    enable = true
+[params.clients]
+    enable = true
     # All clients are defined in their own files. You can find example items
     # at 'exampleSite/data/clients'.
     # For more informtion take a look at the README.
-#    title = "Our Clients"
-#    subtitle = ""
+    title = "Our Clients"
+    subtitle = ""
 
-#[params.recent_posts]
-#    enable = true
-#    title = "From our blog"
-#    subtitle = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
-
+[params.recent_posts]
+    enable = true
+    title = "From our blog"
+    subtitle = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
