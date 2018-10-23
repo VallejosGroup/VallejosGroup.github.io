@@ -11,8 +11,8 @@ theme = "hugo-universal-theme"
     weight = 1
 
 [[menu.main]]
-    name = "Research"
-    url  = "/research/"
+    name = "Publications"
+    url  = "/publications/"
     weight = 2
 
 [[menu.main]]
@@ -22,8 +22,8 @@ theme = "hugo-universal-theme"
     weight = 3
 
 [[menu.main]]
-    name = "Find us"
-    url  = "/findus/"
+    name = "Contact"
+    url  = "/contact/"
     weight = 4
 
 # Top bar social links menu
@@ -62,7 +62,7 @@ theme = "hugo-universal-theme"
     googleMapsApiKey = "AIzaSyCFhtWLJcE30xOAjcbSFi-0fnoVmQZPb1Y"
 
     # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
-    style = "default"
+    style = "blue"
 
     # Since this template is static, the contact form uses www.formspree.io as a
     # proxy. The form makes a POST request to their servers to send the actual
@@ -80,7 +80,7 @@ theme = "hugo-universal-theme"
     email = "your@email.com"
 
     about_us = "<p>Biological Data Science based at the MRC Human Genetics Unit.</p>"
-    copyright = "Copyright (c) 2018, YourCompany; all rights reserved."
+    copyright = "Copyright (c) 2018, Vallejos Group; all rights reserved."
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
@@ -96,7 +96,7 @@ theme = "hugo-universal-theme"
         <br>Edinburgh
         <br>
         <strong>United Kingdom</strong>
-      </p>
+        </p>
       """
     latitude = "-12.043333"
     longitude = "-77.028333"
@@ -136,16 +136,16 @@ theme = "hugo-universal-theme"
     # All testimonials are defined in their own files. You can find example items
     # at 'exampleSite/data/testimonials'.
     # For more informtion take a look at the README.
-    title = "Testimonials"
-    subtitle = "We have worked with many clients and we always like to hear they come out from the cooperation happy and satisfied. Have a look what our clients said about us."
+#    title = "Testimonials"
+#    subtitle = "We have worked with many clients and we always like to hear they come out from the cooperation happy and satisfied. Have a look what our clients said about us."
 
 [params.see_more]
     enable = true
     icon = "fa fa-university"
     title = "Biomedical Data Science"
-    subtitle = "..."
-#    link_url = "#"
-#    link_text = "Check other homepages"
+    subtitle = "Understanding heterogeneity in complex biomedical data"
+    link_url = "/research/" # "#"
+    link_text = "Our research"
 
 #[params.clients]
 #    enable = true
@@ -155,8 +155,8 @@ theme = "hugo-universal-theme"
 #    title = "Our Clients"
 #    subtitle = ""
 
-[params.recent_posts]
-    enable = true
-    title = "From our blog"
-    subtitle = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
+#[params.recent_posts]
+#    enable = true
+#    title = "From our blog"
+#    subtitle = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
 
