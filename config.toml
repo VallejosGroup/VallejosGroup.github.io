@@ -141,11 +141,11 @@ theme = "hugo-universal-theme"
 
 [params.see_more]
     enable = true
-    icon = "fa fa-file-code-o"
-    title = "Do you want to see more?"
-    subtitle = "We have prepared for you more than 40 different HTML pages, including 5 variations of homepage."
-    link_url = "#"
-    link_text = "Check other homepages"
+    icon = "fa fa-university"
+    title = "Biomedical Data Science"
+    subtitle = "..."
+#    link_url = "#"
+#    link_text = "Check other homepages"
 
 #[params.clients]
 #    enable = true
