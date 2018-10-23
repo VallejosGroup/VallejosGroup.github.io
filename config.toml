@@ -79,7 +79,7 @@ theme = "hugo-universal-theme-cata"
     # Enable the contact form by entering your Formspree.io email
     #email = "your@email.com"
 
-    about_us = "<p>Biological Data Science, MRC Human Genetics Unit.</p>"
+    about_us = "<p>Biological Data Science research group. <br> MRC Human Genetics Unit.</p>"
     copyright = "Copyright (c) 2018, Vallejos Group; all rights reserved."
 
     # Format dates with Go's time formatting
