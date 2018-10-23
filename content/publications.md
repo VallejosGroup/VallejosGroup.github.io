@@ -10,8 +10,7 @@ Using Single-Cell RNA Sequencing Data](https://www.cell.com/cell-systems/fulltex
 *Cell Systems* 7 (3), 284-294. <!--**[Open access]**.-->
 
 7. **CA Vallejos**, D Risso, A Scialdone, S Dudoit and JC Marioni (2017). 
-[Normalizing single-cell RNA sequencing data: challenges and opportunities](https://www.nature.com/articles/nmeth.4292). *Nature Methods* 14, 
-565571. <!--**[Open access availave [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5549838/)]**-->
+[Normalizing single-cell RNA sequencing data: challenges and opportunities](https://www.nature.com/articles/nmeth.4292). *Nature Methods* 14, 565571. <!--**[Open access availave [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5549838/)]**-->
 
 6. CP Martinez-Jimenez, N Eling, H Chen, **CA Vallejos**, AA Kolodziejczyk, 
 F Connor, L Stojic, TF Rayner, MJT Stubbington, SA Teichmann, M de la Roche, 
