@@ -1,0 +1,36 @@
+<section class="bar background-white">
+    <div class="container">
+        {{ range $index, $element := sort .Site.Data.publications "weight" }}
+		{{ if eq (mod $index 3) 0 }}
+		<div class="col-md-12">
+            <div class="row">
+		{{ end }}
+		
+		<div class="col-md-8">
+		<a href="{{ .url }}"><h4>{{ $element.title }}</h4></a>
+		<h5>{{ $element.author }}</h5>
+		<p><em>{{ $element.journal }} </em></p>
+		<p>{{ $element.description }}</p>
+		</div>
+		<div class="col-md-4">
+   
+    </div>
+                 <!--       <div class="name-picture">
+                            <img class="" alt="" height="100" src="{{ .avatar | absURL }}">
+                            
+                        </div> -->
+                        
+                        
+                        
+                        
+                        
+
+ 
+
+		{{ if or (eq (mod $index 3) 2) (eq $index (sub (len $.Site.Data.publications) 1 )) }}
+			</div>
+		</div>
+		{{ end }}
+        {{ end }}
+    </div>
+</section>
