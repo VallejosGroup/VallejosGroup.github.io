@@ -79,13 +79,13 @@ theme = "hugo-universal-theme-cata"
     # Enable the contact form by entering your Formspree.io email
     #email = "your@email.com"
 
-    about_us = "<p>Biological Data Science research group. <br> MRC Human Genetics Unit.</p>"
+    about_us = "<p>Biological Data Science research group <br> MRC Human Genetics Unit</p>"
     copyright = "Copyright (c) 2018, Vallejos Group; all rights reserved."
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
 
-    logo = "img/logo.png"
+    logo = "/img/logo.png"
     logo_small = "img/logo-small.png"
     address = """<p><strong>MRC Human Genetics Unit</strong>
         <br>Institute of Genetics and Molecular Medicine
@@ -125,10 +125,10 @@ theme = "hugo-universal-theme-cata"
     # at 'exampleSite/data/carousel'.
     # For more informtion take a look at the README.
 
-[params.features]
+[params.members]
     enable = true
-    # All features are defined in their own files. You can find example items
-    # at 'exampleSite/data/features'.
+    # All members are defined in their own files. You can find example items
+    # at 'exampleSite/data/members'.
     # For more informtion take a look at the README.
 
 [params.testimonials]
@@ -144,8 +144,8 @@ theme = "hugo-universal-theme-cata"
     icon = "fa fa-university"
     title = "Biomedical Data Science"
     subtitle = "Understanding heterogeneity in complex biomedical data"
-    link_url = "/research/" # "#"
-    link_text = "Our research"
+    link_url = "https://www.ed.ac.uk/mrc-human-genetics-unit" # "#"
+    link_text = "MRC Human Genetics Unit"
 
 #[params.clients]
 #    enable = true

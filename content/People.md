@@ -1,4 +1,4 @@
 +++
 title = "People"
-id = "profiles"
+id = "people"
 +++
