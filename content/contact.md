@@ -3,10 +3,9 @@ title = "Contact us"
 id = "findus"
 +++
 
-Do you have a background in statistics, machine learning, data science, 
-mathematics, bioinformatics, computational biology or related? We are often 
-looking for motivated students and postdocs that want to join our
-group and work in exciting biomedical problems. If you want to discuss potential 
+Do you want to work at the interface between Bayes and exciting biomedical
+problems? We are often looking for motivated students and postdocs that want to 
+join our group. If you want to discuss potential 
 opportunities, contact us! <br> <br> 
 
 <P ALIGN=CENTER>
