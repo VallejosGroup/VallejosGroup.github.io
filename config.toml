@@ -24,7 +24,7 @@ theme = "hugo-universal-theme-cata"
 
 [[menu.main]]
     name = "Software"
-    url  = "/publications/"
+    url  = "/software/"
     weight = 4
 
 [[menu.main]]
