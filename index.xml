@@ -11,6 +11,19 @@
     
     
     <item>
+      <title>Catalina Vallejos</title>
+      <link>https://VallejosGroup.github.io/cata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://VallejosGroup.github.io/cata/</guid>
+      <description>Short CV  [2018+] Chancellor&amp;rsquo;s Fellow and Group Leader, MRC Human Genetics Unit (University of Edinburgh)
+ [2018+] Fellow, The Alan Turing Institute
+ [2017] Group Leader, The Alan Turing Institute - Lloyd&amp;rsquo;s Register Foundation programme on data-centric engineering
+ [2016-2018] Research Fellow, The Alan Turing Institute and UCL Department of Statistical Science
+ [2014-2016] Postdoctoral Researcher MRC Biostatistics Unit and EMBL European Bioinformatics Institute. Mentors: Sylvia Richardson and John Marioni</description>
+    </item>
+    
+    <item>
       <title>Contact us</title>
       <link>https://VallejosGroup.github.io/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -19,15 +32,6 @@
       <description>Do you want to work at the interface between Bayes and exciting biomedical problems? We are often looking for motivated students and postdocs that want to join our group. If you want to discuss potential opportunities, contact us!    
 
 We also welcome enquiries from potential collaborators!</description>
-    </item>
-    
-    <item>
-      <title>Our research</title>
-      <link>https://VallejosGroup.github.io/cata/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://VallejosGroup.github.io/cata/</guid>
-      <description>While biomedical data sometimes classifies as &#34;big data&#34;&#34; (where the number of samples and/or variables is large), complexity is its most prominent feature. This arises from a combination of different sources of heterogeneity: heterogeneity across individuals in a population (e.g. response to treatment), heterogeneity in terms of the type of data we collect (e.g. health records &amp; genomics) and heterogeneity that is introduced by the data collection process (e.g. measurement error).</description>
     </item>
     
     <item>
