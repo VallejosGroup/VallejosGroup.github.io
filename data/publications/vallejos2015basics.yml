@@ -1,6 +1,0 @@
-weight: -2
-author: "CA Vallejos, JC Marioni and S Richardson (2015)"
-title: "BASiCS: Bayesian Analysis of Single-Cell Sequencing Data"
-journal: "PLOS Computational Biology"
-url: "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004333"
-description: "Presents BASiCS as an integrated statistical framework for single-cell RNA sequencing data: normalisation, technical noise quantification as well as highly and lowly genes variable identification."

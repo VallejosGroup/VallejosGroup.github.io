@@ -1,6 +1,0 @@
-weight: -3
-author: "CA Vallejos, S Richardson and JC Marioni (2016)"
-title: "Beyond comparisons of means: understanding changes in gene expression at the single-cell level"
-journal: "Genome Biology"
-url: "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0930-3"
-description: "Extends BASiCS with a probabilistic framework to assess differential expression patterns (mean and variability) between cell populations using single-cell RNA sequencing data."

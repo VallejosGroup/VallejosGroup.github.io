@@ -1,6 +1,0 @@
-weight: -7
-author: "CA Vallejos, D Risso, A Scialdone, S Dudoit and JC Marioni (2017)"
-title: "Normalizing single-cell RNA sequencing data: challenges and opportunities"
-journal: "Nature Methods"
-url: "https://www.nature.com/articles/nmeth.4292"
-description: "Discusses commonly used normalization approaches for single-cell RNA sequencing data and illustrate how some of these can produce misleading results."
