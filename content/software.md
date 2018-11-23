@@ -1,4 +1,0 @@
-+++
-title = "Software"
-id = "software"
-+++
