@@ -1,0 +1,6 @@
+weight: -4
+author: "CA Vallejos and MFJ Steel (2017)"
+title: "Incorporating unobserved heterogeneity in Weibull survival models: A Bayesian approach"
+journal: "Econometrics and Statistics"
+url: "https://www.sciencedirect.com/science/article/pii/S2452306217300072"
+description: "Extends Weibull regression survival models to account for outliers and other forms of unobserved heterogeneity."

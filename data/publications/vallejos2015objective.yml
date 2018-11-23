@@ -1,0 +1,6 @@
+weight: -1
+author: "CA Vallejos and MFJ Steel (2015)"
+title: "Objective Bayesian survival analysis using scale mixtures of log-normal distributions"
+journal: "Journal of the American Statistical Association"
+url: "https://www.tandfonline.com/doi/abs/10.1080/01621459.2014.923316"
+description: "Introduces the family of shape mixtures of log-normal distributions as a flexible framework for survival modelling, studying Bayesian inference under nonsubjective priors based on the Jeffreys’ rule. "

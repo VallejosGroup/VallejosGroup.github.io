@@ -1,0 +1,6 @@
+weight: -8
+author: "N Eling, AC Richard, S Richardson, JC Marioni and CA Vallejos (2018)"
+title: "Correcting the Mean-Variance Dependency for Differential Variability Testing Using Single-Cell RNA Sequencing Data"
+journal: "Cell Systems"
+url: "https://www.cell.com/cell-systems/fulltext/S2405-4712(18)30278-3"
+description: "Extends BASiCS with a residual measure of variability that is not confounded by mean expression and with a robust procedure for quantifying technical noise in experiments without technical spike-in molecules."
