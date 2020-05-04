@@ -29,7 +29,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://VallejosGroup.github.io/contact/</guid>
-      <description>Do you want to work at the interface between Bayes and exciting biomedical problems? We are often looking for motivated students and postdocs that want to join our group. If you want to discuss potential opportunities, contact us! We also welcome enquiries from potential collaborators!</description>
+      <description>Do you want to work at the interface between Bayes and exciting biomedical problems? We are often looking for motivated students and postdocs that want to join our group. If you want to discuss potential opportunities, contact us!     We also welcome enquiries from potential collaborators!</description>
     </item>
     
     <item>
@@ -38,7 +38,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://VallejosGroup.github.io/research/</guid>
-      <description>We focus on the development of novel statistical methodology to address and study these sources of heterogeneity. This is a highly multidisciplinary task: from the understanding of complex biomedical problems and technologies, to the development of new methodology and the implementation of open-source analysis tools. Our current research focuses on two areas of application. Firstly, single-cell RNA-sequencing, a cutting-edge experimental technique that allows genome-wide quantification of gene expression on a cell-by-cell basis.</description>
+      <description>While biomedical data sometimes classifies as &#34;big data&#34;&#34; (where the number of samples and/or variables is large), complexity is its most prominent feature. This arises from a combination of different sources of heterogeneity: heterogeneity across individuals in a population (e.g. response to treatment), heterogeneity in terms of the type of data we collect (e.g. health records &amp; genomics) and heterogeneity that is introduced by the data collection process (e.g. measurement error).</description>
     </item>
     
     <item>
