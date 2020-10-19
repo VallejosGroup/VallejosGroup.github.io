@@ -5,11 +5,7 @@
     <link>https://VallejosGroup.github.io/</link>
     <description>Recent content on Vallejos Group - Biomedical Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://VallejosGroup.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://VallejosGroup.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Catalina Vallejos</title>
       <link>https://VallejosGroup.github.io/cata/</link>
