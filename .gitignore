@@ -10,4 +10,3 @@ Gemfile.lock
 package-lock.json
 vendor
 node_modules
-package.json
