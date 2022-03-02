@@ -28,6 +28,7 @@ jobs:
         with:
           node-version: '14'
       # Install PostCSS plugins (from your package.json)
+      - name: Install Tailwind
         run: |
           mkdir node_modules
           npm install
