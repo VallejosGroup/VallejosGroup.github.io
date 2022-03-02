@@ -48,4 +48,4 @@ jobs:
         with:
           # GITHUB_TOKEN secret is set up automatically
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./_site 
