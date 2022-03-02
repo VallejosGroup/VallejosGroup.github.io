@@ -32,7 +32,7 @@ jobs:
         run: |
           mkdir node_modules
           npm install
-          npm install -D tailwindcss@latest postcss@latest autoprefixer@latest cssnano@latest
+          npm install tailwindcss@latest postcss@latest autoprefixer@latest cssnano@latest
       - name: Build site
       # use jekyll-action-ts to build
       # https://github.com/limjh16/jekyll-action-ts
