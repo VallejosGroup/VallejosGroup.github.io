@@ -28,7 +28,6 @@ jobs:
         with:
           node-version: '14'
       # Install PostCSS plugins (from your package.json)
-      - run: npm install
       - run: npm install -D tailwindcss@latest postcss@latest autoprefixer@latest cssnano@latest
       - name: Build site
       # use jekyll-action-ts to build
