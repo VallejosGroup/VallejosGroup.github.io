@@ -21,7 +21,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7 # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          bundler-cache: false # runs 'bundle install' and caches installed gems automatically
       # Install Node as this is needed for PostCSS
       - name: Setup Node
         uses: actions/setup-node@v2
@@ -34,7 +34,6 @@ jobs:
       # https://github.com/limjh16/jekyll-action-ts
         uses: limjh16/jekyll-action-ts@v2
         with:
-          enable_cache: true
           # custom_opts: '--verbose --trace'  #'--drafts --future'
           ### If you need to specify any Jekyll build options, enable the above input
           ### Flags accepted can be found here https://jekyllrb.com/docs/configuration/options/#build-command-options
