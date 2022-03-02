@@ -34,8 +34,7 @@ jobs:
         bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
         npm install -g mermaid.cli
-        npm install postcss
-        npm install postcss-cli
+        npm install postcss postcss-cli postcss-import autoprefixer cssnano --save-dev
         bundle install
     - name: Setup deploy options
       id: setup
