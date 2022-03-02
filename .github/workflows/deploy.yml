@@ -1,20 +1,17 @@
-name: Jekyll Deploy
+name: Deploy
 
 on:
-  schedule:
-    # run daily at 05:30
-    - cron:  '30 5 * * *'
   push:
     branches:
+      - master
       - main
-    paths-ignore:
-      - 'Gemfile'
-      - 'README.md'
-      - 'LICENSE.md'
- 
-# Build site using jekyll
+  pull_request:
+    branches:
+      - master
+      - main
+
 jobs:
-  jekyll:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       # checkout code
