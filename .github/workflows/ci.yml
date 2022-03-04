@@ -1,7 +1,6 @@
 name: CI
 # Builds website but does not deploy it
 on:
-  push:
   pull_request:
       branches:
         - master
