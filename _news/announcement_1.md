@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2021-02-10 12:00:00-0000
 inline: true
 ---
 
-A simple inline announcement.
+Andrew has been awarded an ISSF grant to perform a single-cell multiomics study of eye organoids

@@ -75,6 +75,7 @@ blockquote {
   }
 }
 
+
 // Citation
 .citation, .citation-number {
   color: var(--global-theme-color);
@@ -318,34 +319,6 @@ footer.sticky-bottom {
   }
 }
 
-.post-list {
-  margin: 0;
-  margin-bottom: 40px;
-  padding: 0;
-  li {
-    border-bottom: 1px solid var(--global-divider-color);
-    list-style: none;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    .post-meta {
-      color: var(--global-text-color-light);
-      font-size: 0.875rem;
-      margin-bottom: 0;
-    }
-    .post-tags {
-      color: var(--global-text-color-light);
-      font-size: 0.875rem;
-      padding-top: 0.25rem;
-    }
-    a {
-      color: var(--global-text-color);
-      text-decoration: none;
-      &:hover {
-        color: var(--global-theme-color);
-      }
-    }
-  }
-}
 
 .pagination {
   .page-item {
@@ -598,6 +571,30 @@ html.transition *:after {
         blockquote {
           border-left: 5px solid var(--global-theme-color);
           padding: 8px;
+      }
+      h1 {
+        font-size: 1.875rem/* 30px */;
+        line-height: 2.25rem/* 36px */;
+      }
+
+      h2 {
+        font-size: 1.5rem/* 24px */;
+        line-height: 2rem/* 32px */;
+      }
+
+      h3 {
+        font-size: 1.25rem/* 20px */;
+        line-height: 1.75rem/* 28px */;
+      }
+      img {
+          border-radius: 0.75rem/* 12px */;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      li {
+        list-style-type: disc;
+        
       }
 }
 }
