@@ -1,0 +1,43 @@
+name: CI
+# Builds website but does not deploy it
+on:
+  push:
+  pull_request:
+      branches:
+        - master
+        - main
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout code
+      - uses: actions/checkout@v2
+      # Use ruby/setup-ruby to shorten build times
+      # https://github.com/ruby/setup-ruby
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7 # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      # Install Node as this is needed for PostCSS
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      # Install PostCSS plugins (from your package.json)
+      - name: Install Tailwind
+        run: |
+          mkdir node_modules
+          npm install
+          npm install tailwindcss@3.0.0 @tailwindcss/typography@latest postcss@latest postcss-scss@latest autoprefixer@latest cssnano@latest
+      - name: Build site
+      # use jekyll-action-ts to build
+      # https://github.com/limjh16/jekyll-action-ts
+        uses: limjh16/jekyll-action-ts@v2
+        with:
+          enable_cache: true
+          # custom_opts: '--verbose --trace'  #'--drafts --future'
+          ### If you need to specify any Jekyll build options, enable the above input
+          ### Flags accepted can be found here https://jekyllrb.com/docs/configuration/options/#build-command-options
+      # use actions-gh-pages to deploy
+      # https://github.com/peaceiris/actions-gh-pages
