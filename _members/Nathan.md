@@ -3,7 +3,7 @@ layout: page
 title: temp
 name: Nathan Constantine-Cooke
 role: PhD Student
-img: assets/img/group-members/nathan-800.webp
+img: assets/img/group-members/nathan
 importance: 3
 github: "https://www.github.com/nathansam"
 website: "https://www.constantine-cooke.com"

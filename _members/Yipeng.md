@@ -3,7 +3,7 @@ layout: page
 title: temp
 name: Yipeng Cheng
 role: PhD Student
-img: assets/img/group-members/yipeng-800.webp
+img: assets/img/group-members/yipeng
 importance: 2
 #website: "https://www.facebook.com"
 #scholar: "https://google.com"

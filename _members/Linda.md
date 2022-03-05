@@ -3,7 +3,7 @@ layout: page
 title: temp
 name: "Linda Nguyễn"
 role: "PhD student"
-img: assets/img/group-members/linda-800.webp
+img: assets/img/group-members/linda
 importance: 7
 #website: "https://www.facebook.com"
 #scholar: "https://google.com"

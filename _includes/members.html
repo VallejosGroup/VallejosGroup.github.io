@@ -1,6 +1,11 @@
 <!-- _includes/members.html -->
 <figure class="md:flex rounded-xl p-8 md:p-0 my-8 drop-shadow-2xl" style = "background-color: var(--global-member-bg);">
-    <img class="w-20 h-25 md:w-60 md:h-auto rounded-xl  mx-auto" src="../{{member.img }}" alt="" width="384" height="512">
+
+  <picture>
+    <source srcset="../{{member.img }}-480.webp" type="image/webp">
+    <source srcset="../{{member.img }}.jpg" type="image/jpeg"> 
+    <img class="w-40 md:w-60 md:h-auto rounded-xl  mx-auto" src="../{{member.img }}" alt="" width="384" height="512">
+  </picture>
     <div class="pt-6 md:p-8 flex-wrap text-center md:text-left space-y-4">
         
         <h2 class="text-2xl grow font-thin">{{ member.name}}</h2> 

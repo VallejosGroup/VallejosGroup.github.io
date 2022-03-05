@@ -58,13 +58,8 @@ $ magick convert <filename>.jpg -gravity center -crop 3:4 <filename>.jpg
 Now navigate to the _members/ directory, duplicate the
 [`Nathan.md`](_members/Nathan.md) file, rename it to your own name, and edit
 the file to provide your own links. For any links you do not want,
-comment the line out using #. When specifying the name of the profile image
-append `-800` to the file name and change the extension to `.webp`. When the
-site is generated, `webp` files across a range of quality settings are
-generated from all `png` and `jpg` files in the `img` directory via
-[ImageMagick](https://imagemagick.org). `webp` files are smaller than png
-and jpg images of the same quality and therefore load faster - which in turn
-improves search search engine optimisation. 
+comment the line out using #. When specifying the name of the profile image do
+not include the file extension.
 
 Next, navigate to [_config.yml](_config.yml) and scroll to the Jekyll Scholar
 section of the file. You should add your last name to the `last_name` array and

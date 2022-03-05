@@ -3,7 +3,7 @@ layout: about
 title: About
 permalink: /
 subtitle: Understanding heterogeneity in complex biomedical data
-group_pic: assets/img/group-members/prof_pic.jpg
+group_pic: assets/img/group-members/prof_pic
 
 news: false  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"

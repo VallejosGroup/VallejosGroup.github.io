@@ -3,7 +3,7 @@ layout: page
 title: temp
 name: "Karla Monterrubio"
 role: "Postdoctoral fellow"
-img: assets/img/group-members/karla-800.webp
+img: assets/img/group-members/karla
 importance: 6
 #website: "https://www.facebook.com"
 scholar: "https://scholar.google.com/citations?user=YmyxSXAAAAAJ&hl=en"
