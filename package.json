@@ -6,6 +6,6 @@
     "postcss-cli": "^9.1.0",
     "postcss-import":"14.0.2",
     "autoprefixer":"10.4.2",
-    "cssnano":"5.1.0"
+    "cssnano":"5.1.1"
   }
 }
