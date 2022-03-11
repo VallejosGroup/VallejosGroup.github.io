@@ -7,7 +7,7 @@ email: catalina.vallejos@igmm.ed.ac.uk
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   The Vallejos Research Group Website
 footer_text: 
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website  # add your own keywords or leave empty
+keywords: Bayesian Single-cell RNA-seq EHR # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: "favicon.png"  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
