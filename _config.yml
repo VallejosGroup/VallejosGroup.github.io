@@ -15,7 +15,6 @@ icon: "favicon.png"  # the emoji used as the favicon (alternatively, provide ima
 url: https://vallejosgroup.github.io # the base hostname & protocol for your site
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
-
 repository: "VallejosGroup/VallejosGroup.github.io"
 
 # -----------------------------------------------------------------------------
@@ -167,13 +166,13 @@ defaults:
 # -----------------------------------------------------------------------------
 
 # HTML remove comments (<!-- .... -->)
-remove_HTML_comments: false
+remove_HTML_comments: true
 
 # HTML beautifier (_plugins/beautify.rb) / https://github.com/threedaymonk/htmlbeautifier
 beautify: false # This function has conflict with the code snippets, they can be displayed incorrectly
 
 # HTML minify (_plugins/minify.rb) Thanks to: https://www.ffbit.com/blog/2021/03/17/html-minification-in-jekyll.html
-minify: false
+minify: true
 
 # CSS/SASS minify
 sass:
@@ -200,8 +199,8 @@ jekyll-archives:
 
 scholar:
 
-  last_name: ["Vallejos", "Kapourani", "Monterrubio-Gómez", "Cheng", "Liley", "Maniatis"]
-  first_name: ["Catalina A", "C. A.", "Catalina A.", "Chantriolnt-Andreas", "Karla", "Yipeng", "James", "Christos"]
+  last_name: ["Vallejos", "Kapourani", "Monterrubio-Gómez", "Cheng", "Liley", "Maniatis", "Constantine-Cooke"]
+  first_name: ["Catalina A", "C. A.", "Catalina A.", "Chantriolnt-Andreas", "Karla", "Yipeng", "James", "Christos", "Nathan"]
 
   style: apa
   locale: en
