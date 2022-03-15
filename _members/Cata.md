@@ -3,7 +3,7 @@ layout: page
 title: temp
 name: Catalina Vallejos
 role: Group leader
-img: assets/img/group-members/cata
+img: assets/img/group-members/catalina
 importance: 0
 website: "/catalina/"
 scholar: "https://scholar.google.co.uk/citations?user=lkdrwm0AAAAJ&hl=en"
