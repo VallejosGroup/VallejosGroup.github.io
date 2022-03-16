@@ -104,8 +104,14 @@ installed. To check if you have them installed, run
 $ ruby -v
 $ node -v
 ``` 
+
+If you don't, you might find it handy to install version managers like
+`nvm` or `rvm` - these hopefully automate parts of the install process.
+You'll also need the ruby gem `bundler`.[^1] You can install this
+by running `gem install bundler`.
+
 Running the below commands will then download and install additional
-dependencies and serve the site locally. As change are detected in the
+dependencies and serve the site locally. As changes are detected in the
 source files, the site will automatically re-generate (*note: edits to the
 config file might require re-running `bundle exec jekyll serve` in order to take
 effect*) 
@@ -121,3 +127,6 @@ $ bundle exec jekyll serve
 `npm`,  the node package manager, should install the files needed for Tailwind CSS
 whilst `bundle` will install the Ruby modules used by the site (as
 listed in [`Gemfile`](Gemfile))
+
+
+[^1]: ruby gems are libraries, a bit like python modules or R packages.
