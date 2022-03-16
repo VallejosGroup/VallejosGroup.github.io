@@ -1,17 +1,17 @@
-name: Deploy
-
+name: CI
+# Builds website but does not deploy it
 on:
-  push:
-    branches:
-      - master
-      - main
+  pull_request:
+      branches:
+        - master
+        - main
 
 jobs:
-  deploy:
+  CI:
     runs-on: ubuntu-latest
     steps:
       # checkout code
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       # Use ruby/setup-ruby to shorten build times
       # https://github.com/ruby/setup-ruby
       - uses: ruby/setup-ruby@v1
@@ -20,7 +20,7 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       # Install Node as this is needed for PostCSS
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: '14'
       # Install PostCSS plugins (from your package.json)
@@ -40,9 +40,3 @@ jobs:
           ### Flags accepted can be found here https://jekyllrb.com/docs/configuration/options/#build-command-options
       # use actions-gh-pages to deploy
       # https://github.com/peaceiris/actions-gh-pages
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          # GITHUB_TOKEN secret is set up automatically
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site 
