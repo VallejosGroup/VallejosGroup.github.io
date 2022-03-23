@@ -4,7 +4,7 @@
     "postcss-scss": "4.0.3",
     "@tailwindcss/typography": "0.5.2",
     "postcss-cli": "^9.1.0",
-    "postcss-import":"14.0.2",
+    "postcss-import":"14.1.0",
     "autoprefixer":"10.4.4",
     "cssnano":"5.1.4"
   }
