@@ -104,6 +104,8 @@ collections:
     permalink: /projects/:path/
   members:
     output: true
+  alumni:
+    output: true
 
 news_limit: 5
 

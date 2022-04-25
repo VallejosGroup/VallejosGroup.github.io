@@ -12,7 +12,6 @@ Our website is a [Jekyll](https://jekyllrb.com) site adapted from the
 groups and to support [Tailwind CSS](https://tailwindcss.com) for responsive & modern
 web-design.
 
-
  <h2>Table of Contents </h2>
 
 - [The Vallejos Group Website](#the-vallejos-group-website)

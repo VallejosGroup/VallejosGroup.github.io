@@ -8,7 +8,6 @@ horizontal: false
 importance: 2
 ---
 
-
 <div class="members">
     <!-- Display categorized projects -->
     <!-- Display projects without categories -->
@@ -18,3 +17,8 @@ importance: 2
                 {% include members.html %}
             {%- endfor %}
 </div>
+
+<p class = "text-3xl font-thin text-center">
+<a  title="Alumni" href = "{{site.url}}/alumni/"> See  our alumni </a>
+</p>
+
