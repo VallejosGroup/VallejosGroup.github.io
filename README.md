@@ -1,6 +1,8 @@
 # The Vallejos Group Website 
 
-
+![](https://img.shields.io/badge/Jekyll-CC0000?style=for-the-badge&logo=Jekyll&logoColor=white)
+![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+<br>
 [![Deploy](https://github.com/VallejosGroup/VallejosGroup.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/VallejosGroup/VallejosGroup.github.io/actions/workflows/deploy.yml)
 
 ![screenshot.png](screenshot.png)
@@ -9,7 +11,6 @@ Our website is a [Jekyll](https://jekyllrb.com) site adapted from the
 [al-folio](https://github.com/alshedivat/al-folio) theme to be more suitable for research
 groups and to support [Tailwind CSS](https://tailwindcss.com) for responsive & modern
 web-design.
-
 
  <h2>Table of Contents </h2>
 
