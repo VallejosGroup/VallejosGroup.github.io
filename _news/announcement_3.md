@@ -11,8 +11,8 @@ inline: false
 
 After giving the customary IGC pre-viva seminar, Alan's thesis was examined by
 [Christopher Yau](https://cwcyau.github.io),
-[Davide Ross](http://drisso.github.io), and
-[Tamir Chandler](https://www.ed.ac.uk/mrc-human-genetics-unit/research/chandra-group). <br><br>
+[Davide Risso](http://drisso.github.io), and
+[Tamir Chandra](https://www.ed.ac.uk/mrc-human-genetics-unit/research/chandra-group). <br><br>
 
 Alan's thesis introduced and explored methods of increasing speed and
 scalability for Bayesian RNAseq analysis. In addition to his research, Alan is
