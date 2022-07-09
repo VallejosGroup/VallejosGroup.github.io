@@ -2,7 +2,7 @@
   "dependencies": {
     "postcss": "^8.4.7",
     "postcss-scss": "4.0.3",
-    "@tailwindcss/typography": "0.5.2",
+    "@tailwindcss/typography": "0.5.3",
     "postcss-cli": "^9.1.0",
     "postcss-import":"14.1.0",
     "autoprefixer":"10.4.4",
