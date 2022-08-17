@@ -1,5 +1,9 @@
+"Lees":
+  - firstname: ["Charlie W."]
+    url: https://charlielees.com
+
 "Marioni":
-  - firstname: ["Riccardo E", "Ricardo E."]
+  - firstname: ["Riccardo E", "Ricardo E.", "Riccardo"]
     url: https://marioni-group.owlstown.net
   - firstname: ["John C.", "John C"]
     url: https://www.ebi.ac.uk/research-beta/marioni/
