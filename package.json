@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.3",
-    "autoprefixer": "^10.4.7",
-    "cssnano": "^5.1.12",
-    "postcss": "^8.4.14",
+    "@tailwindcss/typography": "^0.5.4",
+    "autoprefixer": "^10.4.8",
+    "cssnano": "^5.1.13",
+    "postcss": "^8.4.16",
     "postcss-cli": "^10.0.0",
     "postcss-import": "14.1.0",
     "postcss-scss": "^4.0.4",
