@@ -2,7 +2,7 @@
 layout: page
 title: temp
 name: "Karla Monterrubio"
-role: "Postdoctoral fellow"
+role: "Postdoctoral Fellow"
 img: assets/img/group-members/karla
 importance: 6
 #website: "https://www.facebook.com"

@@ -2,7 +2,7 @@
 layout: page
 title: temp
 name: Elena Bernabeu
-role: Postdoctoral researcher
+role: Postdoctoral Researcher
 img: assets/img/group-members/elena
 importance: 1
 #website: "https://www.facebook.com"

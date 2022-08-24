@@ -2,7 +2,7 @@
 layout: page
 title: temp
 name: "Linda Nguyễn"
-role: "PhD student"
+role: "PhD Student"
 img: assets/img/group-members/linda
 importance: 7
 #website: "https://www.facebook.com"

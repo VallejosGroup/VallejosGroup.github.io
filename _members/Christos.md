@@ -2,7 +2,7 @@
 layout: page
 title: temp
 name: "Christos Maniatis"
-role: "PhD student"
+role: "PhD Student"
 img: assets/img/group-members/christos
 importance: 5
 #website: "https://www.facebook.com"

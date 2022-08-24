@@ -2,7 +2,7 @@
 layout: page
 title: temp
 name: Catalina Vallejos
-role: Group leader
+role: Group Leader
 img: assets/img/group-members/catalina
 importance: 0
 website: "/catalina/"
