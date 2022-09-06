@@ -201,8 +201,8 @@ jekyll-archives:
 
 scholar:
 
-  last_name: ["Vallejos", "Kapourani", "Monterrubio-Gómez", "Gomez", "Cheng", "Liley", "Maniatis", "Constantine-Cooke", "Nguyen", "Bernabeu", "Papanastasiou", "Yang"]
-  first_name: ["Catalina A", "Catalina", "C. A.", "Catalina A.", "Chantriolnt-Andreas", "Karla", "Karla Monterrubio", "Yipeng", "James", "Christos", "Nathan", "Nathan Samuel", "Linda", "Elena", "Andrew", "Emma J"] 
+  last_name: ["Vallejos", "Kapourani", "Monterrubio-Gómez", "Gomez", "Cheng", "Liley", "Maniatis", "Constantine-Cooke", "Nguyen", "Bernabeu", "Papanastasiou", "Yang", "Thoma"]
+  first_name: ["Catalina A", "Catalina", "C. A.", "Catalina A.", "Chantriolnt-Andreas", "Karla", "Karla Monterrubio", "Yipeng", "James", "Christos", "Nathan", "Nathan Samuel", "Linda", "Elena", "Andrew", "Emma J", "Ioanna"]
 
   style: apa
   locale: en
