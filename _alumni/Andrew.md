@@ -2,7 +2,7 @@
 layout: page
 name: Andrew Papanastasiou
 role: "Cross-Disciplinary Fellow"
-img: assets/img/group-members/andrew
+img: assets/img/alumni/andrew
 importance: 8
 github: "https://github.com/andrewpapa"
 website: "https://andrewpapa.github.io/"

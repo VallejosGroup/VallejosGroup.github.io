@@ -2,7 +2,7 @@
 layout: page
 title: Alumni
 permalink: /alumni/
-description: Previous members of Vallejos group
+description: Previous members of the Vallejos group
 nav: false
 horizontal: false
 ---
