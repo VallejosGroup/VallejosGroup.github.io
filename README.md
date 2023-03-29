@@ -7,31 +7,46 @@
 
 ![screenshot.png](screenshot.png)
 
-Our website is a [Jekyll](https://jekyllrb.com) site adapted from the
-[al-folio](https://github.com/alshedivat/al-folio) theme to be more suitable for research
-groups and to support [Tailwind CSS](https://tailwindcss.com) for responsive & modern
-web-design.
+<p align = "center"> <em> Our group website </em> </p> 
 
  <h2>Table of Contents </h2>
 
 - [The Vallejos Group Website](#the-vallejos-group-website)
+  - [About](#about)
   - [Making edits to our site](#making-edits-to-our-site)
     - [New members](#new-members)
     - [Adding publications](#adding-publications)
   - [Local setup](#local-setup)
 
+## About
+
+Our website is a [Jekyll](https://jekyllrb.com) site adapted from the
+[al-folio](https://github.com/alshedivat/al-folio) theme to be more suitable for
+research groups and supports [Tailwind CSS](https://tailwindcss.com) for
+responsive and modern web design. *However*, none of this needs to be known (or
+understood) in order to be able to make edits to the site. 
+
+The website is hosted at https://vallejosgroup.github.io.
 
 ## Making edits to our site 
 :pencil2:
 
-Our site is built using [GitHub actions]((https://github.com/features/actions)).
-This means edits to the site can be made without locally building the website.
-When a change is pushed to the `master` branch, a GitHub action runs which
-builds the website on the `gh-pages` branch. This is then deployed to
-https://vallejosgroup.github.io. If you are interested in building the website
-locally so you can see the changes made to the website before they are pushed,
-see the [Local setup](#local-setup) section.
+Jekyll is a static site generator. This means that the files in this repository
+are used to generate the HTML, CSS, and javascript needed to display our
+website. This has the benefit of making it much easier to edit and maintain a
+site compared to editing the HTML, CSS and javascript displayed to visitors
+manually.  
 
+Our site is built using [GitHub actions]((https://github.com/features/actions)).
+This means edits to the site can be made without needing to build the website on
+your own machine. Instead, you can just make changes to the files in this
+repository and then push the changes. When a change is pushed to the `master`
+branch, a GitHub action runs which builds the website (the final HTML, CSS and
+javascript code) on the `gh-pages` branch. 
+
+This is then deployed to https://vallejosgroup.github.io. If you are interested
+in building the website on your own machine so you can see the changes made to
+the website before they are pushed, see the [Local setup](#local-setup) section.
 
 ### New members
 :woman: :man:
@@ -58,25 +73,33 @@ git clone https://github.com/VallejosGroup/VallejosGroup.github.io.git
 
 **2. Adding a 3:4 aspect ratio image to `img/members`**
 
+Images are assumed to be in a **3:4 aspect ratio**. Otherwise, they would disrupt
+the layout of our [members page](https://vallejosgroup.github.io./people/) or
+appear stretched.
+
 Navigate to the `img/members` directory and add a `.jpg` or `.png` profile
-image with a **3:4 aspect ratio**. *Note: a 3:4 aspect ratio image can be
-generated via `imagemagik` using the following command* (replacing < filename >
-with the  actual filename):
+image with a 3:4 aspect ratio.
+
+If you have access to Photoshop, a 3:4 image can be generated using the crop
+tool. Alternatively, there are many online tools which can generate a 3:4 image.
+
+>  **Note**: a 3:4 aspect ratio image can be generated via `imagemagik` using
+> the following command* (replacing < filename > with the  actual filename):
 
 ```bash
 $ magick convert <filename>.jpg -gravity center -crop 3:4 <filename>.jpg
 ```
-
-If you have access to Photoshop, a 3:4 image can be generated using the crop
-tool. Alternatively, there are many online tools which can generate a 3:4 image.
 
 **3. Adding your profile to `_members/`**
 
 Navigate to the `_members/` directory, duplicate the
 [`Nathan.md`](_members/Nathan.md) file, rename it to your own name, and edit
 the file to provide your own links. For any links you do not want,
-comment the line out using `#`. When specifying the name of the profile image do
-not include the file extension.
+comment the line out using `#`. When specifying the name of the profile image,
+do not include the file extension (this is because the jpg or png file you have
+added will be converted to a
+[webp file](https://developers.google.com/speed/webp) when the site is built and
+the correct extension will be automatically added).
 
 **4. Adding first and last names to the [_config.yml](_config.yml) file**
 
@@ -84,8 +107,9 @@ Next, navigate to [_config.yml](_config.yml) and scroll to the Jekyll Scholar
 section of the file. You should add your last name to the `last_name` array and
 first names in the   `first_name` array in the format they (will) appear
 in publications. If your name appears in multiple formats, add all of these
-formats. Now, when a publication is added to the site which you are an
-author on, your name will be underlined in the listing.  
+formats. If you yse any initials, such as "Catalina A.", then these should be
+included in the first_name array. When a publication you have authored is added
+to the site, your name will now be underlined in the listing.  
 
 **5. Committing and pushing changes**
 
