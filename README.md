@@ -23,8 +23,12 @@
 Our website is a [Jekyll](https://jekyllrb.com) site adapted from the
 [al-folio](https://github.com/alshedivat/al-folio) theme to be more suitable for
 research groups and supports [Tailwind CSS](https://tailwindcss.com) for
-responsive and modern web design. *However*, none of this needs to be known (or
+responsive and modern web design. Crucially, none of this needs to be known (or
 understood) in order to be able to make edits to the site. 
+
+If you are uncertain if what you have done is correct, please feel free to
+contact me (Nathan/@nathansam), or push to a branch and open a pull request
+tagging me.
 
 The website is hosted at https://vallejosgroup.github.io.
 
@@ -46,7 +50,8 @@ javascript code) on the `gh-pages` branch.
 
 This is then deployed to https://vallejosgroup.github.io. If you are interested
 in building the website on your own machine so you can see the changes made to
-the website before they are pushed, see the [Local setup](#local-setup) section.
+the website before they are pushed, please see the [Local setup](#local-setup)
+section.
 
 ### New members
 :woman: :man:
@@ -105,11 +110,12 @@ the correct extension will be automatically added).
 
 Next, navigate to [_config.yml](_config.yml) and scroll to the Jekyll Scholar
 section of the file. You should add your last name to the `last_name` array and
-first names in the   `first_name` array in the format they (will) appear
+first names in the `first_name` array in the format they (will) appear
 in publications. If your name appears in multiple formats, add all of these
-formats. If you yse any initials, such as "Catalina A.", then these should be
-included in the first_name array. When a publication you have authored is added
-to the site, your name will now be underlined in the listing.  
+formats. If you use any initials, such as then these should be
+included in the first_name array (E.g "Catalina A."). When a publication you
+have authored is added to the site, your name will now be underlined in the
+listing.  
 
 **5. Committing and pushing changes**
 
