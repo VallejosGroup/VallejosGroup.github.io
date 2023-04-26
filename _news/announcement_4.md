@@ -5,7 +5,7 @@ date: 2022-05-26 12:00:00-0000
 inline: false
 ---
 
-After 4 years as a Chancellor's Fellow, Cata had a successful ESAT review and 
-was awarded tenure. 
+After 4 years as a Chancellor's Fellow, Cata had a successful ESAT
+(Edinburgh Scientific Academic Track) review and was awarded tenure. 
 
-More information about the ESAT programme is available [here](https://www.ed.ac.uk/medicine-vet-medicine/our-research/cmvm-research-support/translation-commercialisation/edinburgh-scientific-academic-track)
+More information about the ESAT programme is available [here](https://www.ed.ac.uk/medicine-vet-medicine/our-research/cmvm-research-support/early-career-researchers/edinburgh-scientific-academic-track)
