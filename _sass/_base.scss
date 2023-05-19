@@ -294,8 +294,22 @@ i.exp:hover {
 svg {
   stroke: var(--global-text-color);
 }
+
+svg.fill { 
+  fill: var(--global-text-color);
+}
+
 svg:hover {
   stroke: var(--global-theme-color);
+}
+
+svg.fill:hover { 
+  fill: var(--global-theme-color);
+}
+
+
+fill.svg.hover {
+  fill: var(--global-theme-color);
 }
 
 table.table a {
