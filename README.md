@@ -112,10 +112,9 @@ Next, navigate to [_config.yml](_config.yml) and scroll to the Jekyll Scholar
 section of the file. You should add your last name to the `last_name` array and
 first names in the `first_name` array in the format they (will) appear
 in publications. If your name appears in multiple formats, add all of these
-formats. If you use any initials, such as then these should be
-included in the first_name array (E.g "Catalina A."). When a publication you
-have authored is added to the site, your name will now be underlined in the
-listing.  
+formats. If you use any initials, then these should be included in the
+first_name array (E.g "Catalina A."). When a publication you have authored is
+added to the site, your name will now be underlined in the listing.  
 
 **5. Committing and pushing changes**
 
@@ -139,15 +138,15 @@ finished, your changes should be on https://vallejosgroup.github.io
 The [publications section](https://vallejosgroup.github.io/publications/) of the
 website is generated from the [_bibliography/papers.bib](_bibliography/papers.bib)
 BibTeX file. Adding a record to this file will result in the publication
-being added to the website. I recommend adding an abstract to the record, as this
-abstract will then be visible on the website. Likewise, providing a url key will
-produce a link to the manuscript on the journal's website. 
+being added to the website. I recommend adding an abstract to the record, as
+this abstract will then be visible on the website. Likewise, providing a url key
+will produce a link to the manuscript on the journal's website. 
 
 There are a few non-standard BibTeX keys used by this website. The first, `abbr`
 can be used to provide a journal abbreviation which is then shown next to the
 publication on the website. The second, `selected` denotes if the publication
 appears on the homepage under the *Selected Publications* section. If this key
-is not listed then `selected = {false}` is assumed. 
+is not listed, then `selected = {false}` is assumed. 
 
 Finally, PDFs can be hosted on the website. Simply copy the PDF file to the 
 `assets/pdf` directory, create a pdf key in the BibTeX file, using the name of
@@ -175,7 +174,7 @@ dependencies and serve the site locally. As changes are detected in the
 source files, the site will automatically re-generate.
 
 >  **Note**: Edits to the config file might require re-running
-> `bundle exec jekyll serve` for them to take effect) 
+> `bundle exec jekyll serve` for them to take effect 
 
 
 ```bash
