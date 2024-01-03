@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # checkout code
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       # Use ruby/setup-ruby to shorten build times
       # https://github.com/ruby/setup-ruby
       - uses: ruby/setup-ruby@v1
@@ -20,9 +20,9 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       # Install Node as this is needed for PostCSS
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '20.10.0'
       # Install PostCSS plugins (from your package.json)
       - name: Install Tailwind
         run: |
