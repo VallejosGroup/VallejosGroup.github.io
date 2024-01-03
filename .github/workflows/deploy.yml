@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # checkout code
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       # Use ruby/setup-ruby to shorten build times
       # https://github.com/ruby/setup-ruby
       - uses: ruby/setup-ruby@v1
