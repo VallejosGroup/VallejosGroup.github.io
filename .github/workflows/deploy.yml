@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '20.10.0'
       # Install PostCSS plugins (from your package.json)
       - name: Install Tailwind
         run: |
