@@ -3,7 +3,7 @@ layout: page
 title: temp
 name: "Christos Maniatis"
 role: "PhD Student"
-img: assets/img/group-members/christos
+img: assets/img/alumni/christos
 importance: 5
 after: "Machine Learning Engineer at Etcembly Ltd"
 years: "2019-2022"
