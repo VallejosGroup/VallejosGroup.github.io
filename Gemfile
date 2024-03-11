@@ -17,4 +17,5 @@ group :jekyll_plugins do
     gem 'htmlcompressor'
     gem 'htmlbeautifier'
     gem 'jekyll-postcss-v2'
+    gem 'nokogiri', '~> 1.16', '>= 1.16.2'
 end
