@@ -41,9 +41,9 @@ max_width: 800px
 # Open Graph & Schema.org
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
-serve_schema_org: false # Include Schema.org in the HTML head
-og_image:  # The site-wide (default for all links) Open Graph preview image
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
+serve_schema_org: true # Include Schema.org in the HTML head
+og_image: "img/open-graph-logo.png" # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
 # Social integration
@@ -52,9 +52,9 @@ og_image:  # The site-wide (default for all links) Open Graph preview image
 github_username: VallejosGroup # your GitHub user name
 gitlab_username: # your GitLab user name
 twitter_username: CataVallejosM # your Twitter handle
-linkedin_username: # your LinkedIn user name
-scholar_userid: # your Google Scholar ID
-orcid_id: # your ORCID ID
+linkedin_username: catalina-vallejos-61b41956 # your LinkedIn user name
+scholar_userid: lkdrwm0AAAAJ # your Google Scholar ID
+orcid_id: 0000-0003-3638-1960 # your ORCID ID
 medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
@@ -107,7 +107,7 @@ collections:
   alumni:
     output: true
 
-news_limit: 5
+news_limit: 4
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
@@ -223,7 +223,6 @@ scholar:
   details_link: Details
 
   query: "@*"
-
 
 # -----------------------------------------------------------------------------
 # Responsive WebP Images
