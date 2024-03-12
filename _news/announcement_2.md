@@ -21,7 +21,7 @@ Megaw](https://www.ed.ac.uk/mrc-human-genetics-unit/research/mill-group).
  
 ## Elena Bernabeu
  
-<img src = "/assets/img/group-members/elena-480.webp" width = "200">
+<img src = "/assets/img/alumni/elena-480.webp" width = "200">
 
 Elena is a postdoctoral research fellow and will be researching [genomic,
 epigenomic, and proteomic predictors of Alzheimer's disease](https://www.ed.ac.uk/centre-genomic-medicine/news-events/latest-news/genetics-epigenetics-and-proteomics-for-ad) using data
