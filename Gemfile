@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "3.0.0"
+ruby "3.3.0"
 group :jekyll_plugins do
     gem 'jekyll'
     gem 'jekyll-archives'
@@ -15,8 +15,10 @@ group :jekyll_plugins do
     gem 'jemoji'
     gem 'unicode_utils'
     gem 'webrick'
+    gem 'csv'
+    gem 'observer'
     gem 'htmlcompressor'
     gem 'htmlbeautifier'
     gem 'jekyll-postcss-v2'
-    gem 'nokogiri', '~> 1.16', '>= 1.16.2'
+    gem 'nokogiri', '~> 1.16'
 end
