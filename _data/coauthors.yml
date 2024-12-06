@@ -15,3 +15,11 @@
 "Steel":
   - firstname: ["Mark F.J.", "Mark F. J."]
     url: https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/steel/steel_homepage
+
+"Liley":
+  - firstname: ["James"]
+    url: https://www.durham.ac.uk/staff/james-liley/
+
+"Aslett":
+  - firstname: ["Louis J. M."]
+    url: https://www.durham.ac.uk/staff/louis-aslett/
