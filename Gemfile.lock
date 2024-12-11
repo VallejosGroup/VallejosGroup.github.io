@@ -120,9 +120,9 @@ GEM
     minitest (5.25.2)
     namae (1.2.0)
       racc (~> 1.7)
-    nokogiri (1.16.8-arm64-darwin)
+    nokogiri (1.17.1-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.16.8-x86_64-linux)
+    nokogiri (1.17.1-x86_64-linux)
       racc (~> 1.4)
     observer (0.1.2)
     pathutil (0.16.2)
@@ -173,7 +173,7 @@ DEPENDENCIES
   jekyll-target-blank
   jekyll-twitter-plugin
   jemoji
-  nokogiri (~> 1.16)
+  nokogiri (~> 1.17)
   observer
   unicode_utils
   webrick
