@@ -35,7 +35,7 @@ GEM
       rexml
     csl-styles (1.0.1.11)
       csl (~> 1.0)
-    csv (3.3.0)
+    csv (3.3.1)
     drb (2.2.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
