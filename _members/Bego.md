@@ -1,7 +1,7 @@
 ---
 layout: page
 title: temp
-name: Begona Bolos
+name: Begoña Bolós
 role: CRUK PhD Student
 img: assets/img/group-members/bego
 importance: 1
