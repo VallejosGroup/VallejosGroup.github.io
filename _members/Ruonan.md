@@ -2,7 +2,7 @@
 layout: page
 title: temp
 name: Ruonan Pei
-role: PhD student
+role: PhD Student
 #img: assets/img/group-members/ruonan
 importance: 7
 #website: "/catalina/"

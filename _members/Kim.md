@@ -2,7 +2,7 @@
 layout: page
 title: temp
 name: Kim Job
-role: EpiCrossBorders PhD student
+role: EpiCrossBorders PhD Student
 #img: assets/img/group-members/kim
 importance: 3
 #website: "/catalina/"

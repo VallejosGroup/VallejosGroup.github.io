@@ -2,7 +2,7 @@
 layout: page
 title: temp
 name: Veronica Finazzi
-role: EpiCrossBorders PhD student
+role: EpiCrossBorders PhD Student
 #img: assets/img/group-members/veronica
 importance: 8
 #website: "/catalina/"

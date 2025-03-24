@@ -2,7 +2,7 @@
 layout: page
 title: temp
 name: Victor Velasco-Pardo
-role: Postdoctoral researcher
+role: Postdoctoral Research Associate
 img: assets/img/group-members/victor
 importance: 9
 #website: "/catalina/"

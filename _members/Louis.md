@@ -2,7 +2,7 @@
 layout: page
 title: temp
 name: Louis Chislett
-role: HDR UK PhD student
+role: HDR UK PhD Student
 img: assets/img/group-members/louis
 importance: 5
 #website: "/catalina/"
