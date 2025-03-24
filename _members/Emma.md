@@ -4,7 +4,7 @@ title: temp
 name: Emma Yang
 role: PhD Student
 img: assets/img/group-members/emma
-importance: 10
+importance: 1
 #website: "https://www.facebook.com"
 #scholar: "https://google.com"
 github: "https://github.com/Toxvida"
