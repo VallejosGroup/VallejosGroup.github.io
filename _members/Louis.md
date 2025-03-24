@@ -3,7 +3,7 @@ layout: page
 title: temp
 name: Louis Chislett
 role: HDR UK PhD student
-#img: assets/img/group-members/louis
+img: assets/img/group-members/louis
 importance: 5
 #website: "/catalina/"
 #scholar: "https://scholar.google.co.uk/citations?user=lkdrwm0AAAAJ&hl=en"
