@@ -9,5 +9,5 @@ importance: 1
 #scholar: "https://google.com"
 github: "https://github.com/BBolosSierra"
 #twitter: "https://twitter.com"
-linkedin: "https://www.linkedin.com/in/begoña-bolós-904b61164"
+linkedin: "https://www.linkedin.com/in/bego%C3%B1a-bol%C3%B3s-904b61164/"
 ---
