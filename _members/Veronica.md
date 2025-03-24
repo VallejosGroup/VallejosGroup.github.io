@@ -4,7 +4,7 @@ title: temp
 name: Veronica Finazzi
 role: EpiCrossBorders PhD student
 #img: assets/img/group-members/veronica
-importance: 7
+importance: 8
 #website: "/catalina/"
 #scholar: "https://scholar.google.co.uk/citations?user=lkdrwm0AAAAJ&hl=en"
 #github: "https://github.com/catavallejos"

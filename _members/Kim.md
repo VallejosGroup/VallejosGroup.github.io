@@ -4,7 +4,7 @@ title: temp
 name: Kim Job
 role: EpiCrossBorders PhD student
 #img: assets/img/group-members/kim
-importance: 2
+importance: 3
 #website: "/catalina/"
 #scholar: "https://scholar.google.co.uk/citations?user=lkdrwm0AAAAJ&hl=en"
 #github: "https://github.com/catavallejos"

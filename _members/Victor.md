@@ -4,7 +4,7 @@ title: temp
 name: Victor Velasco-Pardo
 role: Postdoctoral researcher
 #img: assets/img/group-members/victor
-importance: 8
+importance: 9
 #website: "/catalina/"
 #scholar: "https://scholar.google.co.uk/citations?user=lkdrwm0AAAAJ&hl=en"
 #github: "https://github.com/catavallejos"

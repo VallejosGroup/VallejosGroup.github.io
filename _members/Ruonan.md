@@ -4,7 +4,7 @@ title: temp
 name: Ruonan Pei
 role: PhD student
 #img: assets/img/group-members/ruonan
-importance: 6
+importance: 7
 #website: "/catalina/"
 #scholar: "https://scholar.google.co.uk/citations?user=lkdrwm0AAAAJ&hl=en"
 #github: "https://github.com/catavallejos"

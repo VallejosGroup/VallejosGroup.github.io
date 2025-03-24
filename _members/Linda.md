@@ -4,7 +4,7 @@ title: temp
 name: "Linda Nguyễn"
 role: "PhD Student"
 img: assets/img/group-members/linda
-importance: 3
+importance: 4
 #website: "https://www.facebook.com"
 #scholar: "https://google.com"
 github: "https://github.com/knlng"
