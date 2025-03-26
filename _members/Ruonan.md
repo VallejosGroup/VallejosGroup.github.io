@@ -3,7 +3,7 @@ layout: page
 title: temp
 name: Ruonan Pei
 role: PhD Student
-#img: assets/img/group-members/ruonan
+img: assets/img/group-members/ruonan
 importance: 7
 #website: "/catalina/"
 #scholar: "https://scholar.google.co.uk/citations?user=lkdrwm0AAAAJ&hl=en"
