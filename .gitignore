@@ -6,6 +6,5 @@ _site
 .DS_store
 .ruby-version
 .tweet-cache
-package-lock.json
 vendor
 node_modules
