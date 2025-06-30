@@ -30,10 +30,10 @@ layout: default
             <picture>
               <source srcset="{{site.url}}/assets/img/c.-vallejos-group-1400.webp" type="image/webp">
               <source srcset="{{site.url}}/assets/img/c.-vallejos-group.jpg" type="image/jpeg"> 
-              <img src="{{site.url}}/assets/img/c.-vallejos-group-1400.webp" alt="Avatar" class="object-cover  h-30 w-100 rounded-xl" />
+              <img src="{{site.url}}/assets/img/c.-vallejos-group-1400.webp" alt="Avatar" class="object-cover  h-auto w-100 rounded-xl" />
             </picture>
 
-            <div class="absolute w-full py-2.5 bottom-0 inset-x-0 border-slate-400 bg-slate-400 bg-opacity-40 rounded-b-xl text-center leading-4 backdrop-filter backdrop-blur-sm"><h1 class="post-title">
+            <div class="absolute w-full py-2.5 bottom-0 inset-x-0 border-slate-400 bg-slate-400/40 rounded-b-xl text-center leading-4 backdrop-blur-sm"><h1 class="post-title">
               {% if site.title == "blank" -%}<span class="font-extralight text-2xl">{{ site.group_name}}</span>{%- else -%}{{ site.title }}{%- endif %}
              </h1>
              <p class="desc text-lg">{{ page.subtitle }}</p>

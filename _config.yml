@@ -140,6 +140,11 @@ keep_files:
   - .nojekyll
   - .git
 
+
+
+postcss:
+  cache: false
+
 # Plug-ins
 plugins:
   - jekyll-postcss-v2
@@ -176,9 +181,7 @@ beautify: false # This function has conflict with the code snippets, they can be
 # HTML minify (_plugins/minify.rb) Thanks to: https://www.ffbit.com/blog/2021/03/17/html-minification-in-jekyll.html
 minify: true
 
-# CSS/SASS minify
-sass:
-  style: compressed
+
 
 # -----------------------------------------------------------------------------
 # Jekyll Archives

@@ -12,9 +12,10 @@ d-byline h3 {
 
 d-byline a, d-article d-byline a {
   color: var(--global-text-color) !important;
-  &:hover {
-    color: var(--global-hover-color) !important;
-  }
+}
+
+d-byline a:hover, d-article d-byline a:hover {
+  color: var(--global-hover-color) !important;
 }
 
 d-article {
