@@ -13,15 +13,10 @@ jobs:
       # checkout code
       - uses: actions/checkout@v4
       - name: Build site
-        uses: addnab/docker-run-action@v3 
-        with:
-          image: docker://ghcr.io/vallejosgroup/website
-          options:  --mount type=bind,source="$(pwd)",target="/website"
-          # custom_opts: '--verbose --trace'  #'--drafts --future'
-          ### If you need to specify any Jekyll build options, enable the above input
-          ### Flags accepted can be found here https://jekyllrb.com/docs/configuration/options/#build-command-options
-      # use actions-gh-pages to deploy
-      # https://github.com/peaceiris/actions-gh-pages
+        run: |
+          docker container run -it \
+          --mount type=bind,source="$(pwd)",target="/website" \
+          ghcr.io/vallejosgroup/website
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
