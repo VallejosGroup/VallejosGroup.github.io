@@ -1,9 +1,10 @@
 // postcss.config.js
 
 module.exports = {
-    parser: 'postcss-scss',
     plugins : {
       'postcss-import': {},
-    autoprefixer: {},
+      '@tailwindcss/postcss': {},      
+      'postcss-nesting': {},
+      'autoprefixer': {},
     }
   }
