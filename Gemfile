@@ -20,5 +20,7 @@ group :jekyll_plugins do
     gem 'htmlcompressor'
     gem 'htmlbeautifier'
     gem 'jekyll-postcss-v2'
+    gem 'tailwindcss-ruby'
+    gem 'tailwindcss-rails'
     gem 'nokogiri', '~> 1.16'
 end

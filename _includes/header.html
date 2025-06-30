@@ -1,9 +1,9 @@
 
     <header>
       <!-- Nav Bar -->
-      <nav id="navbar" class=" navbar font-sans font-weight-lighter bg-opacity-30 bg-slate-900 backdrop-filter border-b-2 border-gray-400 border-transparent backdrop-blur-sm navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
+      <nav id="navbar" class=" navbar font-sans font-light bg-slate-900/30 border-b-2 border-gray-400 border-transparent backdrop-blur-sm navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
         <div class="container">
-          <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/">
+          <a class="navbar-brand title font-light" href="{{ site.baseurl | prepend: site.url }}/">
               {%- if site.title == "blank" -%}
 
               <picture>
@@ -30,7 +30,7 @@
             <span class="icon-bar bottom-bar"></span>
           </button>
 
-          <div class="collapse navbar-collapse text-right" id="navbarNav">
+          <div class="text-right" id="navbarNav">
             <ul class="navbar-nav ml-auto flex-nowrap">
 
               <!-- About -->
