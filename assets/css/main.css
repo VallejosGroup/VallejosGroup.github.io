@@ -4,11 +4,11 @@
 @charset "utf-8";
 
 
-@import "variables.css";
-@import "themes.css";
-@import "layout.css";
-@import "base.css";
-@import "distill.css";
+@import "variables";
+@import "themes";
+@import "layout";
+@import "base";
+@import "distill";
 @import "tailwindcss";
 
 @import url(https://cdn.jsdelivr.net/npm/bootstrap@{{ site.bootstrap.version }}/dist/css/bootstrap.min.css);
