@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Cata got tenure after a successful ESAT review. 
 date: 2022-05-26 12:00:00-0000
 inline: false

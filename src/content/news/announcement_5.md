@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Nathan has passed his viva!
 date: 2024-01-31 12:00:00-0000
 inline: false
