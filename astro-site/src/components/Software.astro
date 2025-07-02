@@ -19,9 +19,9 @@ export interface Props {
 const { software } = Astro.props;
 ---
 
-<figure class="md:flex rounded-xl p-8 md:p-0 my-8 drop-shadow-2xl bg-slate-50 dark:bg-slate-800">
+<figure class="md:flex rounded-xl p-8 md:p-0 my-8 drop-shadow-2xl  bg-slate-50 dark:bg-slate-800" style = "display: flex ;justify-content: center; align-items: center;">
   {software.img && (
-    <picture>
+    <picture style = "padding-left: 30px;">
       <source srcset={`/${software.img}.webp`} type="image/webp">
       <source srcset={`/${software.img}.png`} type="image/png"> 
       <img 

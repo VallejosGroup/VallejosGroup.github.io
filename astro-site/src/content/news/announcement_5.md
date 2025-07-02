@@ -5,11 +5,11 @@ date: 2024-01-31 12:00:00-0000
 inline: false
 ---
 
-<img src = "/assets/img/news/nathan-viva-1-800.webp" width = "700px">
+<img src = "/assets/img/news/nathan-viva-1.webp" width = "700px">
 
 <br><br>
 
-<img style = "float: right;" src = "/assets/img/news/nathan-viva-2-800.webp" width = "300px">
+<img style = "float: right;" src = "/assets/img/news/nathan-viva-2.webp" width = "300px">
 
 
 Nathan's thesis was examined by 

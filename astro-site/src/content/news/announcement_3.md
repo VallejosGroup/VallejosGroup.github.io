@@ -5,7 +5,7 @@ date: 2022-05-06 12:00:00-0000
 inline: false
 ---
 
-<img src = "/assets/img/news/alan-viva-800.webp">
+<img src = "/assets/img/news/alan-viva.webp">
 
 <br><br>
 

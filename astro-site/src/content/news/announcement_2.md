@@ -9,7 +9,7 @@ We have welcomed two new members to the group:
 
 ## Linda Nguyễn
 
-<img src = "/assets/img/group-members/linda-480.webp" width = "200">
+<img src = "/assets/img/group-members/linda.webp" width = "200">
 
 Linda is a [Precision Medicine DTP](https://www.ed.ac.uk/usher/precision-medicine)
 PHD student studying the mechanisms of why photoreceptors die in retinitis
@@ -21,7 +21,7 @@ Megaw](https://www.ed.ac.uk/mrc-human-genetics-unit/research/mill-group).
  
 ## Elena Bernabeu
  
-<img src = "/assets/img/alumni/elena-480.webp" width = "200">
+<img src = "/assets/img/alumni/elena.webp" width = "200">
 
 Elena is a postdoctoral research fellow and will be researching [genomic,
 epigenomic, and proteomic predictors of Alzheimer's disease](https://www.ed.ac.uk/centre-genomic-medicine/news-events/latest-news/genetics-epigenetics-and-proteomics-for-ad) using data

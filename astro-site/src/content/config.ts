@@ -53,8 +53,19 @@ const alumniCollection = defineCollection({
   }),
 });
 
+const newsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string().optional(),
+    date: z.coerce.date(),
+    inline: z.boolean().optional(),
+    layout: z.string().optional(), // Allow layout field but ignore it
+  }),
+});
+
 export const collections = {
   'members': membersCollection,
   'software': softwareCollection,
   'alumni': alumniCollection,
+  'news': newsCollection,
 };
