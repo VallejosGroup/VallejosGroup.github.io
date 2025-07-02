@@ -1,5 +1,4 @@
 ---
-layout: page
 name: Rachel Jackson
 role: "BSc Student"
 img: assets/img/alumni/rachel

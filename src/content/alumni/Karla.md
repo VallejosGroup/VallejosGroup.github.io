@@ -1,5 +1,4 @@
 ---
-layout: page
 title: temp
 name: "Karla Monterrubio"
 role: "Postdoctoral Fellow"

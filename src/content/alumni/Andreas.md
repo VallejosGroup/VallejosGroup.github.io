@@ -1,5 +1,4 @@
 ---
-layout: page
 name: Chantriolnt-Andreas Kapourani
 role: Cross-Disciplinary Post-doctoral Fellow
 img: assets/img/alumni/andreas

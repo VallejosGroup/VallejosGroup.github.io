@@ -1,5 +1,4 @@
 ---
-layout: page
 name: James Liley
 role: "Postdoctoral Research Fellow"
 img: assets/img/alumni/james

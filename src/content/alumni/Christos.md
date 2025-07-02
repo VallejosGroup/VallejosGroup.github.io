@@ -1,5 +1,4 @@
 ---
-layout: page
 title: temp
 name: "Christos Maniatis"
 role: "PhD Student"
