@@ -1,5 +1,4 @@
 ---
-layout: page
 title: temp
 name: Elena Bernabeu
 role: Postdoctoral Researcher

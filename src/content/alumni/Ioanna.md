@@ -1,5 +1,4 @@
 ---
-layout: page
 title: temp
 name: "Ioanna Thoma"
 role: "Postdoctoral Researcher"

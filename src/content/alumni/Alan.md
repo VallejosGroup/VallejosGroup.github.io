@@ -1,5 +1,4 @@
 ---
-layout: page
 name: Alan O'Callaghan
 role: "PhD Student"
 img: assets/img/alumni/alan

@@ -1,5 +1,4 @@
 ---
-layout: page
 title: temp
 name: Yipeng Cheng
 role: PhD Student

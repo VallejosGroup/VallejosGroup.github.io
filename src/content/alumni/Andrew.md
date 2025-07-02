@@ -1,5 +1,4 @@
 ---
-layout: page
 name: Andrew Papanastasiou
 role: "Cross-Disciplinary Fellow"
 img: assets/img/alumni/andrew
