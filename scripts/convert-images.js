@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 import { execSync } from 'child_process';
-import { existsSync, mkdirSync, readdirSync, statSync, copyFileSync } from 'fs';
+import { existsSync, mkdirSync, readdirSync, statSync } from 'fs';
 import { join, extname, basename, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import async from 'async';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -17,37 +18,21 @@ const config = {
   excludePatterns: [
     'favicon.png', // Keep favicon as PNG
     'logo.png'     // Keep logo as PNG for compatibility
-  ]
+  ],
+  concurrency: 4 // Number of parallel operations
 };
 
-// Global variable to store the ImageMagick command
-let imageMagickCommand = null;
-
 /**
- * Check if ImageMagick is available and determine the correct command
+ * Check if ImageMagick is available
  */
 function checkImageMagick() {
-  // Try ImageMagick 7+ syntax first (magick)
   try {
     execSync('magick -version', { stdio: 'pipe' });
-    console.log('✓ ImageMagick is available (using "magick" command)');
-    imageMagickCommand = 'magick';
+    console.log('✓ ImageMagick is available');
     return true;
   } catch (error) {
-    // Fall back to ImageMagick 6 syntax (convert)
-    try {
-      execSync('convert -version', { stdio: 'pipe' });
-      console.log('✓ ImageMagick is available (using "convert" command)');
-      imageMagickCommand = 'convert';
-      return true;
-    } catch (error2) {
-      console.error('✗ ImageMagick not found.');
-      console.error('Please install it with:');
-      console.error('  - Ubuntu/Debian: sudo apt-get install imagemagick');
-      console.error('  - macOS: brew install imagemagick');
-      console.error('  - Windows: Download from https://imagemagick.org/script/download.php');
-      process.exit(1);
-    }
+    console.error('✗ ImageMagick not found. Please install it with: brew install imagemagick');
+    process.exit(1);
   }
 }
 
@@ -101,37 +86,33 @@ function getImageFiles(dir, basePath = '') {
 /**
  * Convert image to WebP format
  */
-function convertToWebP(inputPath, outputPath) {
-  try {
-    let command;
-    if (imageMagickCommand === 'magick') {
-      // ImageMagick 7+ syntax
-      command = `magick "${inputPath}" -quality ${config.quality} "${outputPath}"`;
-    } else {
-      // ImageMagick 6 syntax
-      command = `convert "${inputPath}" -quality ${config.quality} "${outputPath}"`;
+async function convertToWebP(inputPath, outputPath) {
+  return new Promise((resolve, reject) => {
+    try {
+      const command = `magick "${inputPath}" -quality ${config.quality} "${outputPath}"`;
+      execSync(command, { stdio: 'pipe' });
+      resolve(true);
+    } catch (error) {
+      console.error(`Failed to convert ${inputPath}:`, error.message);
+      resolve(false);
     }
-    
-    execSync(command, { stdio: 'pipe' });
-    return true;
-  } catch (error) {
-    console.error(`Failed to convert ${inputPath}:`, error.message);
-    return false;
-  }
+  });
 }
 
 /**
- * Copy non-excluded original files (cross-platform)
+ * Copy non-excluded original files
  */
-function copyOriginalFile(inputPath, outputPath) {
-  try {
-    // Use Node.js built-in fs.copyFileSync for cross-platform compatibility
-    copyFileSync(inputPath, outputPath);
-    return true;
-  } catch (error) {
-    console.error(`Failed to copy ${inputPath}:`, error.message);
-    return false;
-  }
+async function copyOriginalFile(inputPath, outputPath) {
+  return new Promise((resolve, reject) => {
+    try {
+      const command = `cp "${inputPath}" "${outputPath}"`;
+      execSync(command, { stdio: 'pipe' });
+      resolve(true);
+    } catch (error) {
+      console.error(`Failed to copy ${inputPath}:`, error.message);
+      resolve(false);
+    }
+  });
 }
 
 /**
@@ -152,9 +133,45 @@ function getFileSize(filePath) {
 }
 
 /**
+ * Process a single file (convert and copy)
+ */
+async function processFile(file, stats) {
+  const outputDir = join(config.outputDir, dirname(file.relativePath));
+  ensureDir(outputDir);
+  
+  const originalBasename = basename(file.relativePath, file.ext);
+  const webpOutputPath = join(outputDir, `${originalBasename}.webp`);
+  const originalOutputPath = join(outputDir, basename(file.relativePath));
+  
+  // Get original file size
+  const originalSize = getFileSize(file.fullPath);
+  stats.totalOriginalSize += originalSize;
+  
+  // Convert to WebP
+  console.log(`🔄 Converting: ${file.relativePath}`);
+  
+  const webpSuccess = await convertToWebP(file.fullPath, webpOutputPath);
+  if (webpSuccess) {
+    const webpSize = getFileSize(webpOutputPath);
+    stats.totalWebPSize += webpSize;
+    
+    const savings = Math.round(((originalSize - webpSize) / originalSize) * 100);
+    console.log(`   ✓ ${originalBasename}.webp (${originalSize}KB → ${webpSize}KB, ${savings}% smaller)`);
+    stats.converted++;
+  }
+  
+  // Also copy the original file for fallback
+  const copySuccess = await copyOriginalFile(file.fullPath, originalOutputPath);
+  if (copySuccess) {
+    console.log(`   📋 Copied original: ${basename(file.relativePath)}`);
+    stats.copied++;
+  }
+}
+
+/**
  * Main conversion process
  */
-function convertImages() {
+async function convertImages() {
   console.log('🖼️  Starting image conversion to WebP...');
   
   checkImageMagick();
@@ -166,63 +183,57 @@ function convertImages() {
     return;
   }
   
-  console.log(`Found ${imageFiles.length} images to process`);
+  console.log(`Found ${imageFiles.length} images to process with ${config.concurrency} concurrent operations`);
   
-  let converted = 0;
-  let copied = 0;
-  let totalOriginalSize = 0;
-  let totalWebPSize = 0;
+  const stats = {
+    converted: 0,
+    copied: 0,
+    totalOriginalSize: 0,
+    totalWebPSize: 0
+  };
   
-  for (const file of imageFiles) {
-    const outputDir = join(config.outputDir, dirname(file.relativePath));
-    ensureDir(outputDir);
-    
-    const originalBasename = basename(file.relativePath, file.ext);
-    const webpOutputPath = join(outputDir, `${originalBasename}.webp`);
-    const originalOutputPath = join(outputDir, basename(file.relativePath));
-    
-    // Get original file size
-    const originalSize = getFileSize(file.fullPath);
-    totalOriginalSize += originalSize;
-    
-    // Convert to WebP
-    console.log(`🔄 Converting: ${file.relativePath}`);
-    
-    if (convertToWebP(file.fullPath, webpOutputPath)) {
-      const webpSize = getFileSize(webpOutputPath);
-      totalWebPSize += webpSize;
-      
-      const savings = Math.round(((originalSize - webpSize) / originalSize) * 100);
-      console.log(`   ✓ ${originalBasename}.webp (${originalSize}KB → ${webpSize}KB, ${savings}% smaller)`);
-      converted++;
-    }
-    
-    // Also copy the original file for fallback
-    if (copyOriginalFile(file.fullPath, originalOutputPath)) {
-      console.log(`   📋 Copied original: ${basename(file.relativePath)}`);
-      copied++;
-    }
-  }
+  // Process files in parallel using async.each
+  await new Promise((resolve, reject) => {
+    async.eachLimit(imageFiles, config.concurrency, async (file) => {
+      await processFile(file, stats);
+    }, (err) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    });
+  });
   
   // Copy excluded files
   const excludedFiles = getExcludedFiles();
-  for (const file of excludedFiles) {
-    const outputDir = join(config.outputDir, dirname(file.relativePath));
-    ensureDir(outputDir);
-    
-    const originalOutputPath = join(outputDir, basename(file.relativePath));
-    if (copyOriginalFile(file.fullPath, originalOutputPath)) {
-      console.log(`📋 Copied excluded file: ${file.relativePath}`);
-      copied++;
-    }
-  }
+  await new Promise((resolve, reject) => {
+    async.eachLimit(excludedFiles, config.concurrency, async (file) => {
+      const outputDir = join(config.outputDir, dirname(file.relativePath));
+      ensureDir(outputDir);
+      
+      const originalOutputPath = join(outputDir, basename(file.relativePath));
+      const success = await copyOriginalFile(file.fullPath, originalOutputPath);
+      if (success) {
+        console.log(`📋 Copied excluded file: ${file.relativePath}`);
+        stats.copied++;
+      }
+    }, (err) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    });
+  });
   
   // Summary
-  const totalSavings = Math.round(((totalOriginalSize - totalWebPSize) / totalOriginalSize) * 100);
+  const totalSavings = stats.totalOriginalSize > 0 ? 
+    Math.round(((stats.totalOriginalSize - stats.totalWebPSize) / stats.totalOriginalSize) * 100) : 0;
   console.log('\n📊 Conversion Summary:');
-  console.log(`   Converted: ${converted} images to WebP`);
-  console.log(`   Copied: ${copied} original files`);
-  console.log(`   Total size reduction: ${totalOriginalSize}KB → ${totalWebPSize}KB (${totalSavings}% smaller)`);
+  console.log(`   Converted: ${stats.converted} images to WebP`);
+  console.log(`   Copied: ${stats.copied} original files`);
+  console.log(`   Total size reduction: ${stats.totalOriginalSize}KB → ${stats.totalWebPSize}KB (${totalSavings}% smaller)`);
   console.log('✅ Image conversion complete!');
 }
 
@@ -251,7 +262,10 @@ function getExcludedFiles() {
 
 // Run the conversion if this script is executed directly
 if (process.argv[1] === __filename) {
-  convertImages();
+  convertImages().catch(error => {
+    console.error('Error during conversion:', error);
+    process.exit(1);
+  });
 }
 
 export { convertImages };
