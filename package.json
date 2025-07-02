@@ -1,15 +1,22 @@
 {
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16",
-    "autoprefixer": "^10.4.21",
-    "cssnano": "^7.0.7",
-    "postcss": "^8.5.6",
-    "postcss-import": "^16.1.1",
-    "tailwindcss": "^4.1.11"
+  "name": "astro-site",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "npm run astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "convert-images": "node scripts/convert-images.js",
+    "build:full": "npm run build && npm run convert-images"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.1.11",
-    "postcss-cli": "^11.0.1",
-    "postcss-nesting": "^13.0.2"
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.11",
+    "astro": "^5.10.2",
+    "bibtex-parse-js": "^0.0.24",
+    "tailwindcss": "^4.1.11"
   }
 }
