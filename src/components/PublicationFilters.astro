@@ -1,0 +1,273 @@
+---
+// No server-side props needed for this component
+---
+
+<div class="publication-filters">
+  <div class="filter-row">
+    <div class="search-container">
+      <input 
+        type="text" 
+        id="publication-search" 
+        placeholder="Search publications by title, author, or journal..."
+        class="search-input"
+      />
+    </div>
+    
+    <div class="filter-container">
+      <label class="filter-label">
+        <input type="checkbox" id="selected-only" class="filter-checkbox" />
+        Selected publications only
+      </label>
+      
+      <select id="year-filter" class="year-select">
+        <option value="">All years</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initializeFilters() {
+    const searchInput = document.getElementById('publication-search');
+    const selectedOnlyCheckbox = document.getElementById('selected-only');
+    const yearFilter = document.getElementById('year-filter');
+    
+    // Populate year filter
+    const yearSections = document.querySelectorAll('.year-section');
+    const years = Array.from(yearSections).map(section => {
+      const yearHeading = section.querySelector('.year');
+      return yearHeading ? yearHeading.textContent.trim() : null;
+    }).filter(Boolean);
+    
+    years.forEach(year => {
+      const option = document.createElement('option');
+      option.value = year;
+      option.textContent = year;
+      yearFilter.appendChild(option);
+    });
+    
+    function filterPublications() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const selectedOnly = selectedOnlyCheckbox.checked;
+      const selectedYear = yearFilter.value;
+      
+      // Filter year sections
+      yearSections.forEach(yearSection => {
+        const yearHeading = yearSection.querySelector('.year');
+        const sectionYear = yearHeading ? yearHeading.textContent.trim() : '';
+        
+        // Hide/show entire year section based on year filter
+        if (selectedYear && sectionYear !== selectedYear) {
+          yearSection.style.display = 'none';
+          return;
+        } else {
+          yearSection.style.display = 'block';
+        }
+        
+        // Filter publications within the section
+        const publications = yearSection.querySelectorAll('.publication');
+        let visibleCount = 0;
+        
+        publications.forEach(publication => {
+          const title = publication.querySelector('.publication-title')?.textContent.toLowerCase() || '';
+          const authors = publication.querySelector('.publication-authors')?.textContent.toLowerCase() || '';
+          const journal = publication.querySelector('.publication-venue')?.textContent.toLowerCase() || '';
+          const isSelected = publication.classList.contains('selected');
+          
+          const matchesSearch = !searchTerm || 
+            title.includes(searchTerm) || 
+            authors.includes(searchTerm) || 
+            journal.includes(searchTerm);
+          
+          const matchesSelected = !selectedOnly || isSelected;
+          
+          if (matchesSearch && matchesSelected) {
+            publication.style.display = 'block';
+            visibleCount++;
+          } else {
+            publication.style.display = 'none';
+          }
+        });
+        
+        // Hide year section if no publications are visible
+        if (visibleCount === 0) {
+          yearSection.style.display = 'none';
+        }
+      });
+      
+      // Show "no results" message if needed
+      updateNoResultsMessage();
+    }
+    
+    function updateNoResultsMessage() {
+      const visibleSections = Array.from(yearSections).filter(section => 
+        section.style.display !== 'none'
+      );
+      
+      let existingMessage = document.getElementById('no-results-message');
+      
+      if (visibleSections.length === 0) {
+        if (!existingMessage) {
+          const message = document.createElement('div');
+          message.id = 'no-results-message';
+          message.className = 'no-results';
+          message.innerHTML = '<p>No publications match your current filters.</p>';
+          document.querySelector('.publications').appendChild(message);
+        }
+      } else {
+        if (existingMessage) {
+          existingMessage.remove();
+        }
+      }
+    }
+    
+    // Add event listeners
+    searchInput.addEventListener('input', filterPublications);
+    selectedOnlyCheckbox.addEventListener('change', filterPublications);
+    yearFilter.addEventListener('change', filterPublications);
+    
+    // Add clear button functionality
+    const clearButton = document.createElement('button');
+    clearButton.textContent = '×';
+    clearButton.className = 'clear-search';
+    clearButton.style.display = 'none';
+    clearButton.addEventListener('click', () => {
+      searchInput.value = '';
+      selectedOnlyCheckbox.checked = false;
+      yearFilter.value = '';
+      filterPublications();
+    });
+    
+    searchInput.parentNode.appendChild(clearButton);
+    
+    searchInput.addEventListener('input', () => {
+      clearButton.style.display = searchInput.value ? 'block' : 'none';
+    });
+  }
+  
+  // Initialize when DOM is loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeFilters);
+  } else {
+    initializeFilters();
+  }
+</script>
+
+<style>
+  .publication-filters {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .search-container {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .clear-search {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #6b7280;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+  }
+  
+  .clear-search:hover {
+    background: #4b5563;
+  }
+  
+  .filter-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .filter-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #374151;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .filter-checkbox {
+    width: 1rem;
+    height: 1rem;
+    accent-color: #3b82f6;
+  }
+  
+  .year-select {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .year-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .no-results {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #6b7280;
+    font-style: italic;
+  }
+  
+  @media (max-width: 768px) {
+    .filter-row {
+      flex-direction: column;
+    }
+    
+    .search-container {
+      min-width: unset;
+    }
+    
+    .filter-container {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+</style>

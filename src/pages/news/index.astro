@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const newsItems = await getCollection('news');
+const sortedNews = newsItems.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+---
+
+<Layout title="News - Vallejos Group">
+  <div class="news-index">
+    <h1>News</h1>
+    
+    <div class="news-list">
+      {sortedNews.map((news) => (
+        <article class="news-item" key={news.id}>
+          <header>
+            <h2>
+              <a href={`/news/${news.slug}`}>
+                {news.data.title || 'Untitled Post'}
+              </a>
+            </h2>
+            <time datetime={news.data.date.toISOString()}>
+              {news.data.date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              })}
+            </time>
+          </header>
+          
+          {!news.data.inline && (
+            <div class="excerpt">
+              <p>Read more about this announcement...</p>
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .news-index {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .news-index h1 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .news-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .news-item:last-child {
+    border-bottom: none;
+  }
+  
+  .news-item header h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+  }
+  
+  .news-item header h2 a {
+    color: #1f2937;
+    text-decoration: none;
+  }
+  
+  .news-item header h2 a:hover {
+    color: #3b82f6;
+  }
+  
+  .news-item time {
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+  
+  .excerpt {
+    margin-top: 1rem;
+    color: #6b7280;
+  }
+</style>

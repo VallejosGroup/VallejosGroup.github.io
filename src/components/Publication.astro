@@ -1,0 +1,287 @@
+---
+export interface Props {
+  publication: {
+    id: string;
+    title: string;
+    authors: string;
+    journal: string;
+    year: number;
+    volume?: string;
+    number?: string;
+    pages?: string;
+    doi?: string;
+    url?: string;
+    abstract?: string;
+    abbr?: string;
+    selected?: boolean;
+    bibtex_show?: boolean;
+    pdf?: string;
+    month?: string;
+  };
+}
+
+const { publication } = Astro.props;
+
+// Format authors to bold the group members (you can customize this list)
+const groupMembers = [
+  'Catalina A. Vallejos',
+  'Catalina A Vallejos', 
+  'Vallejos, Catalina A.',
+  'Nathan Constantine-Cooke',
+  'Constantine-Cooke, Nathan',
+  'Karla Monterrubio-Gómez',
+  'Monterrubio-Gómez, Karla'
+];
+
+function formatAuthors(authors: string) {
+  let formatted = authors;
+  groupMembers.forEach(member => {
+    const regex = new RegExp(`\\b${member.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+    formatted = formatted.replace(regex, `<strong>${member}</strong>`);
+  });
+  return formatted;
+}
+
+function generateCitation() {
+  let citation = `${publication.authors}. `;
+  citation += `"${publication.title}." `;
+  citation += `<em>${publication.journal}</em>`;
+  
+  if (publication.volume) {
+    citation += ` ${publication.volume}`;
+    if (publication.number) {
+      citation += `(${publication.number})`;
+    }
+  }
+  
+  if (publication.pages) {
+    citation += `: ${publication.pages}`;
+  }
+  
+  citation += ` (${publication.year}).`;
+  
+  return citation;
+}
+---
+
+<div class="publication" class:list={[publication.selected && 'selected']}>
+  <div class="publication-header">
+    {publication.abbr && (
+      <span class="journal-abbr">{publication.abbr}</span>
+    )}
+    {publication.selected && (
+      <span class="selected-badge">★</span>
+    )}
+  </div>
+  
+  <div class="publication-content">
+    <h3 class="publication-title">{publication.title}</h3>
+    
+    <div class="publication-authors" set:html={formatAuthors(publication.authors)} />
+    
+    <div class="publication-venue">
+      <em>{publication.journal}</em>
+      {publication.volume && (
+        <span> {publication.volume}</span>
+      )}
+      {publication.number && (
+        <span>({publication.number})</span>
+      )}
+      {publication.pages && (
+        <span>: {publication.pages}</span>
+      )}
+      <span> ({publication.year})</span>
+    </div>
+    
+    {publication.abstract && (
+      <details class="abstract-toggle">
+        <summary>Abstract</summary>
+        <div class="abstract-content">
+          {publication.abstract}
+        </div>
+      </details>
+    )}
+    
+    <div class="publication-links">
+      {publication.doi && (
+        <a href={`https://doi.org/${publication.doi}`} target="_blank" rel="noopener noreferrer" class="link-button">
+          DOI
+        </a>
+      )}
+      {publication.url && (
+        <a href={publication.url} target="_blank" rel="noopener noreferrer" class="link-button">
+          URL
+        </a>
+      )}
+      {publication.pdf && (
+        <a href={`/assets/pdfs/${publication.pdf}`} target="_blank" rel="noopener noreferrer" class="link-button">
+          PDF
+        </a>
+      )}
+      {publication.bibtex_show && (
+        <button class="link-button bibtex-toggle" onclick={`toggleBibtex('${publication.id}')`}>
+          BibTeX
+        </button>
+      )}
+    </div>
+    
+    {publication.bibtex_show && (
+      <div id={`bibtex-${publication.id}`} class="bibtex-content" style="display: none;">
+        <pre><code>{`@${publication.type}{${publication.id},
+  title = {${publication.title}},
+  author = {${publication.authors}},
+  journal = {${publication.journal}},
+  year = {${publication.year}},${publication.volume ? `
+  volume = {${publication.volume}},` : ''}${publication.number ? `
+  number = {${publication.number}},` : ''}${publication.pages ? `
+  pages = {${publication.pages}},` : ''}${publication.doi ? `
+  doi = {${publication.doi}},` : ''}
+}`}</code></pre>
+      </div>
+    )}
+  </div>
+</div>
+
+<script>
+  function toggleBibtex(id) {
+    const element = document.getElementById(`bibtex-${id}`);
+    if (element) {
+      element.style.display = element.style.display === 'none' ? 'block' : 'none';
+    }
+  }
+  
+  // Make function available globally
+  window.toggleBibtex = toggleBibtex;
+</script>
+
+<style>
+  .publication {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: white;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .publication:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .publication.selected {
+    border-left: 4px solid oklch(20.8% 0.042 265.755);
+    background: #f8fafc;
+  }
+  
+  .publication-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .journal-abbr {
+    background: #3b82f6;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  .selected-badge {
+    color: #f59e0b;
+    font-size: 1.25rem;
+  }
+  
+  .publication-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    color: #1f2937;
+  }
+  
+  .publication-authors {
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+    line-height: 1.5;
+  }
+  
+  .publication-venue {
+    margin-bottom: 1rem;
+    color: #6b7280;
+    font-size: 0.95rem;
+  }
+  
+  .abstract-toggle {
+    margin-bottom: 1rem;
+  }
+  
+  .abstract-toggle summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: #3b82f6;
+    margin-bottom: 0.5rem;
+  }
+  
+  .abstract-toggle summary:hover {
+    color: #2563eb;
+  }
+  
+  .abstract-content {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #374151;
+    margin-top: 0.5rem;
+  }
+  
+  .publication-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .link-button {
+    background: #3b82f6;
+    color: white;
+    padding: 0.375rem 0.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .link-button:hover {
+    background: #2563eb;
+  }
+  
+  .bibtex-content {
+    background: #f3f4f6;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .bibtex-content pre {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    color: #374151;
+  }
+  
+  .bibtex-content code {
+    background: none;
+    padding: 0;
+  }
+</style>
