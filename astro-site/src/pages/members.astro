@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Member from '../components/Member.astro';
+import { getCollection } from 'astro:content';
+
+// Get all members and sort by importance
+const members = await getCollection('members');
+const sortedMembers = members.sort((a, b) => a.data.importance - b.data.importance);
+---
+
+<Layout title="People - Vallejos Group">
+  <div class="members">
+    <h1>People</h1>
+    
+    <div class="members-list">
+      {sortedMembers.map((member) => (
+        <Member member={member.data} />
+      ))}
+    </div>
+    
+    <p class="text-3xl font-thin text-center">
+      <a title="Alumni" href="/alumni">See our alumni</a>
+    </p>
+  </div>
+</Layout>
+
+<style>
+  .members-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+</style>

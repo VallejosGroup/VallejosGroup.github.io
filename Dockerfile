@@ -1,4 +1,9 @@
 FROM ubuntu:latest
+LABEL maintainer="Vallejos Group"
+LABEL description="Docker image for Jekyll site with Tailwind CSS and PostCSS"
+LABEL version="1.0"
+
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 SHELL ["/bin/bash", "-c"]
 
@@ -29,4 +34,4 @@ RUN mkdir -p /website
 WORKDIR /website
 COPY render.sh render.sh
 RUN chmod +x render.sh
-CMD ["bash", "./render.sh"]
+CMD ["/bin/bash", "./render.sh"]

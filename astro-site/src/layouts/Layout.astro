@@ -1,0 +1,137 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "The Vallejos Research Group Website" } = Astro.props;
+
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="font-sans fixed-top-nav sticky-bottom-footer">
+    <div class="font-sans">
+      <!-- Header -->
+      <header>
+        <!-- Nav Bar -->
+        <nav id="navbar" class="navbar font-sans font-light bg-slate-900/30 border-b-2 border-gray-400 border-transparent backdrop-blur-sm navbar-expand-sm fixed-top">
+          <div class="container">
+            <a class="navbar-brand title font-light" href="/">
+              <img src="/assets/img/logo.png" alt="Vallejos Group" width="100" height="56">
+            </a>
+            
+            <!-- Navbar Toggle -->
+            <button id="navbar-toggler" class="navbar-toggler collapsed ml-auto md:hidden" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+
+            <div class="navbar-collapse hidden md:flex" id="navbarNav">
+              <ul class="navbar-nav ml-auto flex-nowrap">
+                <!-- About -->
+                <li class="nav-item">
+                  <a class="nav-link navbarcolor" href="/">About</a>
+                </li>
+                
+                <!-- Members -->
+                <li class="nav-item">
+                  <a class="nav-link navbarcolor" href="/members">Members</a>
+                </li>
+                
+                <!-- Projects -->
+                <li class="nav-item">
+                  <a class="nav-link navbarcolor" href="/projects">Projects</a>
+                </li>
+                
+                <!-- Software -->
+                <li class="nav-item">
+                  <a class="nav-link navbarcolor" href="/software">Software</a>
+                </li>
+                
+                <!-- Publications -->
+                <li class="nav-item">
+                  <a class="nav-link navbarcolor" href="/publications">Publications</a>
+                </li>
+                
+                <!-- Contact -->
+                <li class="nav-item">
+                  <a class="nav-link navbarcolor" href="/contact">Contact</a>
+                </li>
+                
+                <!-- Dark mode toggle -->
+                <li class="toggle-container">
+                  <button id="light-toggle" title="Change theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Content -->
+      <div class="container mt-5">
+        <slot />
+      </div>
+
+      <!-- Footer -->
+      <footer class="sticky-bottom mt-5">
+        <div class="container">
+          &copy; Copyright {new Date().getFullYear()} Vallejos Group. 
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Hamburger menu functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggler = document.getElementById('navbar-toggler');
+        const navbarNav = document.getElementById('navbarNav');
+        
+        if (toggler && navbarNav) {
+          toggler.addEventListener('click', function() {
+            const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
+            
+            // Toggle aria-expanded
+            toggler.setAttribute('aria-expanded', !isExpanded);
+            
+            // Toggle collapsed class
+            toggler.classList.toggle('collapsed');
+            
+            // Toggle navbar visibility
+            navbarNav.classList.toggle('hidden');
+            navbarNav.classList.toggle('show');
+          });
+          
+          // Close mobile menu when clicking on a nav link
+          const navLinks = navbarNav.querySelectorAll('.nav-link');
+          navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              if (window.innerWidth < 768) { // md breakpoint
+                navbarNav.classList.add('hidden');
+                navbarNav.classList.remove('show');
+                toggler.classList.add('collapsed');
+                toggler.setAttribute('aria-expanded', 'false');
+              }
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

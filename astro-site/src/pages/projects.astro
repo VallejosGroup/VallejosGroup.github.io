@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Projects - Vallejos Group">
+  <div class="projects">
+    <h1>Projects</h1>
+    
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Single-cell RNA-sequencing</h3>
+        <p>Developing statistical methods for analyzing single-cell RNA-seq data to understand cellular heterogeneity.</p>
+      </div>
+      
+      <div class="project-card">
+        <h3>Electronic Health Records</h3>
+        <p>Creating predictive models based on observational data routinely collected by health providers.</p>
+      </div>
+      
+      <div class="project-card">
+        <h3>Precision Medicine</h3>
+        <p>Developing computational tools to improve understanding of health and disease for precision medicine initiatives.</p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .project-card {
+    padding: 2rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    background: #f8fafc;
+  }
+  
+  .project-card h3 {
+    margin-bottom: 1rem;
+    color: #1e40af;
+  }
+</style>

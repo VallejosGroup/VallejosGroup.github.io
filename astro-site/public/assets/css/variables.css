@@ -1,0 +1,37 @@
+/*******************************************************************************
+ * Variables used throughout the theme.
+ * To adjust anything, simply edit the variables below and rebuild the theme.
+ ******************************************************************************/
+
+:root {
+  /* Colors */
+  --red-color: #FF3636;
+  --red-color-dark: #B71C1C;
+  --orange-color: #F29105;
+  --blue-color: #0076df;
+  --blue-color-dark: #00369f;
+  --cyan-color: #2698BA;
+  --light-cyan-color: #4fb3d3; /* lighten(#2698BA, 25%) approximation */
+  --green-color: #00ab37;
+  --green-color-lime: #B7D12A;
+  --green-color-dark: #009f06;
+  --green-color-light: #ddffdd;
+  --green-color-bright: #11D68B;
+  --purple-color: #B509AC;
+  --light-purple-color: #d754d1; /* lighten(#B509AC, 25%) approximation */
+  --pink-color: #f92080;
+  --pink-color-light: #ffdddd;
+  --yellow-color: #efcc00;
+
+  --grey-color: #828282;
+  --grey-color-light: #b8b8b8; /* lighten(#828282, 40%) approximation */
+  --grey-color-dark: #1C1C1D;
+  --grey-900: #212529;
+
+  --white-color: #ffffff;
+  --black-color: #000000;
+
+  /* Theme colors */
+  --code-bg-color-light: rgba(181, 9, 172, 0.05); /* rgba(#B509AC, 0.05) */
+  --code-bg-color-dark: #2c3237;
+}

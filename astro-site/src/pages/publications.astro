@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Publication from '../components/Publication.astro';
+import PublicationFilters from '../components/PublicationFilters.astro';
+import { parseBibTeX } from '../utils/bibParser.js';
+
+// Parse publications from BibTeX file
+const publicationsByYear = parseBibTeX();
+
+// Get years in descending order
+const years = Object.keys(publicationsByYear)
+  .map(year => parseInt(year))
+  .sort((a, b) => b - a);
+---
+
+<Layout title="Publications - Vallejos Group">
+  <div class="publications">
+    <h1>Publications</h1>
+    
+    <PublicationFilters />
+    
+    {years.map(year => (
+      <div class="year-section">
+        <h2 class="year">{year}</h2>
+        <div class="publications-list">
+          {publicationsByYear[year]?.map(publication => (
+            <Publication publication={publication} />
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .publications {
+    max-width: 4xl;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .publications h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #1f2937;
+    text-align: center;
+  }
+  
+  .year-section {
+    margin-bottom: 3rem;
+  }
+  
+  .year {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+</style>

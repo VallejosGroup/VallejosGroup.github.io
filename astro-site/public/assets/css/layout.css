@@ -1,0 +1,48 @@
+/******************************************************************************
+ * Content
+ ******************************************************************************/
+
+body {
+  padding-bottom: 70px;
+  color: var(--global-text-color);
+  background-color: var(--global-bg-color);
+}
+
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  scroll-margin-top: 66px;
+}
+
+body.fixed-top-nav {
+  /* Add some padding for the nav-bar. */
+  padding-top: 56px;
+}
+
+body.sticky-bottom-footer {
+  /* Remove padding below footer. */
+  padding-bottom: 0;
+}
+
+.container {
+  max-width: var(--max-content-width);
+}
+
+/* Profile */
+.profile img {
+  width: 100%;
+}
+
+/* TODO: redefine content layout. */
+
+
+/******************************************************************************
+ * Publications
+ ******************************************************************************/
+
+/* TODO: redefine publications layout. */
+
+
+/*****************************************************************************
+* Projects
+*****************************************************************************/
+
+/* TODO: redefine projects layout. */
