@@ -33,7 +33,11 @@ jobs:
           cache: 'npm'
 
       - name: Install ImageMagick
-        run: sudo apt-get update && sudo apt-get install -y imagemagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+          # Verify installation
+          convert -version || magick -version
 
       - name: Install dependencies
         run: npm ci

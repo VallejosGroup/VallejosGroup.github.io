@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { execSync } from 'child_process';
-import { existsSync, mkdirSync, readdirSync, statSync } from 'fs';
+import { existsSync, mkdirSync, readdirSync, statSync, copyFileSync } from 'fs';
 import { join, extname, basename, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -20,17 +20,34 @@ const config = {
   ]
 };
 
+// Global variable to store the ImageMagick command
+let imageMagickCommand = null;
+
 /**
- * Check if ImageMagick is available
+ * Check if ImageMagick is available and determine the correct command
  */
 function checkImageMagick() {
+  // Try ImageMagick 7+ syntax first (magick)
   try {
     execSync('magick -version', { stdio: 'pipe' });
-    console.log('✓ ImageMagick is available');
+    console.log('✓ ImageMagick is available (using "magick" command)');
+    imageMagickCommand = 'magick';
     return true;
   } catch (error) {
-    console.error('✗ ImageMagick not found. Please install it with: brew install imagemagick');
-    process.exit(1);
+    // Fall back to ImageMagick 6 syntax (convert)
+    try {
+      execSync('convert -version', { stdio: 'pipe' });
+      console.log('✓ ImageMagick is available (using "convert" command)');
+      imageMagickCommand = 'convert';
+      return true;
+    } catch (error2) {
+      console.error('✗ ImageMagick not found.');
+      console.error('Please install it with:');
+      console.error('  - Ubuntu/Debian: sudo apt-get install imagemagick');
+      console.error('  - macOS: brew install imagemagick');
+      console.error('  - Windows: Download from https://imagemagick.org/script/download.php');
+      process.exit(1);
+    }
   }
 }
 
@@ -86,7 +103,15 @@ function getImageFiles(dir, basePath = '') {
  */
 function convertToWebP(inputPath, outputPath) {
   try {
-    const command = `magick "${inputPath}" -quality ${config.quality} "${outputPath}"`;
+    let command;
+    if (imageMagickCommand === 'magick') {
+      // ImageMagick 7+ syntax
+      command = `magick "${inputPath}" -quality ${config.quality} "${outputPath}"`;
+    } else {
+      // ImageMagick 6 syntax
+      command = `convert "${inputPath}" -quality ${config.quality} "${outputPath}"`;
+    }
+    
     execSync(command, { stdio: 'pipe' });
     return true;
   } catch (error) {
@@ -96,12 +121,12 @@ function convertToWebP(inputPath, outputPath) {
 }
 
 /**
- * Copy non-excluded original files
+ * Copy non-excluded original files (cross-platform)
  */
 function copyOriginalFile(inputPath, outputPath) {
   try {
-    const command = `cp "${inputPath}" "${outputPath}"`;
-    execSync(command, { stdio: 'pipe' });
+    // Use Node.js built-in fs.copyFileSync for cross-platform compatibility
+    copyFileSync(inputPath, outputPath);
     return true;
   } catch (error) {
     console.error(`Failed to copy ${inputPath}:`, error.message);
