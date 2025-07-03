@@ -9,30 +9,35 @@ const sortedNews = newsItems.sort((a, b) => new Date(b.data.date) - new Date(a.d
 <Layout title="News - Vallejos Group">
   <div class="news-index">
     <h1>News</h1>
-    
+    <p class="intro">
+      Stay updated with the latest news and announcements from the Vallejos Group.
+      </p>
+
+
+      
     <div class="news-list">
       {sortedNews.map((news) => (
         <article class="news-item" key={news.id}>
           <header>
             <h2>
-              <a href={`/news/${news.slug}`}>
-                {news.data.title || 'Untitled Post'}
-              </a>
+              {news.data.inline ? (
+                <p>{news.data.title || 'Untitled Post'}</p>
+              ) : (
+                <a href={`/news/${news.slug}`}>
+                  <p>{news.data.title || 'Untitled Post'}</p>
+                </a>
+                
+              )}
+
             </h2>
             <time datetime={news.data.date.toISOString()}>
-              {news.data.date.toLocaleDateString('en-US', { 
+              {news.data.date.toLocaleDateString('en-GB', { 
                 year: 'numeric', 
                 month: 'long', 
                 day: 'numeric' 
               })}
             </time>
           </header>
-          
-          {!news.data.inline && (
-            <div class="excerpt">
-              <p>Read more about this announcement...</p>
-            </div>
-          )}
         </article>
       ))}
     </div>
