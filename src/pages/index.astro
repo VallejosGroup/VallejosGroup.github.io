@@ -22,28 +22,28 @@ const recentNews = sortedNews.slice(0, 3);
             </div>
           </div>
 
-    <div class="news-section mb-8 p-6 bg-gray-50 rounded-lg">
-      <h1 class="text-2xl font-bold mb-4">Latest News</h1>
-      <ul class="news-list space-y-3">
+    <div class="news-section mb-8">
+      <h1>Latest News</h1>
+      <ul class="news-list">
         {recentNews.map((news) => (
-          <li key={news.id} class="news-item flex justify-between items-start p-3 bg-white rounded-md shadow-sm hover:shadow-md transition-shadow">
-            <a href={`/news/${news.slug}`} class="news-link text-blue-600 hover:text-blue-800 font-medium flex-grow mr-4">
+          <li key={news.id} class="news-item">
+            <a href={`/news/${news.slug}`} class="news-link">
               {news.data.title || 'Untitled Post'}
             </a>
-            <time class="news-date text-gray-500 text-sm flex-shrink-0">
-              {news.data.date.toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'short', 
-                day: 'numeric' 
+            <time class="news-date">
+              {news.data.date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
               })}
             </time>
           </li>
         ))}
       </ul>
-      <a href="/news" class="view-all-news inline-block mt-4 text-blue-600 hover:text-blue-800 font-medium">View all news →</a>
+      <a href="/news" class="view-all-news">View all news →</a>
     </div>
 
-    <h1>About</h1>
+    <h1>About us</h1>
 
     <div class="content">
       <p>
