@@ -55,9 +55,30 @@ Welcome to the group! Follow these steps to add your profile:
 
 View the deployment status in the [Actions tab](https://github.com/VallejosGroup/VallejosGroup.github.io/actions).
 
+### Adding News posts :newspaper:
+
+News posts are managed in the `src/content/news/` directory. Each post is a markdown file with metadata at the top. Here's how to add a new post:
+1. **Create a new markdown file** in `src/content/news/`.
+2. **Add metadata** at the top of the file:
+   ```markdown
+   ---
+   title: Your News Title
+   date: 2024-01-01 12:00:00-0000
+   inline: false
+   ---
+   Your news content goes here.
+   ```
+3. **Write your content** in markdown format below the metadata.
+4. **Commit and push your changes**:
+   ```bash
+   git add -A
+   git commit -am "Add news post about something"
+   git push -u origin main
+   ```
+
 ### Adding Publications 📚
 
-Publications are managed via a BibTeX file at `src/content/publications.bib`. Add your publication record here, along with optional fields like `abstract`. PDF hosting is supported in `public/assets/pdfs`.
+Publications are managed via a BibTeX file at `public/assets/papers.bib`. Add your publication record here, along with optional fields like `abstract`. PDF hosting is supported in `public/assets/pdfs`.
 
 ## Local Setup 💻
 
