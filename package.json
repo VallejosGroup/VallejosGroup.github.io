@@ -3,11 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "npm run astro dev",
+    "convert-images-public": "node scripts/convert-images.js --output public/assets --clobber",
+    "convert-images": "node scripts/convert-images.js --output dist/assets",
+    "dev": "npm run convert-images-public && npm run astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "convert-images": "node scripts/convert-images.js",
     "build:full": "npm run build && npm run convert-images"
   },
   "dependencies": {

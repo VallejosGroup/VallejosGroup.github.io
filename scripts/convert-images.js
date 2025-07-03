@@ -12,15 +12,27 @@ const __dirname = dirname(__filename);
 // Configuration
 const config = {
   inputDir: join(__dirname, '../public/assets'),
-  outputDir: join(__dirname, '../dist/assets'),
+  outputDir: join(__dirname, '../dist/assets'), // Default output directory
   quality: 80, // WebP quality (0-100)
   supportedFormats: ['.jpg', '.jpeg', '.png', '.gif'],
   excludePatterns: [
     'favicon.png', // Keep favicon as PNG
     'logo.png'     // Keep logo as PNG for compatibility
   ],
-  concurrency: 4 // Number of parallel operations
+  concurrency: 4, // Number of parallel operations
+  shouldConvert: true // Default to true, can be overridden by CLI arg
 };
+
+// Parse command line arguments
+const args = process.argv.slice(2);
+for (let i = 0; i < args.length; i++) {
+  if (args[i] === '--output' && args[i + 1]) {
+    config.outputDir = join(__dirname, '..', args[i + 1]);
+    i++; // Skip next argument as it's the value
+  } else if (args[i] === '--no-clobber') {
+    config.shouldConvert = false;
+  }
+}
 
 // Global variable to store the ImageMagick command
 let imageMagickCommand = null;
@@ -202,16 +214,32 @@ async function processFile(file, stats) {
     const webpOutputPath = join(outputDir, `${webpBasename}.webp`);
     const webpDisplayName = isOriginalResolution ? `${originalBasename}.webp` : `${originalBasename}-${width}.webp`;
 
-    console.log(`🔄 Converting: ${file.relativePath} to ${isOriginalResolution ? 'original resolution' : width + 'px'}`);
-    
-    const webpSuccess = await convertToWebP(file.fullPath, webpOutputPath, isOriginalResolution ? null : width);
-    if (webpSuccess) {
-      const webpSize = getFileSize(webpOutputPath);
-      stats.totalWebPSize += webpSize;
+    // Check if WebP already exists and is newer than original
+    if (config.shouldConvert && existsSync(webpOutputPath)) {
+      const originalStat = statSync(file.fullPath);
+      const webpStat = statSync(webpOutputPath);
+      if (webpStat.mtimeMs > originalStat.mtimeMs) {
+        console.log(`☑️  Skipping conversion for ${webpDisplayName} (already up-to-date)`);
+        stats.skipped++;
+        stats.totalWebPSize += getFileSize(webpOutputPath); // Add existing size to total
+        continue; // Skip conversion if already up-to-date
+      }
+    }
+
+    if (config.shouldConvert) {
+      console.log(`🔄 Converting: ${file.relativePath} to ${isOriginalResolution ? 'original resolution' : width + 'px'}`);
       
-      const savings = Math.round(((originalSize - webpSize) / originalSize) * 100);
-      console.log(`   ✓ ${webpDisplayName} (${originalSize}KB → ${webpSize}KB, ${savings}% smaller)`);
-      stats.converted++;
+      const webpSuccess = await convertToWebP(file.fullPath, webpOutputPath, isOriginalResolution ? null : width);
+      if (webpSuccess) {
+        const webpSize = getFileSize(webpOutputPath);
+        stats.totalWebPSize += webpSize;
+        
+        const savings = Math.round(((originalSize - webpSize) / originalSize) * 100);
+        console.log(`   ✓ ${webpDisplayName} (${originalSize}KB → ${webpSize}KB, ${savings}% smaller)`);
+        stats.converted++;
+      }
+    } else {
+      console.log(`ℹ️  Conversion skipped for ${webpDisplayName} (--no-clobber flag)`);
     }
   }
   
@@ -243,6 +271,7 @@ async function convertImages() {
   const stats = {
     converted: 0,
     copied: 0,
+    skipped: 0,
     totalOriginalSize: 0,
     totalWebPSize: 0
   };
