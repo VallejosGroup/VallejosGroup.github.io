@@ -16,7 +16,7 @@ export interface Props {
 const { member } = Astro.props;
 ---
 
-<figure class="md:flex rounded-xl p-8 md:p-0 my-8 drop-shadow-2xl bg-slate-50 dark:bg-slate-800">
+<figure class="md:flex rounded-xl p-8 md:p-0 my-8 drop-shadow-2xl bg-slate-50">
   {member.img && (
     <picture>
       <source srcset={`/${member.img}-480.webp`} type="image/webp">
