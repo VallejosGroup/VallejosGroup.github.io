@@ -16,13 +16,13 @@ export interface Props {
 const { member } = Astro.props;
 ---
 
-<figure class="md:flex rounded-xl p-8 md:p-0 my-8 drop-shadow-2xl bg-slate-50">
+<figure class="md:flex rounded-xl p-8 md:p-0 my-8 drop-shadow-2xl bg-slate-50 dark:bg-slate-800">
   {member.img && (
     <picture>
       <source srcset={`/${member.img}-480.webp`} type="image/webp">
       <source srcset={`/${member.img}.jpg`} type="image/jpeg"> 
       <img 
-        class="size-40 md:size-60 md:h-auto rounded-xl mx-auto" 
+        class="w-40 md:size-60 md:h-auto rounded-xl mx-auto" 
         src={`/${member.img}.jpg`} 
         alt={member.name} 
         width="384" 

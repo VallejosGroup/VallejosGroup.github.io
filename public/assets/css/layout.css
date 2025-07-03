@@ -46,3 +46,12 @@ body.sticky-bottom-footer {
 *****************************************************************************/
 
 /* TODO: redefine projects layout. */
+
+/* Apply background to expanded navbar on small screens */
+@media (max-width: 767px) {
+  .navbar-collapse.show {
+    background-color: rgba(15, 23, 42, 1);
+    border-bottom: 2px solid #9ca3af;
+    backdrop-filter: blur(4px);
+  }
+}
