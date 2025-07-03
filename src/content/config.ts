@@ -1,7 +1,7 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const membersCollection = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     name: z.string(),
     role: z.string(),
@@ -17,7 +17,7 @@ const membersCollection = defineCollection({
 });
 
 const softwareCollection = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     name: z.string(),
     description: z.string(),
@@ -36,7 +36,7 @@ const softwareCollection = defineCollection({
 });
 
 const alumniCollection = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     name: z.string(),
     role: z.string(),
@@ -54,7 +54,7 @@ const alumniCollection = defineCollection({
 });
 
 const newsCollection = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string().optional(),
     date: z.coerce.date(),
@@ -64,8 +64,8 @@ const newsCollection = defineCollection({
 });
 
 export const collections = {
-  'members': membersCollection,
-  'software': softwareCollection,
-  'alumni': alumniCollection,
-  'news': newsCollection,
+  members: membersCollection,
+  software: softwareCollection,
+  alumni: alumniCollection,
+  news: newsCollection,
 };

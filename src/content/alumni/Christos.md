@@ -13,5 +13,3 @@ years: "2019-2022"
 #blog: "https://www.blog.com"
 #linkedin: "https://www.linkedin.com"
 ---
-
-

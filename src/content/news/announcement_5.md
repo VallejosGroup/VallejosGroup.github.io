@@ -10,11 +10,10 @@ inline: false
 
 <img style = "float: right;" src = "/assets/img/news/nathan-viva-2.webp" width = "300px">
 
-
-Nathan's thesis was examined by 
+Nathan's thesis was examined by
 [Dr Chris Lamb](https://www.ncl.ac.uk/medical-sciences/people/profile/christopherlamb.html),
-[Dr Ailith Ewing](https://www.ed.ac.uk/profile/dr-ailith-ewing), and 
-[Dr Brian Tom](https://www.mrc-bsu.cam.ac.uk/people/in-alphabetical-order/t-to-z/brian-tom/). 
+[Dr Ailith Ewing](https://www.ed.ac.uk/profile/dr-ailith-ewing), and
+[Dr Brian Tom](https://www.mrc-bsu.cam.ac.uk/people/in-alphabetical-order/t-to-z/brian-tom/).
 
 Nathan was jointly supervised by Dr Catalina Vallejos and Dr Karla Monterrubio
 in the Vallejos group and by [Professor Charlie Lees](https://charlielees.com/).
@@ -26,4 +25,3 @@ Nathan is now continuing to work in the Vallejos and Lees groups as a
 postdoctoral research associate, continuing his ongoing research.
 
 <br><br><br><br><br><br>
-

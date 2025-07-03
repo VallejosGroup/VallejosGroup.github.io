@@ -34,12 +34,14 @@ public/
 Each entry should include these fields for optimal display:
 
 ### Required Fields
+
 - `title` - Publication title
 - `author` - List of authors (separated by " and ")
 - `journal` - Journal or venue name
 - `year` - Publication year
 
 ### Optional Fields
+
 - `abbr` - Journal abbreviation (displays as a badge)
 - `selected = {true}` - Mark as a selected/featured publication (shows star)
 - `bibtex_show = {true}` - Enable BibTeX display button
@@ -76,12 +78,15 @@ Each entry should include these fields for optimal display:
 ## Features
 
 ### Automatic Sorting
+
 - Publications are grouped by year (newest first)
 - Within each year, selected publications appear first
 - Then sorted by month (latest first)
 
 ### Group Member Highlighting
+
 The system automatically bolds group member names in author lists. Current members:
+
 - Catalina A. Vallejos
 - Nathan Constantine-Cooke
 - Karla Monterrubio-Gómez
@@ -89,11 +94,13 @@ The system automatically bolds group member names in author lists. Current membe
 To add new members, edit the `groupMembers` array in `src/components/Publication.astro`.
 
 ### Search and Filtering
+
 - **Search**: By title, author, or journal name
 - **Filter by year**: Dropdown to show specific years
 - **Selected only**: Checkbox to show only featured publications
 
 ### Interactive Elements
+
 - **Abstract toggle**: Click to expand/collapse abstracts
 - **BibTeX display**: Click to show formatted BibTeX citation
 - **External links**: DOI, URL, and PDF links when available
@@ -101,49 +108,58 @@ To add new members, edit the `groupMembers` array in `src/components/Publication
 ## Customization
 
 ### Styling
+
 - Main styles in `src/components/Publication.astro`
 - Filter styles in `src/components/PublicationFilters.astro`
 - Page layout styles in `src/pages/publications.astro`
 
 ### Group Member Names
+
 Edit the `groupMembers` array in `src/components/Publication.astro`:
 
 ```javascript
 const groupMembers = [
-  'Catalina A. Vallejos',
-  'New Member Name',
+  "Catalina A. Vallejos",
+  "New Member Name",
   // Add more members here
 ];
 ```
 
 ### Journal Abbreviations
+
 Add common abbreviations directly in BibTeX entries using the `abbr` field.
 
 ## Troubleshooting
 
 ### Build Errors
+
 - Check BibTeX syntax - ensure all braces `{}` are balanced
 - Verify the BibTeX file path is correct
 - Look for special characters that need escaping
 
 ### Missing Publications
+
 - Ensure the BibTeX entry has required fields (title, author, journal, year)
 - Check that the file is saved as UTF-8 encoding
 - Verify the BibTeX entry is properly formatted
 
 ### Display Issues
+
 - Check browser console for JavaScript errors
 - Ensure all special LaTeX characters are properly handled in `cleanBibTeXString()`
 
 ## Maintenance
 
 ### Regular Updates
+
 1. Add new publications to the BibTeX file
 2. Update group member list when team changes
 3. Add new journal abbreviations as needed
 
 ### Performance
+
 The system processes the entire BibTeX file at build time, so there's no runtime performance impact regardless of the number of publications.
 
 ### Backup
+
 The BibTeX file contains all publication data, so ensure it's backed up and version controlled.

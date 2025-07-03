@@ -5,7 +5,7 @@
 
 version: 2
 updates:
-    # Maintain dependencies for Bundler
+  # Maintain dependencies for Bundler
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
@@ -19,8 +19,8 @@ updates:
     schedule:
       interval: "daily"
     assignees:
-      - "nathansam"  
-      
+      - "nathansam"
+
   - package-ecosystem: "github-actions"
     # Workflow files stored in the
     # default location of `.github/workflows`
@@ -29,4 +29,3 @@ updates:
       interval: "daily"
     assignees:
       - "nathansam"
-

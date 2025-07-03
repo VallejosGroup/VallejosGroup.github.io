@@ -4,7 +4,18 @@
 
 /* Typography */
 
-p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+div,
+li,
+span,
+strong {
   color: var(--global-text-color);
 }
 
@@ -30,7 +41,8 @@ a:hover:after :not(.nav-item.dropdown) {
   width: 100%;
 }
 
-figure, img {
+figure,
+img {
   max-width: 90vw;
 }
 
@@ -83,7 +95,8 @@ blockquote {
 }
 
 /* Citation */
-.citation, .citation-number {
+.citation,
+.citation-number {
   color: var(--global-theme-color);
 }
 
@@ -109,8 +122,8 @@ blockquote {
   .profile {
     width: 30%;
   }
-  .profile .address p { 
-    display: block; 
+  .profile .address p {
+    display: block;
   }
 }
 
@@ -168,7 +181,7 @@ blockquote {
   color: "var(--global-text-color)";
 }
 
-.navbar.navbar-light .navbar-nav .nav-item.active>.nav-link {
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
   background-color: inherit;
   font-weight: bolder;
   color: black;
@@ -178,7 +191,7 @@ figure {
   display: flex !important;
 }
 
-.navbar.navbar-light .navbar-nav .nav-item.active>.nav-link:hover {
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link:hover {
   color: var(--global-hover-color);
 }
 
@@ -268,11 +281,11 @@ figure {
 }
 
 .navbarcolor {
-  color:white;
+  color: white;
 }
 
 .navbarcolor:hover {
-  color:var(--global-theme-color);
+  color: var(--global-theme-color);
 }
 
 /* Footer */
@@ -308,7 +321,7 @@ svg {
   stroke: var(--global-text-color);
 }
 
-svg.fill { 
+svg.fill {
   fill: var(--global-text-color);
 }
 
@@ -316,7 +329,7 @@ svg:hover {
   stroke: var(--global-theme-color);
 }
 
-svg.fill:hover { 
+svg.fill:hover {
   fill: var(--global-theme-color);
 }
 
@@ -326,7 +339,7 @@ fill.svg.hover {
 
 table.table a {
   margin: 0;
-  color:var(--global-theme-color);
+  color: var(--global-theme-color);
 }
 
 footer.sticky-bottom {
@@ -398,7 +411,8 @@ footer.sticky-bottom {
   align-items: center;
 }
 
-.projects .grid-sizer, .projects .grid-item {
+.projects .grid-sizer,
+.projects .grid-item {
   width: 250px;
   margin-bottom: 10px;
 }
@@ -561,7 +575,8 @@ pre {
   padding: 6px 12px;
 }
 
-pre pre, pre code {
+pre pre,
+pre code {
   background-color: transparent;
   border-radius: 0;
   padding: 0;
@@ -612,22 +627,22 @@ html.transition *:after {
 }
 
 .post .post-content h1 {
-  font-size: 1.875rem/* 30px */;
-  line-height: 2.25rem/* 36px */;
+  font-size: 1.875rem /* 30px */;
+  line-height: 2.25rem /* 36px */;
 }
 
 .post .post-content h2 {
-  font-size: 1.5rem/* 24px */;
-  line-height: 2rem/* 32px */;
+  font-size: 1.5rem /* 24px */;
+  line-height: 2rem /* 32px */;
 }
 
 .post .post-content h3 {
-  font-size: 1.25rem/* 20px */;
-  line-height: 1.75rem/* 28px */;
+  font-size: 1.25rem /* 20px */;
+  line-height: 1.75rem /* 28px */;
 }
 
 .post .post-content img {
-  border-radius: 0.75rem/* 12px */;
+  border-radius: 0.75rem /* 12px */;
   display: block;
   margin-left: auto;
   margin-right: auto;

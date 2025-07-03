@@ -7,4 +7,3 @@ img: assets/img/bassline
 github: https://github.com/nathansam/bassline
 importance: 2
 ---
-

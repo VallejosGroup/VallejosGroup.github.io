@@ -39,7 +39,6 @@ Welcome to the group! Follow these steps to add your profile:
    ```bash
    git clone https://github.com/VallejosGroup/VallejosGroup.github.io.git
    ```
-   
 2. **Add a 3:4 aspect ratio image to `public/assets/members`**:
    - Use tools like Photoshop or online crop tools. Images must be in `.jpg`, `.png`, or directly uploaded as `.webp`.
 
@@ -58,6 +57,7 @@ View the deployment status in the [Actions tab](https://github.com/VallejosGroup
 ### Adding News posts :newspaper:
 
 News posts are managed in the `src/content/news/` directory. Each post is a markdown file with metadata at the top. Here's how to add a new post:
+
 1. **Create a new markdown file** in `src/content/news/`.
 2. **Add metadata** at the top of the file:
    ```markdown
@@ -66,6 +66,7 @@ News posts are managed in the `src/content/news/` directory. Each post is a mark
    date: 2024-01-01 12:00:00-0000
    inline: false
    ---
+
    Your news content goes here.
    ```
 3. **Write your content** in markdown format below the metadata.

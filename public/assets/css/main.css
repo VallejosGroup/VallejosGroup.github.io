@@ -14,21 +14,19 @@
 @import url(https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{ site.fontawesome.version }}/css/all.min.css);
 @import url(https://cdn.jsdelivr.net/npm/academicons@{{ site.academicons.version }}/css/academicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons);
-@import url(https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/{{ site.highlight_theme_light | append: '.css' }});
+@import url(https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/{{site.highlight_theme_light|append:".css"}});
 
 @import "tailwindcss";
 
 @source './_includes/**/*.html';
 @source './_includes/header.html';
 
-
 @source './_layouts/**/*.html';
 @source './_posts/*.md';
 @source '*.html';
 
 @theme {
-  --font-sans: "Roboto", "sans-serif"; 
+  --font-sans: "Roboto", "sans-serif";
 }
-
 
 @plugin "@tailwindcss/typography";
