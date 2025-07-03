@@ -39,7 +39,8 @@ function checkImageMagick() {
     // Fall back to ImageMagick 6 syntax (convert)
     try {
       execSync('convert -version', { stdio: 'pipe' });
-      console.log('✓ ImageMagick is available (using "convert" command)');
+      execSync('identify -version', { stdio: 'pipe' });
+      console.log('✓ ImageMagick is available (using "convert" and "identify" commands)');
       imageMagickCommand = 'convert';
       return true;
     } catch (error2) {
@@ -101,18 +102,33 @@ function getImageFiles(dir, basePath = '') {
 }
 
 /**
+ * Get original image dimensions
+ */
+function getImageDimensions(filePath) {
+  try {
+    const command = `identify -format "%w" "${filePath}"`;
+    const width = execSync(command, { stdio: 'pipe' }).toString().trim();
+    return parseInt(width, 10);
+  } catch (error) {
+    console.error(`Failed to get dimensions for ${filePath}:`, error.message);
+    return null;
+  }
+}
+
+/**
  * Convert image to WebP format
  */
-async function convertToWebP(inputPath, outputPath) {
+async function convertToWebP(inputPath, outputPath, width) {
   return new Promise((resolve) => {
     try {
       let command;
+      const resizeOption = width ? `-resize ${width}x` : '';
       if (imageMagickCommand === 'magick') {
         // ImageMagick 7+ syntax
-        command = `magick "${inputPath}" -quality ${config.quality} "${outputPath}"`;
+        command = `magick "${inputPath}" ${resizeOption} -quality ${config.quality} "${outputPath}"`;
       } else {
         // ImageMagick 6 syntax
-        command = `convert "${inputPath}" -quality ${config.quality} "${outputPath}"`;
+        command = `convert "${inputPath}" ${resizeOption} -quality ${config.quality} "${outputPath}"`;
       }
       
       execSync(command, { stdio: 'pipe' });
@@ -165,24 +181,38 @@ async function processFile(file, stats) {
   ensureDir(outputDir);
   
   const originalBasename = basename(file.relativePath, file.ext);
-  const webpOutputPath = join(outputDir, `${originalBasename}.webp`);
   const originalOutputPath = join(outputDir, basename(file.relativePath));
   
   // Get original file size
   const originalSize = getFileSize(file.fullPath);
   stats.totalOriginalSize += originalSize;
   
-  // Convert to WebP
-  console.log(`🔄 Converting: ${file.relativePath}`);
+  // Get original image width
+  const originalWidth = getImageDimensions(file.fullPath);
   
-  const webpSuccess = await convertToWebP(file.fullPath, webpOutputPath);
-  if (webpSuccess) {
-    const webpSize = getFileSize(webpOutputPath);
-    stats.totalWebPSize += webpSize;
+  // Convert to WebP at different resolutions
+  const resolutions = [480, 800, 1200];
+  if (originalWidth && !resolutions.includes(originalWidth)) {
+    resolutions.push(originalWidth);
+  }
+  
+  for (const width of resolutions) {
+    const isOriginalResolution = width === originalWidth;
+    const webpBasename = isOriginalResolution ? originalBasename : `${originalBasename}-${width}`;
+    const webpOutputPath = join(outputDir, `${webpBasename}.webp`);
+    const webpDisplayName = isOriginalResolution ? `${originalBasename}.webp` : `${originalBasename}-${width}.webp`;
+
+    console.log(`🔄 Converting: ${file.relativePath} to ${isOriginalResolution ? 'original resolution' : width + 'px'}`);
     
-    const savings = Math.round(((originalSize - webpSize) / originalSize) * 100);
-    console.log(`   ✓ ${originalBasename}.webp (${originalSize}KB → ${webpSize}KB, ${savings}% smaller)`);
-    stats.converted++;
+    const webpSuccess = await convertToWebP(file.fullPath, webpOutputPath, isOriginalResolution ? null : width);
+    if (webpSuccess) {
+      const webpSize = getFileSize(webpOutputPath);
+      stats.totalWebPSize += webpSize;
+      
+      const savings = Math.round(((originalSize - webpSize) / originalSize) * 100);
+      console.log(`   ✓ ${webpDisplayName} (${originalSize}KB → ${webpSize}KB, ${savings}% smaller)`);
+      stats.converted++;
+    }
   }
   
   // Also copy the original file for fallback

@@ -78,11 +78,142 @@ h3 {
   padding: 0.5rem;
   cursor: pointer;
   color: #6b7280;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+#light-toggle .fa-sun {
+  display: none;
+}
+
+#light-toggle .fa-moon {
+  display: block;
+}
+
+[data-theme='dark'] #light-toggle .fa-sun {
+  display: block;
+}
+
+[data-theme='dark'] #light-toggle .fa-moon {
+  display: none;
 }
 
 #light-toggle:hover {
   color: #374151;
 }
+
+/* Dark theme */
+[data-theme='dark'] body {
+  background-color: #1a202c;
+  color: #cbd5e0;
+}
+
+[data-theme='dark'] .navbar {
+  background-color: rgba(26, 32, 44, 0.8);
+  border-bottom-color: #4a5568;
+}
+
+[data-theme='dark'] .nav-link {
+  color: #a0aec0;
+}
+
+[data-theme='dark'] .nav-link:hover {
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] h1, [data-theme='dark'] h2, [data-theme='dark'] h3 {
+  color: #e2e8f0 !important;
+}
+
+[data-theme='dark'] .subtitle {
+  color: #a0aec0;
+}
+
+[data-theme='dark'] footer {
+  color: #a0aec0;
+}
+
+[data-theme='dark'] .publication {
+  background: #2d3748;
+  border-color: #4a5568;
+}
+
+[data-theme='dark'] .publication.selected {
+  border-left-color: #f59e0b;
+  background: #4a5568;
+}
+
+[data-theme='dark'] .publication-title {
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .publication-authors {
+  color: #a0aec0;
+}
+
+[data-theme='dark'] .publication-venue {
+  color: #a0aec0;
+}
+
+[data-theme='dark'] .abstract-toggle summary {
+  color: #a0aec0;
+}
+
+[data-theme='dark'] .abstract-toggle summary:hover {
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .abstract-content {
+  background: #1a202c;
+  color: #cbd5e0;
+}
+
+[data-theme='dark'] .link-button {
+  background-image: linear-gradient(to bottom, #4a5568, #2d3748);
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .link-button:hover {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .bibtex-content {
+  background: #1a202c;
+}
+
+[data-theme='dark'] .bibtex-content pre {
+  color: #cbd5e0;
+}
+
+[data-theme='dark'] .news-item {
+  border-bottom-color: #4a5568;
+}
+
+[data-theme='dark'] .news-link {
+  color: #a0aec0;
+}
+
+[data-theme='dark'] .news-link:hover {
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .news-date {
+  color: #a0aec0;
+}
+
+[data-theme='dark'] .view-all-news {
+  color: #a0aec0;
+}
+
+[data-theme='dark'] .view-all-news:hover {
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .page-title {
+    color: #e2e8f0;
+}
+
 
 /* Responsive Navbar Styles */
 .navbar {
@@ -288,6 +419,7 @@ h3 {
     padding-top: 2rem;
 }
 
+
   .publication {
     border: 1px solid #e2e8f0;
     border-radius: 8px;
@@ -418,4 +550,206 @@ h3 {
   .bibtex-content code {
     background: none;
     padding: 0;
+  }
+
+  .publication-filters {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  [data-theme=dark] .publication-filters {
+    background: #4a5568 !important;
+  }
+  
+  .filter-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .search-container {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .clear-search {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #6b7280;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+  }
+  
+  .clear-search:hover {
+    background: #4b5563;
+  }
+  
+  .filter-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .filter-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #374151;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .filter-checkbox {
+    width: 1rem;
+    height: 1rem;
+    accent-color: #3b82f6;
+  }
+  
+  .year-select {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .year-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .no-results {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #6b7280;
+    font-style: italic;
+  }
+  
+  @media (max-width: 768px) {
+    .filter-row {
+      flex-direction: column;
+    }
+    
+    .search-container {
+      min-width: unset;
+    }
+    
+    .filter-container {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  [data-theme='dark'] figure {
+  background: #323c51 !important;
+}
+
+
+
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .project-card {
+    padding: 2rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    background: #f8fafc;
+  }
+
+  [data-theme='dark'] .project-card {
+    background: #323c51 !important;
+  }
+  
+  .project-card h3 {
+    margin-bottom: 1rem;
+  }
+
+    .news-index {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .news-index h1 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+
+    [data-theme='dark'] .news-item h2 {
+    color: #e2e8f0 !important;
+}
+  
+  .news-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .news-item:last-child {
+    border-bottom: none;
+  }
+  
+  .news-item header h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+  }
+  
+  .news-item header h2 a {
+    text-decoration: none;
+  }
+  
+  .news-item header h2 a:hover {
+    color: #3b82f6;
+  }
+  
+  .news-item time {
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+  
+  .excerpt {
+    margin-top: 1rem;
+    color: #6b7280;
   }
