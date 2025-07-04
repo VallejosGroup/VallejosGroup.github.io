@@ -19,7 +19,7 @@
 
 ## About
 
-Our website is now an [Astro](https://astro.build) site, featuring a modern, responsive design powered by [Tailwind CSS](https://tailwindcss.com). W
+Our website is now an [Astro](https://astro.build) site, featuring a modern, responsive design powered by [Tailwind CSS](https://tailwindcss.com).
 
 If you have any questions or need help, feel free to contact me (Nathan/@nathansam), or create a branch and open a pull request tagging me.
 
