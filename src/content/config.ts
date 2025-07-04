@@ -10,6 +10,7 @@ const membersCollection = defineCollection({
     website: z.string().optional(),
     github: z.string().optional(),
     twitter: z.string().optional(),
+    bluesky: z.string().optional(),
     scholar: z.string().optional(),
     blog: z.string().optional(),
     linkedin: z.string().optional(),
