@@ -16,8 +16,7 @@ const config = {
   quality: 80, // WebP quality (0-100)
   supportedFormats: [".jpg", ".jpeg", ".png", ".gif"],
   excludePatterns: [
-    "favicon.png", // Keep favicon as PNG
-    "logo.png", // Keep logo as PNG for compatibility
+    "favicon.png" // Keep favicon as PNG
   ],
   concurrency: 4, // Number of parallel operations
   shouldConvert: true, // Default to true, can be overridden by CLI arg

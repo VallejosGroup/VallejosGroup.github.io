@@ -26,7 +26,7 @@ const { software } = Astro.props;
   {
     software.img && (
       <picture style="padding-left: 30px;">
-        <source srcset={`/${software.img}.webp`} type="image/webp" />
+        <source srcset={`/${software.img}-800.webp`} type="image/webp" />
         <source srcset={`/${software.img}.png`} type="image/png" />
         <img
           class="size-40 md:size-60 md:h-auto rounded-xl mx-auto object-contain"
