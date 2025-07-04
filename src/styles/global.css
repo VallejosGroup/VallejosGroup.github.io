@@ -766,6 +766,10 @@ h3 {
 }
 
 [data-theme="dark"] .over-image {
-    background: #323c5199 !important;
+  background: #323c5199 !important;
   border-color: #323c51 !important;
+}
+
+[data-theme="dark"] img {
+  filter: brightness(0.88);
 }
