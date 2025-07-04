@@ -5,5 +5,5 @@ category: Survival Analysis
 language: R
 img: assets/img/bassline
 github: https://github.com/nathansam/bassline
-importance: 2
+importance: 3
 ---
