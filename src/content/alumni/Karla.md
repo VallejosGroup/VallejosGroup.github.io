@@ -10,4 +10,6 @@ scholar: "https://scholar.google.com/citations?user=YmyxSXAAAAAJ&hl=en"
 #twitter: "https://www.twitter.com"
 #blog: "https://www.blog.com"
 linkedin: "https://www.linkedin.com/in/karla-monterrubio-87b181b4/"
+years: "2020-2024"
+after: "Senior Data/AI Scientist, Takeda Pharmaceuticals"
 ---
