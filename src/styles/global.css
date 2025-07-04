@@ -759,3 +759,13 @@ h3 {
 .content p {
   margin: 0.625rem 0; /* 10px / 16px = 0.625rem */
 }
+
+.over-image {
+  border-color: oklch(70.4% 0.04 256.788);
+  background: oklch(70.4% 0.04 256.788 / 40%); 
+}
+
+[data-theme="dark"] .over-image {
+    background: #323c5199 !important;
+  border-color: #323c51 !important;
+}
