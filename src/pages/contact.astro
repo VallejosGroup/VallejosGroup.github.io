@@ -1,44 +1,55 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Contact - Vallejos Group">
   <div class="contact">
-    <h1 class = "page-title">Contact us</h1>
-    
+    <h1 class="page-title">Contact us</h1>
+
     <div>
-      <div style = "padding-bottom: 20px; text-align: center;">
-         <a href="mailto:catalina.vallejos@ed.ac.uk" title="email"><i class="fas fa-envelope" style = "font-size: 3em; padding-right: 10px;"></i></a>
-         <a href="https://www.linkedin.com/in/catalina-vallejos-61b41956/" title="LinkedIn"><i class="fab fa-linkedin" style = "font-size: 3em;"></i></a>
+      <div style="padding-bottom: 20px; text-align: center;">
+        <a href="mailto:catalina.vallejos@ed.ac.uk" title="email"
+          ><i
+            class="fas fa-envelope"
+            style="font-size: 3em; padding-right: 10px;"></i></a
+        >
+        <a
+          href="https://www.linkedin.com/in/catalina-vallejos-61b41956/"
+          title="LinkedIn"
+          ><i class="fab fa-linkedin" style="font-size: 3em;"></i></a
+        >
       </div>
     </div>
 
-
-    <div class="grid md:grid-cols-2 gap-4">
-    <div>
-        <h1 class="text-2xl grow font-extralight">Address</h1> <br>
-        <p class = "font-bold">MRC Human Genetics Unit,</p>
-        <p class = "">Institute of Genetics and Cancer, <br>
-        University of Edinburgh, <br>
-        Western General Hospital, <br>
-        Crewe Road, <br>
-        EH4 2XY, <br>
-        Edinburgh, <br>
-        United Kingdom <br> </p>
+    <div class="grid gap-4 md:grid-cols-2">
+      <div>
+        <h1 class="grow text-2xl font-extralight">Address</h1>
+        <br />
+        <p class="font-bold">MRC Human Genetics Unit,</p>
+        <p class="">
+          Institute of Genetics and Cancer, <br />
+          University of Edinburgh, <br />
+          Western General Hospital, <br />
+          Crewe Road, <br />
+          EH4 2XY, <br />
+          Edinburgh, <br />
+          United Kingdom <br />
+        </p>
+      </div>
+      <div class="place-self-center">
+        <iframe
+          class="rounded-xl"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2684.0389232956563!2d-3.232683183966795!3d55.9613910833522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2suk!4v1645917527249!5m2!1sen!2suk"
+          width="450"
+          height="350"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"></iframe>
+        <br />
+        <br />
+      </div>
     </div>
-    <div class = "place-self-center">
-        <iframe class="rounded-xl" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2684.0389232956563!2d-3.232683183966795!3d55.9613910833522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2suk!4v1645917527249!5m2!1sen!2suk" width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        <br>
-        <br>
-        
-    </div>
-</div>
-
-    
   </div>
-
-
-
 </Layout>
 
 <style>
@@ -46,21 +57,21 @@ import Layout from '../layouts/Layout.astro';
     max-width: 600px;
     margin: 0 auto;
   }
-  
+
   .social-links ul {
     list-style: none;
     padding: 0;
   }
-  
+
   .social-links li {
     margin: 0.5rem 0;
   }
-  
+
   .social-links a {
     color: #3b82f6;
     text-decoration: none;
   }
-  
+
   .social-links a:hover {
     text-decoration: underline;
   }

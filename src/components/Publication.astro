@@ -24,19 +24,22 @@ const { publication } = Astro.props;
 
 // Format authors to bold the group members (you can customize this list)
 const groupMembers = [
-  'Catalina A. Vallejos',
-  'Catalina A Vallejos', 
-  'Vallejos, Catalina A.',
-  'Nathan Constantine-Cooke',
-  'Constantine-Cooke, Nathan',
-  'Karla Monterrubio-Gómez',
-  'Monterrubio-Gómez, Karla'
+  "Catalina A. Vallejos",
+  "Catalina A Vallejos",
+  "Vallejos, Catalina A.",
+  "Nathan Constantine-Cooke",
+  "Constantine-Cooke, Nathan",
+  "Karla Monterrubio-Gómez",
+  "Monterrubio-Gómez, Karla",
 ];
 
 function formatAuthors(authors: string) {
   let formatted = authors;
-  groupMembers.forEach(member => {
-    const regex = new RegExp(`\\b${member.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+  groupMembers.forEach((member) => {
+    const regex = new RegExp(
+      `\\b${member.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`,
+      "gi",
+    );
     formatted = formatted.replace(regex, `<strong>${member}</strong>`);
   });
   return formatted;
@@ -46,99 +49,142 @@ function generateCitation() {
   let citation = `${publication.authors}. `;
   citation += `"${publication.title}." `;
   citation += `<em>${publication.journal}</em>`;
-  
+
   if (publication.volume) {
     citation += ` ${publication.volume}`;
     if (publication.number) {
       citation += `(${publication.number})`;
     }
   }
-  
+
   if (publication.pages) {
     citation += `: ${publication.pages}`;
   }
-  
+
   citation += ` (${publication.year}).`;
-  
+
   return citation;
 }
 ---
 
-<div class="publication" class:list={[publication.selected && 'selected']}>
+<div class="publication" class:list={[publication.selected && "selected"]}>
   <div class="publication-header">
-    {publication.abbr && (
-      <span class="journal-abbr">{publication.abbr}</span>
-    )}
-    {publication.selected && (
-      <span class="selected-badge">★</span>
-    )}
+    {publication.abbr && <span class="journal-abbr">{publication.abbr}</span>}
+    {publication.selected && <span class="selected-badge">★</span>}
   </div>
-  
+
   <div class="publication-content">
     <h3 class="publication-title">{publication.title}</h3>
-    
-    <div class="publication-authors" set:html={formatAuthors(publication.authors)} />
-    
+
+    <div
+      class="publication-authors"
+      set:html={formatAuthors(publication.authors)}
+    />
+
     <div class="publication-venue">
       <em>{publication.journal}</em>
-      {publication.volume && (
-        <span> {publication.volume}</span>
-      )}
-      {publication.number && (
-        <span>({publication.number})</span>
-      )}
-      {publication.pages && (
-        <span>: {publication.pages}</span>
-      )}
+      {publication.volume && <span> {publication.volume}</span>}
+      {publication.number && <span>({publication.number})</span>}
+      {publication.pages && <span>: {publication.pages}</span>}
       <span> ({publication.year})</span>
     </div>
-    
-    {publication.abstract && (
-      <details class="abstract-toggle">
-        <summary>Abstract</summary>
-        <div class="abstract-content">
-          {publication.abstract}
-        </div>
-      </details>
-    )}
-    
+
+    {
+      publication.abstract && (
+        <details class="abstract-toggle">
+          <summary>Abstract</summary>
+          <div class="abstract-content">{publication.abstract}</div>
+        </details>
+      )
+    }
+
     <div class="publication-links">
-      {publication.doi && (
-        <a href={`https://doi.org/${publication.doi}`} target="_blank" rel="noopener noreferrer" class="link-button">
-          DOI
-        </a>
-      )}
-      {publication.url && (
-        <a href={publication.url} target="_blank" rel="noopener noreferrer" class="link-button">
-          URL
-        </a>
-      )}
-      {publication.pdf && (
-        <a href={`/assets/pdfs/${publication.pdf}`} target="_blank" rel="noopener noreferrer" class="link-button">
-          PDF
-        </a>
-      )}
-      {publication.bibtex_show && (
-        <button class="link-button bibtex-toggle" onclick={`toggleBibtex('${publication.id}')`}>
-          BibTeX
-        </button>
-      )}
+      {
+        publication.doi && (
+          <a
+            href={`https://doi.org/${publication.doi}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-button"
+          >
+            DOI
+          </a>
+        )
+      }
+      {
+        publication.url && (
+          <a
+            href={publication.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-button"
+          >
+            URL
+          </a>
+        )
+      }
+      {
+        publication.pdf && (
+          <a
+            href={`/assets/pdfs/${publication.pdf}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-button"
+          >
+            PDF
+          </a>
+        )
+      }
+      {
+        publication.bibtex_show && (
+          <button
+            class="link-button bibtex-toggle"
+            onclick={`toggleBibtex('${publication.id}')`}
+          >
+            BibTeX
+          </button>
+        )
+      }
     </div>
-    
-    {publication.bibtex_show && (
-      <div id={`bibtex-${publication.id}`} class="bibtex-content" style="display: none;">
-        <pre><code>{`@${publication.type}{${publication.id},
+
+    {
+      publication.bibtex_show && (
+        <div
+          id={`bibtex-${publication.id}`}
+          class="bibtex-content"
+          style="display: none;"
+        >
+          <pre>
+            <code>{`@${publication.type}{${publication.id},
   title = {${publication.title}},
   author = {${publication.authors}},
   journal = {${publication.journal}},
-  year = {${publication.year}},${publication.volume ? `
-  volume = {${publication.volume}},` : ''}${publication.number ? `
-  number = {${publication.number}},` : ''}${publication.pages ? `
-  pages = {${publication.pages}},` : ''}${publication.doi ? `
-  doi = {${publication.doi}},` : ''}
-}`}</code></pre>
-      </div>
-    )}
+  year = {${publication.year}},${
+    publication.volume
+      ? `
+  volume = {${publication.volume}},`
+      : ""
+  }${
+    publication.number
+      ? `
+  number = {${publication.number}},`
+      : ""
+  }${
+    publication.pages
+      ? `
+  pages = {${publication.pages}},`
+      : ""
+  }${
+    publication.doi
+      ? `
+  doi = {${publication.doi}},`
+      : ""
+  }
+}`}</code>
+          </pre>
+        </div>
+      )
+    }
   </div>
 </div>
 
@@ -146,10 +192,11 @@ function generateCitation() {
   function toggleBibtex(id) {
     const element = document.getElementById(`bibtex-${id}`);
     if (element) {
-      element.style.display = element.style.display === 'none' ? 'block' : 'none';
+      element.style.display =
+        element.style.display === "none" ? "block" : "none";
     }
   }
-  
+
   // Make function available globally
   window.toggleBibtex = toggleBibtex;
 </script>

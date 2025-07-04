@@ -64,8 +64,7 @@
 
   const objectFromMap = function (map) {
     const object = Array.from(map).reduce(
-      (object, [key, value]) =>
-        Object.assign(object, { [key]: value }), // Be careful! Maps can have non-String keys; object literals can't.
+      (object, [key, value]) => Object.assign(object, { [key]: value }), // Be careful! Maps can have non-String keys; object literals can't.
       {},
     );
     return object;

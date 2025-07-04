@@ -1,28 +1,30 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Software from '../components/Software.astro';
-import { getCollection } from 'astro:content';
+import Layout from "../layouts/Layout.astro";
+import Software from "../components/Software.astro";
+import { getCollection } from "astro:content";
 
 // Get all software and sort by importance
-const software = await getCollection('software');
-const sortedSoftware = software.sort((a, b) => a.data.importance - b.data.importance);
+const software = await getCollection("software");
+const sortedSoftware = software.sort(
+  (a, b) => a.data.importance - b.data.importance,
+);
 ---
 
 <Layout title="Software - Vallejos Group">
   <div class="software">
     <h1 class="page-title">Software</h1>
-    
+
     <div class="software-list">
-      {sortedSoftware.map((sw) => (
-        <Software software={sw.data} />
-      ))}
+      {sortedSoftware.map((sw) => <Software software={sw.data} />)}
     </div>
-    
-    {sortedSoftware.length === 0 && (
-      <p class="text-center text-gray-600 text-lg">
-        No software packages available yet.
-      </p>
-    )}
+
+    {
+      sortedSoftware.length === 0 && (
+        <p class="text-center text-lg text-gray-600">
+          No software packages available yet.
+        </p>
+      )
+    }
   </div>
 </Layout>
 

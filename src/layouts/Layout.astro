@@ -4,41 +4,62 @@ export interface Props {
   description?: string;
 }
 
-const { title, description = "The Vallejos Research Group Website" } = Astro.props;
+const { title, description = "The Vallejos Research Group Website" } =
+  Astro.props;
 
-import '../styles/global.css';
+import "../styles/global.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <script is:inline src="/assets/js/dark_mode.js"></script>
   </head>
-  <body class="font-sans fixed-top-nav sticky-bottom-footer">
+  <body class="fixed-top-nav sticky-bottom-footer font-sans">
     <div class="font-sans">
       <!-- Header -->
       <header>
         <!-- Nav Bar -->
-        <nav id="navbar" class="navbar font-sans font-light bg-slate-900/30 border-b-2 border-gray-400 border-transparent backdrop-blur-sm navbar-expand-sm fixed-top">
+        <nav
+          id="navbar"
+          class="navbar navbar-expand-sm fixed-top border-b-2 border-gray-400 border-transparent bg-slate-900/30 font-sans font-light backdrop-blur-sm"
+        >
           <div class="container">
             <a class="navbar-brand title font-light" href="/">
               <picture>
-                
-                <source srcset="/assets/img/logo-480.webp" type="image/webp">
-                <source srcset="/assets/img/logo.png" type="image/png">
-               <img src="/assets/img/logo.png" alt="Vallejos Group logo" width="100" height="56">
+                <source srcset="/assets/img/logo-480.webp" type="image/webp" />
+                <source srcset="/assets/img/logo.png" type="image/png" />
+                <img
+                  src="/assets/img/logo.png"
+                  alt="Vallejos Group logo"
+                  width="100"
+                  height="56"
+                />
               </picture>
             </a>
-            
+
             <!-- Navbar Toggle -->
-            <button id="navbar-toggler" class="navbar-toggler collapsed ml-auto md:hidden" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button
+              id="navbar-toggler"
+              class="navbar-toggler collapsed ml-auto md:hidden"
+              type="button"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
               <span class="sr-only">Toggle navigation</span>
               <span class="hamburger-line"></span>
               <span class="hamburger-line"></span>
@@ -51,37 +72,39 @@ import '../styles/global.css';
                 <li class="nav-item">
                   <a class="nav-link navbarcolor" href="/">About</a>
                 </li>
-                
+
                 <!-- Members -->
                 <li class="nav-item">
                   <a class="nav-link navbarcolor" href="/members">Members</a>
                 </li>
-                
+
                 <!-- News -->
                 <li class="nav-item">
                   <a class="nav-link navbarcolor" href="/news">News</a>
                 </li>
-                
+
                 <!-- Projects -->
                 <li class="nav-item">
                   <a class="nav-link navbarcolor" href="/projects">Projects</a>
                 </li>
-                
+
                 <!-- Software -->
                 <li class="nav-item">
                   <a class="nav-link navbarcolor" href="/software">Software</a>
                 </li>
-                
+
                 <!-- Publications -->
                 <li class="nav-item">
-                  <a class="nav-link navbarcolor" href="/publications">Publications</a>
+                  <a class="nav-link navbarcolor" href="/publications"
+                    >Publications</a
+                  >
                 </li>
-                
+
                 <!-- Contact -->
                 <li class="nav-item">
                   <a class="nav-link navbarcolor" href="/contact">Contact</a>
                 </li>
-                
+
                 <!-- Dark mode toggle -->
                 <li class="toggle-container">
                   <button id="light-toggle" title="Change theme">
@@ -103,41 +126,42 @@ import '../styles/global.css';
       <!-- Footer -->
       <footer class="sticky-bottom mt-5">
         <div class="container">
-          &copy; Copyright {new Date().getFullYear()} Vallejos Group. 
+          &copy; Copyright {new Date().getFullYear()} Vallejos Group.
         </div>
       </footer>
     </div>
 
     <script>
       // Hamburger menu functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const toggler = document.getElementById('navbar-toggler');
-        const navbarNav = document.getElementById('navbarNav');
-        
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggler = document.getElementById("navbar-toggler");
+        const navbarNav = document.getElementById("navbarNav");
+
         if (toggler && navbarNav) {
-          toggler.addEventListener('click', function() {
-            const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
-            
+          toggler.addEventListener("click", function () {
+            const isExpanded = toggler.getAttribute("aria-expanded") === "true";
+
             // Toggle aria-expanded
-            toggler.setAttribute('aria-expanded', !isExpanded);
-            
+            toggler.setAttribute("aria-expanded", !isExpanded);
+
             // Toggle collapsed class
-            toggler.classList.toggle('collapsed');
-            
+            toggler.classList.toggle("collapsed");
+
             // Toggle navbar visibility
-            navbarNav.classList.toggle('hidden');
-            navbarNav.classList.toggle('show');
+            navbarNav.classList.toggle("hidden");
+            navbarNav.classList.toggle("show");
           });
-          
+
           // Close mobile menu when clicking on a nav link
-          const navLinks = navbarNav.querySelectorAll('.nav-link');
-          navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-              if (window.innerWidth < 768) { // md breakpoint
-                navbarNav.classList.add('hidden');
-                navbarNav.classList.remove('show');
-                toggler.classList.add('collapsed');
-                toggler.setAttribute('aria-expanded', 'false');
+          const navLinks = navbarNav.querySelectorAll(".nav-link");
+          navLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+              if (window.innerWidth < 768) {
+                // md breakpoint
+                navbarNav.classList.add("hidden");
+                navbarNav.classList.remove("show");
+                toggler.classList.add("collapsed");
+                toggler.setAttribute("aria-expanded", "false");
               }
             });
           });

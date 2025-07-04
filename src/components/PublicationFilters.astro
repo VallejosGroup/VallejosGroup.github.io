@@ -5,20 +5,20 @@
 <div class="publication-filters">
   <div class="filter-row">
     <div class="search-container">
-      <input 
-        type="text" 
-        id="publication-search" 
+      <input
+        type="text"
+        id="publication-search"
         placeholder="Search publications by title, author, or journal..."
         class="search-input"
       />
     </div>
-    
+
     <div class="filter-container">
       <label class="filter-label">
         <input type="checkbox" id="selected-only" class="filter-checkbox" />
         Selected publications only
       </label>
-      
+
       <select id="year-filter" class="year-select">
         <option value="">All years</option>
       </select>
@@ -28,91 +28,104 @@
 
 <script>
   function initializeFilters() {
-    const searchInput = document.getElementById('publication-search');
-    const selectedOnlyCheckbox = document.getElementById('selected-only');
-    const yearFilter = document.getElementById('year-filter');
-    
+    const searchInput = document.getElementById("publication-search");
+    const selectedOnlyCheckbox = document.getElementById("selected-only");
+    const yearFilter = document.getElementById("year-filter");
+
     // Populate year filter
-    const yearSections = document.querySelectorAll('.year-section');
-    const years = Array.from(yearSections).map(section => {
-      const yearHeading = section.querySelector('.year');
-      return yearHeading ? yearHeading.textContent.trim() : null;
-    }).filter(Boolean);
-    
-    years.forEach(year => {
-      const option = document.createElement('option');
+    const yearSections = document.querySelectorAll(".year-section");
+    const years = Array.from(yearSections)
+      .map((section) => {
+        const yearHeading = section.querySelector(".year");
+        return yearHeading ? yearHeading.textContent.trim() : null;
+      })
+      .filter(Boolean);
+
+    years.forEach((year) => {
+      const option = document.createElement("option");
       option.value = year;
       option.textContent = year;
       yearFilter.appendChild(option);
     });
-    
+
     function filterPublications() {
       const searchTerm = searchInput.value.toLowerCase();
       const selectedOnly = selectedOnlyCheckbox.checked;
       const selectedYear = yearFilter.value;
-      
+
       // Filter year sections
-      yearSections.forEach(yearSection => {
-        const yearHeading = yearSection.querySelector('.year');
-        const sectionYear = yearHeading ? yearHeading.textContent.trim() : '';
-        
+      yearSections.forEach((yearSection) => {
+        const yearHeading = yearSection.querySelector(".year");
+        const sectionYear = yearHeading ? yearHeading.textContent.trim() : "";
+
         // Hide/show entire year section based on year filter
         if (selectedYear && sectionYear !== selectedYear) {
-          yearSection.style.display = 'none';
+          yearSection.style.display = "none";
           return;
         } else {
-          yearSection.style.display = 'block';
+          yearSection.style.display = "block";
         }
-        
+
         // Filter publications within the section
-        const publications = yearSection.querySelectorAll('.publication');
+        const publications = yearSection.querySelectorAll(".publication");
         let visibleCount = 0;
-        
-        publications.forEach(publication => {
-          const title = publication.querySelector('.publication-title')?.textContent.toLowerCase() || '';
-          const authors = publication.querySelector('.publication-authors')?.textContent.toLowerCase() || '';
-          const journal = publication.querySelector('.publication-venue')?.textContent.toLowerCase() || '';
-          const isSelected = publication.classList.contains('selected');
-          
-          const matchesSearch = !searchTerm || 
-            title.includes(searchTerm) || 
-            authors.includes(searchTerm) || 
+
+        publications.forEach((publication) => {
+          const title =
+            publication
+              .querySelector(".publication-title")
+              ?.textContent.toLowerCase() || "";
+          const authors =
+            publication
+              .querySelector(".publication-authors")
+              ?.textContent.toLowerCase() || "";
+          const journal =
+            publication
+              .querySelector(".publication-venue")
+              ?.textContent.toLowerCase() || "";
+          const isSelected = publication.classList.contains("selected");
+
+          const matchesSearch =
+            !searchTerm ||
+            title.includes(searchTerm) ||
+            authors.includes(searchTerm) ||
             journal.includes(searchTerm);
-          
+
           const matchesSelected = !selectedOnly || isSelected;
-          
+
           if (matchesSearch && matchesSelected) {
-            publication.style.display = 'block';
+            publication.style.display = "block";
             visibleCount++;
           } else {
-            publication.style.display = 'none';
+            publication.style.display = "none";
           }
         });
-        
+
         // Hide year section if no publications are visible
         if (visibleCount === 0) {
-          yearSection.style.display = 'none';
+          yearSection.style.display = "none";
         }
       });
-      
+
       // Show "no results" message if needed
       updateNoResultsMessage();
     }
-    
+
     function updateNoResultsMessage() {
-      const visibleSections = Array.from(yearSections).filter(section => 
-        section.style.display !== 'none'
+      const visibleSections = Array.from(yearSections).filter(
+        (section) => section.style.display !== "none",
       );
-      
-      let existingMessage = document.getElementById('no-results-message');
-      
+
+      let existingMessage = document.getElementById("no-results-message");
+
       if (visibleSections.length === 0) {
         if (!existingMessage) {
-          const message = document.createElement('div');
-          message.id = 'no-results-message';
-          message.className = 'no-results';
-          message.innerHTML = '<p>No publications match your current filters.</p>';
-          document.querySelector('.publications').appendChild(message);
+          const message = document.createElement("div");
+          message.id = "no-results-message";
+          message.className = "no-results";
+          message.innerHTML =
+            "<p>No publications match your current filters.</p>";
+          document.querySelector(".publications").appendChild(message);
         }
       } else {
         if (existingMessage) {
@@ -120,34 +133,34 @@
         }
       }
     }
-    
+
     // Add event listeners
-    searchInput.addEventListener('input', filterPublications);
-    selectedOnlyCheckbox.addEventListener('change', filterPublications);
-    yearFilter.addEventListener('change', filterPublications);
-    
+    searchInput.addEventListener("input", filterPublications);
+    selectedOnlyCheckbox.addEventListener("change", filterPublications);
+    yearFilter.addEventListener("change", filterPublications);
+
     // Add clear button functionality
-    const clearButton = document.createElement('button');
-    clearButton.textContent = '×';
-    clearButton.className = 'clear-search';
-    clearButton.style.display = 'none';
-    clearButton.addEventListener('click', () => {
-      searchInput.value = '';
+    const clearButton = document.createElement("button");
+    clearButton.textContent = "×";
+    clearButton.className = "clear-search";
+    clearButton.style.display = "none";
+    clearButton.addEventListener("click", () => {
+      searchInput.value = "";
       selectedOnlyCheckbox.checked = false;
-      yearFilter.value = '';
+      yearFilter.value = "";
       filterPublications();
     });
-    
+
     searchInput.parentNode.appendChild(clearButton);
-    
-    searchInput.addEventListener('input', () => {
-      clearButton.style.display = searchInput.value ? 'block' : 'none';
+
+    searchInput.addEventListener("input", () => {
+      clearButton.style.display = searchInput.value ? "block" : "none";
     });
   }
-  
+
   // Initialize when DOM is loaded
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeFilters);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeFilters);
   } else {
     initializeFilters();
   }

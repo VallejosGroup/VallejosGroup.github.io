@@ -60,6 +60,7 @@ News posts are managed in the `src/content/news/` directory. Each post is a mark
 
 1. **Create a new markdown file** in `src/content/news/`.
 2. **Add metadata** at the top of the file:
+
    ```markdown
    ---
    title: Your News Title
@@ -69,6 +70,7 @@ News posts are managed in the `src/content/news/` directory. Each post is a mark
 
    Your news content goes here.
    ```
+
 3. **Write your content** in markdown format below the metadata.
 4. **Commit and push your changes**:
    ```bash

@@ -1,45 +1,46 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
 
-const newsItems = await getCollection('news');
-const sortedNews = newsItems.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+const newsItems = await getCollection("news");
+const sortedNews = newsItems.sort(
+  (a, b) => new Date(b.data.date) - new Date(a.data.date),
+);
 ---
 
 <Layout title="News - Vallejos Group">
   <div class="news-index">
     <h1>News</h1>
     <p class="intro">
-      Stay updated with the latest news and announcements from the Vallejos Group.
-      </p>
+      Stay updated with the latest news and announcements from the Vallejos
+      Group.
+    </p>
 
-
-      
     <div class="news-list">
-      {sortedNews.map((news) => (
-        <article class="news-item" key={news.id}>
-          <header>
-            <h2>
-              {news.data.inline ? (
-                <p>{news.data.title || 'Untitled Post'}</p>
-              ) : (
-                <a href={`/news/${news.slug}`}>
-                  <p>{news.data.title || 'Untitled Post'}</p>
-                </a>
-                
-              )}
-
-            </h2>
-            <time datetime={news.data.date.toISOString()}>
-              {news.data.date.toLocaleDateString('en-GB', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-              })}
-            </time>
-          </header>
-        </article>
-      ))}
+      {
+        sortedNews.map((news) => (
+          <article class="news-item" key={news.id}>
+            <header>
+              <h2>
+                {news.data.inline ? (
+                  <p>{news.data.title || "Untitled Post"}</p>
+                ) : (
+                  <a href={`/news/${news.slug}`}>
+                    <p>{news.data.title || "Untitled Post"}</p>
+                  </a>
+                )}
+              </h2>
+              <time datetime={news.data.date.toISOString()}>
+                {news.data.date.toLocaleDateString("en-GB", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+            </header>
+          </article>
+        ))
+      }
     </div>
   </div>
 </Layout>

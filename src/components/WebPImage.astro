@@ -4,27 +4,37 @@ export interface Props {
   alt: string;
   width?: number;
   height?: number;
-  loading?: 'lazy' | 'eager';
+  loading?: "lazy" | "eager";
   class?: string;
   style?: string;
 }
 
-const { src, alt, width, height, loading = 'lazy', class: className, style } = Astro.props;
+const {
+  src,
+  alt,
+  width,
+  height,
+  loading = "lazy",
+  class: className,
+  style,
+} = Astro.props;
 
 // Generate WebP and fallback paths
 function getImagePaths(originalSrc: string) {
   // Remove leading slash if present
-  const cleanSrc = originalSrc.startsWith('/') ? originalSrc.slice(1) : originalSrc;
-  
+  const cleanSrc = originalSrc.startsWith("/")
+    ? originalSrc.slice(1)
+    : originalSrc;
+
   // Extract path components
-  const lastDotIndex = cleanSrc.lastIndexOf('.');
+  const lastDotIndex = cleanSrc.lastIndexOf(".");
   const basePath = cleanSrc.substring(0, lastDotIndex);
-  
+
   return {
     webp480: `/${basePath}-480.webp`,
     webp800: `/${basePath}-800.webp`,
     webp1200: `/${basePath}-1200.webp`,
-    fallback: `/${cleanSrc}`
+    fallback: `/${cleanSrc}`,
   };
 }
 
@@ -33,10 +43,14 @@ const { webp480, webp800, webp1200, fallback } = getImagePaths(src);
 
 <picture>
   <!-- WebP versions for modern browsers -->
-  <source srcset={`${webp480} 480w, ${webp800} 800w, ${webp1200} 1200w`} type="image/webp" sizes="(max-width: 600px) 480px, (max-width: 1000px) 800px, 1200px" />
-  
+  <source
+    srcset={`${webp480} 480w, ${webp800} 800w, ${webp1200} 1200w`}
+    type="image/webp"
+    sizes="(max-width: 600px) 480px, (max-width: 1000px) 800px, 1200px"
+  />
+
   <!-- Fallback for older browsers -->
-  <img 
+  <img
     src={fallback}
     alt={alt}
     width={width}
@@ -53,7 +67,7 @@ const { webp480, webp800, webp1200, fallback } = getImagePaths(src);
   picture {
     display: contents;
   }
-  
+
   img {
     max-width: 100%;
     height: auto;

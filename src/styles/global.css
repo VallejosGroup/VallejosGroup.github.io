@@ -762,7 +762,7 @@ h3 {
 
 .over-image {
   border-color: oklch(70.4% 0.04 256.788);
-  background: oklch(70.4% 0.04 256.788 / 40%); 
+  background: oklch(70.4% 0.04 256.788 / 40%);
 }
 
 [data-theme="dark"] .over-image {
