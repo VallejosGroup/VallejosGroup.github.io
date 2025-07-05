@@ -29,7 +29,7 @@ export function parseBibTeX() {
         id: entry.citationKey,
         type: entry.entryType,
         title: cleanBibTeXString(entry.entryTags?.title || ""),
-        authors: authorList.slice(0, -1).join(', ')+', and '+authorList.slice(-1),
+        authors: authorList.slice(0, -1).join(', ')+' and '+authorList.slice(-1),
         journal: cleanBibTeXString(entry.entryTags?.journal || ""),
         year: parseInt(entry.entryTags?.year || "2025"),
         volume: entry.entryTags?.volume || "",
