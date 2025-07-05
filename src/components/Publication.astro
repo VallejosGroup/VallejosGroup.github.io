@@ -152,8 +152,8 @@ function generateCitation() {
           id={`bibtex-${publication.id}`}
           class="bibtex-content bibtex-hidden"
         >
-          <pre>
-            <code>{`@${publication.type}{${publication.id},
+          <pre><code>{
+          `@${publication.type}{${publication.id},
   title = {${publication.title}},
   author = {${publication.authors}},
   journal = {${publication.journal}},
@@ -177,9 +177,7 @@ function generateCitation() {
       ? `
   doi = {${publication.doi}},`
       : ""
-  }
-}`}</code>
-          </pre>
+  }}`} </code></pre>
         </div>
       )
     }
@@ -209,5 +207,6 @@ function generateCitation() {
   .bibtex-hidden {
     max-height: 0;
     opacity: 0;
+    padding: 0rem;
   }
 </style>
