@@ -19,13 +19,17 @@ export function parseBibTeX() {
 
     // Process and format entries
     const publications = entries.map((entry) => {
+
+      const authorList = cleanBibTeXString(entry.entryTags?.author || "")
+          .split(" and ")
+          .map(formatAuthorName)
+      
+
       return {
         id: entry.citationKey,
         type: entry.entryType,
         title: cleanBibTeXString(entry.entryTags?.title || ""),
-        authors: cleanBibTeXString(entry.entryTags?.author || "")
-          .split(" and ")
-          .map(formatAuthorName),
+        authors: authorList.slice(0, -1).join(', ')+', and '+authorList.slice(-1),
         journal: cleanBibTeXString(entry.entryTags?.journal || ""),
         year: parseInt(entry.entryTags?.year || "2025"),
         volume: entry.entryTags?.volume || "",
@@ -116,20 +120,6 @@ function formatAuthorName(author) {
     return `${parts[1].trim()} ${parts[0].trim()}`;
   }
   return author;
-}
-
-/**
- * Format authors string for display
- */
-export function formatAuthors(authorsString) {
-  const authors = authorsString.split(", ");
-  if (authors.length === 1) {
-    return authors[0];
-  } else if (authors.length === 2) {
-    return `${authors[0]} and ${authors[1]}`;
-  } else if (authors.length > 2) {
-    return `${authors.slice(0, -1).join(", ")}, and ${authors[authors.length - 1]}`;
-  }
 }
 
 /**
