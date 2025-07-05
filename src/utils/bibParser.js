@@ -21,7 +21,7 @@ export function parseBibTeX() {
     const publications = entries.map((entry) => {
 
       const authorList = cleanBibTeXString(entry.entryTags?.author || "")
-          .split(" and ")
+          .split(/ and | AND /)
           .map(formatAuthorName)
       
 
