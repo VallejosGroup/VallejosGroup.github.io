@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getEntry } from 'astro:content';
+
+const cata = await getEntry('pages', 'cata');
+const { Content } = await cata.render();
+---
+<Layout title={cata.data.title} description={cata.data.description}>
+
+  <h1 class ="text-3xl font-bold mb-4 page-title">{cata.data.title}</h1>
+
+  <Content />
+</Layout>
