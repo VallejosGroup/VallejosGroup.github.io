@@ -1,22 +1,22 @@
 ---
 export interface Props {
   publication: {
-    id: string;
-    title: string;
-    authors: string;
-    journal: string;
-    year: number;
-    volume?: string;
-    number?: string;
-    pages?: string;
-    doi?: string;
-    url?: string;
-    abstract?: string;
-    abbr?: string;
-    selected?: boolean;
-    bibtex_show?: boolean;
-    pdf?: string;
-    month?: string;
+    id: "string";
+    title: "string";
+    authors: "string";
+    journal: "string";
+    year: "number";
+    volume?: "string";
+    number?: "string";
+    pages?: "string";
+    doi?: "string";
+    url?: "string";
+    abstract?: "string";
+    abbr?: "string";
+    selected?: "boolean";
+    bibtex_show?: "boolean";
+    pdf?: "string";
+    month?: "string";
   };
 }
 
@@ -150,8 +150,7 @@ function generateCitation() {
       publication.bibtex_show && (
         <div
           id={`bibtex-${publication.id}`}
-          class="bibtex-content"
-          style="display: none;"
+          class="bibtex-content bibtex-hidden"
         >
           <pre>
             <code>{`@${publication.type}{${publication.id},
@@ -191,11 +190,24 @@ function generateCitation() {
   function toggleBibtex(id) {
     const element = document.getElementById(`bibtex-${id}`);
     if (element) {
-      element.style.display =
-        element.style.display === "none" ? "block" : "none";
+      element.classList.toggle("bibtex-hidden");
     }
   }
 
   // Make function available globally
   window.toggleBibtex = toggleBibtex;
 </script>
+
+<style>
+  .bibtex-content {
+    max-height: 500px; /* Adjust as needed */
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 1;
+  }
+
+  .bibtex-hidden {
+    max-height: 0;
+    opacity: 0;
+  }
+</style>
