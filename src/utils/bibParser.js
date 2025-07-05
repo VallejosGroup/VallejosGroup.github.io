@@ -23,10 +23,9 @@ export function parseBibTeX() {
         id: entry.citationKey,
         type: entry.entryType,
         title: cleanBibTeXString(entry.entryTags?.title || ""),
-        authors: cleanBibTeXString(entry.entryTags?.author || "").replace(
-          / and /g,
-          ", ",
-        ),
+        authors: cleanBibTeXString(entry.entryTags?.author || "")
+          .split(" and ")
+          .map(formatAuthorName),
         journal: cleanBibTeXString(entry.entryTags?.journal || ""),
         year: parseInt(entry.entryTags?.year || "2025"),
         volume: entry.entryTags?.volume || "",
@@ -108,6 +107,18 @@ function cleanBibTeXString(str) {
 }
 
 /**
+ * Formats an individual author name, handling "Last, First" and "First Last" formats.
+ */
+function formatAuthorName(author) {
+  author = author.trim();
+  if (author.includes(',')) {
+    const parts = author.split(',');
+    return `${parts[1].trim()} ${parts[0].trim()}`;
+  }
+  return author;
+}
+
+/**
  * Format authors string for display
  */
 export function formatAuthors(authorsString) {
@@ -119,7 +130,6 @@ export function formatAuthors(authorsString) {
   } else if (authors.length > 2) {
     return `${authors.slice(0, -1).join(", ")}, and ${authors[authors.length - 1]}`;
   }
-  return authorsString;
 }
 
 /**

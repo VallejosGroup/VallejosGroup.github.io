@@ -40,7 +40,6 @@ function formatAuthors(authors: string) {
       `\\b${member.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`,
       "gi",
     );
-    formatted = formatted.replace(regex, `<strong>${member}</strong>`);
   });
   return formatted;
 }
