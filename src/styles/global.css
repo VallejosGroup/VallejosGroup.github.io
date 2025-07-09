@@ -646,7 +646,6 @@ h3 {
   border: 1px solid #d1d5db;
   border-radius: 0.375rem; /* 6px / 16px = 0.375rem */
   font-size: 0.9375rem; /* 15px / 16px = 0.9375rem */
-  background: white;
   cursor: pointer;
 }
 
