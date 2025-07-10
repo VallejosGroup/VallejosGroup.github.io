@@ -41,6 +41,13 @@ Welcome to the group! Follow these steps to add your profile:
    ```
 2. **Add a 3:4 aspect ratio image to `public/assets/members`**:
    - Use tools like Photoshop or online crop tools. Images must be in `.jpg`, `.png`, or directly uploaded as `.webp`.
+  
+>  **Note**: a 3:4 aspect ratio image can be generated via `imagemagik` using
+> the following command* (replacing < filename > with the  actual filename):
+
+```bash
+$ magick convert <filename>.jpg -gravity center -crop 3:4 <filename>.jpg
+```
 
 3. **Add your profile in `src/content/members/`**:
    - Create a markdown file for your profile in `src/content/members/`.
