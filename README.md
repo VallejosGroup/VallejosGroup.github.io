@@ -12,10 +12,11 @@
 ## Table of Contents
 
 - [About](#about)
-- [Making edits to our site](#making-edits-to-our-site)
-  - [New members](#new-members)
-  - [Adding publications](#adding-publications)
-- [Local setup](#local-setup)
+- [Making edits to our site](#making-edits-to-our-site-%EF%B8%8F)
+  - [New members](#new-members-)
+  - [Adding news posts](#adding-news-posts-newspaper)
+  - [Adding publications](#adding-publications-)
+- [Local setup](#local-setup-)
 
 ## About
 
