@@ -18,7 +18,7 @@
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.13.3",
     "async": "^3.2.6",
-    "bibtex-parse-js": "^0.0.23",
+    "bibtex-parse-js": "^0.0.24",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
