@@ -19,7 +19,7 @@
     "astro": "^5.13.4",
     "async": "^3.2.6",
     "bibtex-parse-js": "^0.0.23",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "prettier": "3.6.2",
