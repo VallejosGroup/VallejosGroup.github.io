@@ -16,7 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.8",
+    "astro": "^5.16.9",
     "async": "^3.2.6",
     "bibtex-parse-js": "^0.0.24",
     "tailwindcss": "^4.1.18"
