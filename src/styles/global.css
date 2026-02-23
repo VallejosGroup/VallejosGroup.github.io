@@ -630,7 +630,6 @@ h3 {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9375rem; /* 15px / 16px = 0.9375rem */
-  color: #374151;
   cursor: pointer;
   white-space: nowrap;
 }
