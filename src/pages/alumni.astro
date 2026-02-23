@@ -24,7 +24,7 @@ const sortedAlumni = alumni.sort((a, b) => {
           <div class="alumni-card">
             {alumnus.data.img && (
               <div class="alumni-image">
-                <img src={`/${alumnus.data.img}.jpg`} alt={alumnus.data.name} />
+                <img src={`/${alumnus.data.img}-480.webp`} alt={alumnus.data.name} />
               </div>
             )}
             <h3>{alumnus.data.name}</h3>
@@ -114,6 +114,7 @@ const sortedAlumni = alumni.sort((a, b) => {
     margin: 2rem 0;
   }
 
+
   .alumni-card {
     padding: 2rem;
     border: 1px solid #e5e7eb;
@@ -124,6 +125,9 @@ const sortedAlumni = alumni.sort((a, b) => {
     transition: box-shadow 0.15s ease-in-out;
   }
 
+
+
+  
   .alumni-card:hover {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
@@ -214,5 +218,31 @@ const sortedAlumni = alumni.sort((a, b) => {
   .text-center a:hover {
     background-color: #f9fafb;
     border-color: #9ca3af;
+  }
+
+  :global([data-theme="dark"]) .alumni-card {
+    background: #323c51 !important;
+    border-color: #4a5568;
+  }
+
+  :global([data-theme="dark"]) .alumni-card h3 {
+    color: #e2e8f0 !important;
+  }
+
+  :global([data-theme="dark"]) .alumni-image {
+    border-color: #4a5568;
+  }
+
+  :global([data-theme="dark"]) .years {
+    color: #a0aec0;
+  }
+
+  :global([data-theme="dark"]) .current {
+    color: #cbd5e0;
+  }
+
+  :global([data-theme="dark"]) .text-center a:hover {
+    background-color: #323c51;
+    border-color: #6b7280;
   }
 </style>
