@@ -1,6 +1,6 @@
 ---
 title: Linda returns from internship at Roche 
-date: 2024-04-01 12:00:00-0000
+date: 2024-01-01 12:00:00-0000
 inline: false
 ---
 
