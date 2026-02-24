@@ -20,7 +20,7 @@ planning and resource allocation.
 <br>
 
 More information about SPARRA and its use 
-cases is provided by PHS [here](https://publichealthscotland.scot/resources-and-tools/health-intelligence-and-data-management/scottish-patients-at-risk-of-readmission-and-admission-sparra/overview/).
+cases is provided by PHS <strong>[here](https://publichealthscotland.scot/resources-and-tools/health-intelligence-and-data-management/scottish-patients-at-risk-of-readmission-and-admission-sparra/overview/)<\strong>
 
 # SPARRAv4
 
