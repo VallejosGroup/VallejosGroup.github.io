@@ -1,5 +1,5 @@
 ---
-title: New starts: Elliot, Alex and Becky
+title: "New starts: Elliot, Alex and Becky"
 date: 2025-09-01 12:00:00-0000
 inline: false
 ---
