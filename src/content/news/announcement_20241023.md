@@ -1,6 +1,6 @@
 ---
 title: SPARRAv4 paper is published in npj Digital Medicine
-date: 2024-08-01 12:00:00-0000
+date: 2024-10-23 12:00:00-0000
 inline: true
 ---
 
