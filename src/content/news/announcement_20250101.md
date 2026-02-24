@@ -1,7 +1,7 @@
 ---
 title: Cata was appointed as Co-Director for the HDRUK Scotland Regional Network
 date: 2025-01-01 12:00:00-0000
-inline: true
+inline: false
 ---
 
 <img src = "/assets/img/news/hdruklogo.png" width = "200">
