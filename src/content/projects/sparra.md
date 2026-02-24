@@ -75,6 +75,9 @@ This includes the use of TRIPOD reporting guidelines and open-source code.
   <li>
   Paper: [Liley et al (2024), npj Digital Medicine](https://www.nature.com/articles/s41746-024-01250-1). 
   </li>
+  <li>
+  Code: [jamesliley/SPARRAv4](https://github.com/jamesliley/SPARRAv4)
+  </li>
 </ul>
   
 - [Press release: AI tool predicts emergency hospital risk](https://www.ed.ac.uk/news/2024/ai-tool-predicts-emergency-hospital-risk).
