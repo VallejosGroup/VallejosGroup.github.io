@@ -1,26 +1,26 @@
 ---
-title: "Predicting emergency admissions in Scotland: SPARRA"
+title: "Predicting emergency admissions in Scotland: SPARRAv4 and beyond"
 ---
 
 # Background
-
-Emergency hospital admissions account for around half of all hospital stays in 
-Scotland, placing tremendous strain on the healthcare system. 
 
 SPARRA (Scottish Patients At Risk of Readmission and Admission) is a risk 
 prediction model used across Scotland to identify individuals at a high risk of 
 requiring urgent hospital care within the next year. The model was originally 
 developed by [Public Health Scotland (PHS)](https://www.publichealthscotland.scot) 
-and scores are calculated monthly for approximately 80% of Scottish residents. 
-One important strength of SPARRA is its nationwide coverage, using existing 
-healthcare databases without the need for additional bespoke data collection. 
+and SPARRA scores are calculated monthly for approximately 80% of Scottish residents. 
+
+<br>
 
 Individual-level SPARRA scores can be used by medical professionals to plan 
 anticipatory interventions for the patients under their care. At an aggregate 
 level, SPARRA scores may also be used to estimate future demand, supporting 
-planning and resource allocation. More information about SPARRA and its use 
+planning and resource allocation. 
+
+<br>
+
+More information about SPARRA and its use 
 cases is provided by PHS [here](https://publichealthscotland.scot/resources-and-tools/health-intelligence-and-data-management/scottish-patients-at-risk-of-readmission-and-admission-sparra/overview/).
-This includes an interactive [data visualisation dashboard](https://scotland.shinyapps.io/phs-sparra-data-visualisation/).
 
 # SPARRAv4
 
@@ -57,6 +57,7 @@ TRIPOD reporting guidelines and the sharing of open-source code.
 - [Press release: AI tool predicts emergency hospital risk](https://www.ed.ac.uk/news/2024/ai-tool-predicts-emergency-hospital-risk).
 - [SPARRAv4 GitHub code repository](https://github.com/jamesliley/SPARRAv4)
 - [TRIPOD reporting guidelines](https://www.tripod-statement.org/)
+- [SPARRA overview by PHS](https://publichealthscotland.scot/resources-and-tools/health-intelligence-and-data-management/scottish-patients-at-risk-of-readmission-and-admission-sparra/overview/).
 
 # Stratified performance
 
