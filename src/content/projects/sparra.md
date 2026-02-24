@@ -20,7 +20,9 @@ planning and resource allocation.
 <br>
 
 More information about SPARRA and its use 
-cases is provided by PHS <strong>[here](https://publichealthscotland.scot/resources-and-tools/health-intelligence-and-data-management/scottish-patients-at-risk-of-readmission-and-admission-sparra/overview/)<\strong>
+cases is provided by PHS <strong>[here](https://publichealthscotland.scot/resources-and-tools/health-intelligence-and-data-management/scottish-patients-at-risk-of-readmission-and-admission-sparra/overview/)</strong>
+
+<br>
 
 # SPARRAv4
 
@@ -31,6 +33,8 @@ by our team in collaboration with PHS. Supported by
 [The Alan Turing Institute](https://www.turing.ac.uk) and 
 [Health Data Research UK](https://www.hdruk.ac.uk), the project was co-led by 
 Dr Catalina Vallejos and [Prof Louis Aslett (Durham)](https://www.louisaslett.com). 
+
+<br>
 
 Similar to its predecessors, SPARRAv4 inputs include demographic data 
 (such as the Scottish Index of Multiple Deprivation; SIMD) together information 
