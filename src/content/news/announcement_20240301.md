@@ -4,7 +4,7 @@ date: 2024-03-01 12:00:00-0000
 inline: false
 ---
 
-<img src = "/assets/img/group-members/hdruklogo.bego.webp" width = "200">
+<img src = "/assets/img/group-members/bego.webp" width = "200">
 
 Bego joined the group as a PhD student.
 

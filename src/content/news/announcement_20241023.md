@@ -1,10 +1,10 @@
 ---
 title: SPARRAv4 paper is published in npj Digital Medicine
 date: 2024-10-23 12:00:00-0000
-inline: true
+inline: false
 ---
 
-<img src = "/assets/img/sparra/sparrabyscriberia.jpg" width = "200">
+<img src = "/assets/img/sparra/sparrabyscriberia.jpg" width = "400">
 
 We are excited to announce that our paper describing SPARRAv4 has been published 
 in [npj Digital Medicine](https://www.nature.com/articles/s41746-024-01250-1). 
