@@ -192,6 +192,8 @@ present illustrative cases of potential hold-out set implementations.
   </li>
 </ul>
 
+<br>
+
 ### Adaptive model updating using a simulated environment
 
 We consider the general challenge of model updating in the presence of concept 
@@ -215,10 +217,13 @@ is then used to learn an optimal updating strategy.
   </li>
 </ul>
 
+<br>
+
 # Group members
 
-Current and former members of the Biomedical Data Science research group 
-have contributed to this project:
+Current and former group members that have contributed to this project:
+
+<br>
 
 - Dr Catalina Vallejos (group leader)
 - Dr James Liley (former PDRA)
