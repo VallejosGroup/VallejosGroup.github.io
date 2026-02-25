@@ -119,16 +119,16 @@ as part of the Data-Driven Systems and Health Inequalities programme.
 
 <ul style="list-style-type: circle;"> 
   <li>
-  Paper: <a href="https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000675"><strong>Thoma et al (2024), PLoS Digital Health </strong></a. 
+  Paper: <a href="https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000675"><strong>Thoma et al (2024), PLoS Digital Health </strong></a>. 
   </li>
   <li>
-  Code: <a href="https://github.com/Public-Health-Scotland/sparra-performance-analysis"><strong>Publicly available in GitHub</strong></a.
+  Code: <a href="https://github.com/Public-Health-Scotland/sparra-performance-analysis"><strong>Publicly available in GitHub</strong></a>.
   </li>
   <li>
-  Online dashboard: <a href="https://github.com/Public-Health-Scotland/sparra-performance-analysis"><strong>Available in PHS website</strong></a.
+  Online dashboard: <a href="https://github.com/Public-Health-Scotland/sparra-performance-analysis"><strong>Available in PHS website</strong></a>.
   </li>
   <li>
-  R package: <a href="https://cran.r-project.org/web/packages/SPARRAfairness/index.html"><strong>Available in CRAN</strong></a.
+  R package: <a href="https://cran.r-project.org/web/packages/SPARRAfairness/index.html"><strong>Available in CRAN</strong></a>.
   </li>
 </ul>
 
@@ -162,10 +162,10 @@ repeatedly over time. We also discuss potential routes to overcome these issues.
 
 <ul style="list-style-type: circle;"> 
   <li>
-  Paper: <a href="https://proceedings.mlr.press/v130/liley21a.html"><strong>Liley et al (2021), AISTATS</strong></a. 
+  Paper: <a href="https://proceedings.mlr.press/v130/liley21a.html"><strong>Liley et al (2021), AISTATS</strong></a>. 
   </li>
   <li>
-  Code: <a href="https://github.com/jamesliley/model_updating"><strong>Publicly available in GitHub</strong></a.
+  Code: <a href="https://github.com/jamesliley/model_updating"><strong>Publicly available in GitHub</strong></a>.
   </li>
 </ul>
 
@@ -188,7 +188,7 @@ present illustrative cases of potential hold-out set implementations.
 
 <ul style="list-style-type: circle;"> 
   <li>
-  Paper: <a href="https://link.springer.com/article/10.1007/s43681-024-00561-z"><strong>Chislet et al (2024), AI and Ethics</strong></a. 
+  Paper: <a href="https://link.springer.com/article/10.1007/s43681-024-00561-z"><strong>Chislet et al (2024), AI and Ethics</strong></a>. 
   </li>
 </ul>
 
@@ -213,7 +213,7 @@ is then used to learn an optimal updating strategy.
 
 <ul style="list-style-type: circle;"> 
   <li>
-  Pre-print: <a href="https://arxiv.org/abs/2412.10119"><strong>Chislet et al (2024), arXiv</strong></a. 
+  Pre-print: <a href="https://arxiv.org/abs/2412.10119"><strong>Chislet et al (2024), arXiv</strong></a>. 
   </li>
 </ul>
 
