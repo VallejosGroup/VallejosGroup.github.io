@@ -47,11 +47,11 @@ prescription details and previous hospital admissions).
 
 <br>
 
-A key difference with respect of the previous version of the model (SPARRAv3) is 
-the underlying modelling approach. SPARRAv4 uses a topic model to extract more 
-granular information from prescriptions and diagnostic data. Furthermore, it uses 
-an ensemble of machine learning models (including boosted decision trees and 
-neural networks) to capture more complex data patterns. 
+A key difference with respect to earlier versions is the underlying modelling 
+approach. SPARRAv4 uses a topic model to extract more granular information from 
+prescriptions and diagnostic data. Furthermore, it uses an ensemble of machine 
+learning models (including boosted decision trees and neural networks) to 
+capture more complex data patterns. 
 
 <br>
 
@@ -65,26 +65,28 @@ recorded primary diagnosis) that are harder to predict.
 
 Throughout model development, our team placed high emphasis on transparency and 
 reproducibility while ensuring compliance with data governance constraints. 
-This includes the use of TRIPOD reporting guidelines and open-source code. 
+This includes the use of
+<strong>[TRIPOD reporting guidelines](https://www.tripod-statement.org/)</strong> 
+and open-source code. 
 
 <br>
 
-## Links
+SPARRAv4 will be soon deployed by PHS across Scotland, replacing SPARRAv3. 
+
+<br>
 
 <ul style="list-style-type: circle;"> 
   <li>
-  Paper: [Liley et al (2024), npj Digital Medicine](https://www.nature.com/articles/s41746-024-01250-1). 
+  Paper: <strong><a href="https://www.nature.com/articles/s41746-024-01250-1">Liley et al (2024), npj Digital Medicine</a </strong>. 
   </li>
   <li>
-  Code: [jamesliley/SPARRAv4](https://github.com/jamesliley/SPARRAv4)
+  Code: <strong><a href="https://github.com/jamesliley/SPARRAv4">Publicly available in GitHub</a </strong>.
+  </li>
+  <li>
+  Press release: <strong><a href="https://www.ed.ac.uk/news/2024/ai-tool-predicts-emergency-hospital-risk">AI tool predicts emergency hospital risk</a </strong>.
   </li>
 </ul>
   
-- [Press release: AI tool predicts emergency hospital risk](https://www.ed.ac.uk/news/2024/ai-tool-predicts-emergency-hospital-risk).
-- [SPARRAv4 GitHub code repository](https://github.com/jamesliley/SPARRAv4)
-- [TRIPOD reporting guidelines](https://www.tripod-statement.org/)
-- [SPARRA overview by PHS](https://publichealthscotland.scot/resources-and-tools/health-intelligence-and-data-management/scottish-patients-at-risk-of-readmission-and-admission-sparra/overview/).
-
 # Stratified performance
 
 TBC
