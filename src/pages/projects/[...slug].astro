@@ -15,11 +15,30 @@ const { Content } = await project.render();
 ---
 
 <Layout title={project.data.title} description={project.data.description}>
-  <h1 class="text-3xl font-bold mb-4 page-title">{project.data.title}</h1>
+  <div class="project-content">
+    <h1 class="text-3xl font-bold mb-4 page-title">{project.data.title}</h1>
 
-  <Content />
+    <Content />
 
-  <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e2e8f0;">
-    <a href="/projects" style="color: #3b82f6; text-decoration: none; font-weight: 500;">← Back to Projects</a>
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e2e8f0;">
+      <a href="/projects" style="color: #3b82f6; text-decoration: none; font-weight: 500;">← Back to Projects</a>
+    </div>
   </div>
 </Layout>
+
+<style>
+  .project-content :global(h1),
+  .project-content :global(h2),
+  .project-content :global(h3) {
+    padding-top: 10px;
+  }
+
+  .project-content :global(p) {
+    margin-bottom: 15px;
+  }
+  
+  /* Don't add padding to the main page title */
+  .project-content > h1:first-child {
+    padding-top: 0;
+  }
+</style>
