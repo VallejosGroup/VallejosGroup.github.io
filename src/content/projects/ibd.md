@@ -17,7 +17,7 @@ precision medicine in IBD. By leveraging longitudinal data and advanced
 statistical modelling, we aim to provide clinicians with dynamic risk prediction
 tools that can adapt as a patient's clinical profile changes over time.
 
-This works represents a long-standing collaboration with
+This work represents a long-standing collaboration with
 <a href = "https://charlielees.com/"> <strong> Prof Charlie Lees </strong> </a>
 
 # Longitudinal Biomarkers and the Lothian IBD Registry
@@ -58,7 +58,7 @@ gut microbiome, and biomarkers influence IBD outcomes.
 
 <ul style="list-style-type: circle;"> 
   <li> <a href = "https://doi.org/10.1136/gutjnl-2025-337846">Paper: <strong> Constantine-Cooke, Gros, & Plevris et al. (2025) Gut </strong> </a>  </li>
-  <li> <a href = "https://www.constantine-cooke.com/predicct-analysis"> Statistical reports: <strong> Available online </strong> </li>
+  <li> <a href = "https://www.constantine-cooke.com/predicct-analysis"> Statistical reports: <strong> Available online </strong> </a> </li>
 </ul>
 
 
@@ -71,7 +71,7 @@ information becomes available, providing a real-time assessment of the risk of
 disease flare or the need for therapy escalation.
 
 To facilitate these analyses, our team actively develops open-source software,
-including <a href = "www.github.com/vallejosgroup/landmaRk"> <strong> landmaRk </strong></a> 
+including <a href = "https://github.com/vallejosgroup/landmaRk"> <strong> landmaRk </strong></a> 
 
 
 # Group members
