@@ -1,5 +1,8 @@
 ---
-title: "Predicting emergency admissions in Scotland: SPARRAv4 and beyond"
+title: "Predicting emergency admissions in Scotland"
+description: "Clinical risk prediction to support anticipatory interventions."
+image: "/assets/img/sparra/sparrabyscriberia.webp"
+importance: 1
 ---
 
 # Background

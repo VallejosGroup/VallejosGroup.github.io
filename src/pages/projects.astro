@@ -1,5 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+const sortedProjects = projects.sort((a, b) => {
+  const importanceA = a.data.importance ?? 100;
+  const importanceB = b.data.importance ?? 100;
+  return importanceA - importanceB;
+});
 ---
 
 <Layout title="Projects - Vallejos Group">
@@ -7,44 +15,22 @@ import Layout from "../layouts/Layout.astro";
     <h1 class="page-title">Projects</h1>
 
     <div class="projects-grid">
-      <div class="project-card">
-        <h3>Predicting emergency admissions in Scotland</h3>
-        <p>
-        
-          <img src = "/assets/img/sparra/sparrabyscriberia.webp" width = "300">
+      {sortedProjects.map((project) => (
+        <a href={`/projects/${project.slug}`}>
+        <div class="project-card">
           
-          Clinical risk prediction to support anticipatory interventions.
-          
-          <br>
-          
-          Read more about it <a href="/sparra/"><strong>here</strong></a>. 
-        </p>
-      </div>
-      
-      
-      <div class="project-card">
-        <h3>Single-cell RNA-sequencing</h3>
-        <p>
-          Developing statistical methods for analyzing single-cell RNA-seq data
-          to understand cellular heterogeneity.
-        </p>
-      </div>
+            <h3>{project.data.title}</h3>
+            <p>
+              {project.data.image && (
+                <img src={project.data.image} width="300" alt={project.data.title} />
+                <br>
+              )}
 
-      <div class="project-card">
-        <h3>Electronic Health Records</h3>
-        <p>
-          Creating predictive models based on observational data routinely
-          collected by health providers.
-        </p>
-      </div>
-
-      <div class="project-card">
-        <h3>Precision Medicine</h3>
-        <p>
-          Developing computational tools to improve understanding of health and
-          disease for precision medicine initiatives.
-        </p>
-      </div>
+              {project.data.description}
+            </p>
+        </div>
+        </a>
+      ))}
     </div>
   </div>
 </Layout>

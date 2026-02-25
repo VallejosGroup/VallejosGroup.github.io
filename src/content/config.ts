@@ -74,10 +74,21 @@ const pagesCollection = defineCollection({
   }),
 });
 
+const projectsCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    image: z.string().optional(),
+    importance: z.number().default(100),
+  }),
+});
+
 export const collections = {
   members: membersCollection,
   software: softwareCollection,
   alumni: alumniCollection,
   news: newsCollection,
   pages: pagesCollection,
+  projects: projectsCollection,
 };

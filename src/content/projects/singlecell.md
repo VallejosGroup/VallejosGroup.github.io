@@ -1,5 +1,7 @@
 ---
-title: "Single cell sequencing"
+title: "Single-cell RNA-sequencing"
+description: "Developing statistical methods for analyzing single-cell RNA-seq data to understand cellular heterogeneity."
+importance: 2
 ---
 
 ## TBC
