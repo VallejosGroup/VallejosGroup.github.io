@@ -77,17 +77,19 @@ SPARRAv4 will be soon deployed by PHS across Scotland, replacing SPARRAv3.
 
 <ul style="list-style-type: circle;"> 
   <li>
-  Paper: <strong><a href="https://www.nature.com/articles/s41746-024-01250-1">Liley et al (2024), npj Digital Medicine</a </strong>. 
+  Paper: <a href="https://www.nature.com/articles/s41746-024-01250-1"><strong>Liley et al (2024), npj Digital Medicine</strong></a. 
   </li>
   <li>
-  Code: <strong><a href="https://github.com/jamesliley/SPARRAv4">Publicly available in GitHub</a </strong>.
+  Code: <a href="https://github.com/jamesliley/SPARRAv4"><strong>Publicly available in GitHub</strong></a .
   </li>
   <li>
-  Press release: <strong><a href="https://www.ed.ac.uk/news/2024/ai-tool-predicts-emergency-hospital-risk">AI tool predicts emergency hospital risk</a </strong>.
+  Press release: <a href="https://www.ed.ac.uk/news/2024/ai-tool-predicts-emergency-hospital-risk"><strong>AI tool predicts emergency hospital risk </strong></a.
   </li>
 </ul>
+
+<br>
   
-# Stratified performance
+# Stratified performance of SPARRA
 
 We carried out a retrospective analysis to comprehensively evaluate how SPARRA 
 (versions 3 and 4) performs across population subgroups defined by age, sex, 
@@ -132,7 +134,22 @@ as part of the Data-Driven Systems and Health Inequalities programme.
 
 # Related work inspired by SPARRA
 
-TBC
+Beyond work directly related to the development and evaluation of SPARRA, our 
+team has also developed methodological and ethical challenges related to the use 
+of SPARRA and similar risk prediction models. 
+
+### Model updating after interventions
+
+<ul style="list-style-type: circle;"> 
+  <li>
+  Paper: <a href="https://proceedings.mlr.press/v130/liley21a.html"><strong>Liley et al (2021), AISTATS</strong></a. 
+  </li>
+  <li>
+  Code: <strong><a href="https://github.com/jamesliley/model_updating">Publicly available in GitHub</a </strong>.
+  </li>
+</ul>
+
+### Model updating after interventions
 
 # Group members
 
