@@ -122,34 +122,98 @@ as part of the Data-Driven Systems and Health Inequalities programme.
   Paper: <a href="https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000675"><strong>Thoma et al (2024), PLoS Digital Health </strong></a. 
   </li>
   <li>
-  Code: <strong><a href="https://github.com/Public-Health-Scotland/sparra-performance-analysis">Publicly available in GitHub</a </strong>.
+  Code: <a href="https://github.com/Public-Health-Scotland/sparra-performance-analysis"><strong>Publicly available in GitHub</strong></a.
   </li>
   <li>
-  R package: <strong><a href="https://github.com/Public-Health-Scotland/sparra-performance-analysis">Publicly available in GitHub</a </strong>.
+  Online dashboard: <a href="https://github.com/Public-Health-Scotland/sparra-performance-analysis"><strong>Available in PHS website</strong></a.
   </li>
   <li>
-  Online dashboard: <strong><a href="https://cran.r-project.org/web/packages/SPARRAfairness/index.html">Available in CRAN</a </strong>.
+  R package: <a href="https://cran.r-project.org/web/packages/SPARRAfairness/index.html"><strong>Available in CRAN</strong></a.
   </li>
 </ul>
+
+<br>
 
 # Related work inspired by SPARRA
 
 Beyond work directly related to the development and evaluation of SPARRA, our 
 team has also developed methodological and ethical challenges related to the use 
-of SPARRA and similar risk prediction models. 
+and updating of SPARRA and similar risk prediction models. 
+
+<br>
 
 ### Model updating after interventions
+
+Machine learning is increasingly being used to generate prediction models that 
+inform interventions in real-world settings; for example, anticipatory care 
+plans informed by SPARRA. In parallel, there is increasing interest in updating 
+and improving such models over time, as more data becomes available and 
+modelling techniques improve: interventions informed by a risk score can alter
+the outcome they were trying to predict, leading to a feedback loop that is
+often referred to as 'performative prediction'. 
+
+<br>
+
+We demonstrate the consequences of 'naive updating', where performative 
+prediction is not accounted for when updating a model, and this is done 
+repeatedly over time. We also discuss potential routes to overcome these issues.
+
+<br>
 
 <ul style="list-style-type: circle;"> 
   <li>
   Paper: <a href="https://proceedings.mlr.press/v130/liley21a.html"><strong>Liley et al (2021), AISTATS</strong></a. 
   </li>
   <li>
-  Code: <strong><a href="https://github.com/jamesliley/model_updating">Publicly available in GitHub</a </strong>.
+  Code: <a href="https://github.com/jamesliley/model_updating"><strong>Publicly available in GitHub</strong></a.
   </li>
 </ul>
 
-### Model updating after interventions
+<br>
+
+### Ethical considerations of use of hold-out sets in model updating
+
+We explore the potential use of 'hold-out sets', in which a set of patients do 
+not receive model derived risk scores, as a potential solution to address 
+performative effects in the context of model updating. 
+
+<br>
+
+We present an overview of clinical and research ethics in this context, focusing 
+on the ethical principles of beneficence, non-maleficence, autonomy and justice.
+We also consider informed consent and the principle of clinical equipoise, and 
+present illustrative cases of potential hold-out set implementations. 
+
+<br>
+
+<ul style="list-style-type: circle;"> 
+  <li>
+  Paper: <a href="https://link.springer.com/article/10.1007/s43681-024-00561-z"><strong>Chislet et al (2024), AI and Ethics</strong></a. 
+  </li>
+</ul>
+
+### Adaptive model updating using a simulated environment
+
+We consider the general challenge of model updating in the presence of concept 
+drift, where the underlying distribution of the data changes over time. We review
+existing strategies, including regular model updates (e.g. yearly) as well as
+those triggered by concept drift detection. 
+
+<br>
+
+We present a novel strategy, AMUSE (adaptive model updating using a simulated 
+environment) to balance the costs and benefits associated to model updating. 
+Our key idea is to use a simulated training environment in which possible 
+episodes of drift are simulated by a parametric model. A reinforcement learning 
+is then used to learn an optimal updating strategy.
+
+<br>
+
+<ul style="list-style-type: circle;"> 
+  <li>
+  Pre-print: <a href="https://arxiv.org/abs/2412.10119"><strong>Chislet et al (2024), arXiv</strong></a. 
+  </li>
+</ul>
 
 # Group members
 
