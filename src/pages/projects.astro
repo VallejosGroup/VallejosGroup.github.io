@@ -11,26 +11,88 @@ const sortedProjects = projects.sort((a, b) => {
 ---
 
 <Layout title="Projects - Vallejos Group">
-  <div class="projects">
+  <div class="projects projects-page-wide">
     <h1 class="page-title">Projects</h1>
 
     <div class="projects-grid">
       {sortedProjects.map((project) => (
-        <a href={`/projects/${project.slug}`}>
-        <div class="project-card">
-          
+        <a href={`/projects/${project.slug}`} class="project-card-link">
+          <div class="project-card">
             <h3>{project.data.title}</h3>
-            <p>
+            <div>
               {project.data.image && (
-                <img src={project.data.image} width="300" alt={project.data.title} />
-                <br>
+                <img src={project.data.image} alt={project.data.title} />
               )}
-
-              {project.data.description}
-            </p>
-        </div>
+              <p>{project.data.description}</p>
+            </div>
+          </div>
         </a>
       ))}
     </div>
   </div>
 </Layout>
+
+<script>
+  function layoutMasonry() {
+    const grid = document.querySelector('.projects-grid');
+    if (!grid) return;
+    
+    const items = Array.from(grid.querySelectorAll('.project-card-link'));
+    if (items.length === 0) return;
+
+    // Skip masonry on mobile
+    if (window.innerWidth <= 768) {
+      grid.style.height = 'auto';
+      return;
+    }
+
+    const gap = 32; // 2rem = 32px
+    const containerWidth = grid.offsetWidth;
+    
+    // Determine number of columns based on screen width
+    const columns = window.innerWidth <= 1200 ? 2 : 3;
+    const columnWidth = (containerWidth - (gap * (columns - 1))) / columns;
+    
+    // Track the height of each column
+    const columnHeights = new Array(columns).fill(0);
+
+    items.forEach((item) => {
+      // Find the shortest column
+      const shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
+      
+      // Position the item
+      const left = shortestColumnIndex * (columnWidth + gap);
+      const top = columnHeights[shortestColumnIndex];
+      
+      item.style.left = `${left}px`;
+      item.style.top = `${top}px`;
+      
+      // Update the column height
+      columnHeights[shortestColumnIndex] += item.offsetHeight + gap;
+    });
+
+    // Set the container height to the tallest column
+    grid.style.height = `${Math.max(...columnHeights) - gap}px`;
+  }
+
+  // Run layout on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', layoutMasonry);
+  } else {
+    layoutMasonry();
+  }
+
+  // Re-layout on window resize with debouncing
+  let resizeTimeout: number;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(layoutMasonry, 150);
+  });
+
+  // Re-layout when images load
+  document.querySelectorAll('.project-card img').forEach((img) => {
+    if (img instanceof HTMLImageElement) {
+      img.addEventListener('load', layoutMasonry);
+    }
+  });
+</script>
