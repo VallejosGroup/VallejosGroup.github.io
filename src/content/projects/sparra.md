@@ -77,13 +77,13 @@ SPARRAv4 will be soon deployed by PHS across Scotland, replacing SPARRAv3.
 
 <ul style="list-style-type: circle;"> 
   <li>
-  Paper: <a href="https://www.nature.com/articles/s41746-024-01250-1"><strong>Liley et al (2024), npj Digital Medicine</strong></a. 
+  Paper: <a href="https://www.nature.com/articles/s41746-024-01250-1"><strong>Liley et al (2024), npj Digital Medicine</strong></a>. 
   </li>
   <li>
-  Code: <a href="https://github.com/jamesliley/SPARRAv4"><strong>Publicly available in GitHub</strong></a .
+  Code: <a href="https://github.com/jamesliley/SPARRAv4"><strong>Publicly available in GitHub</strong></a>.
   </li>
   <li>
-  Press release: <a href="https://www.ed.ac.uk/news/2024/ai-tool-predicts-emergency-hospital-risk"><strong>AI tool predicts emergency hospital risk </strong></a.
+  Press release: <a href="https://www.ed.ac.uk/news/2024/ai-tool-predicts-emergency-hospital-risk"><strong>AI tool predicts emergency hospital risk </strong></a>.
   </li>
 </ul>
 
