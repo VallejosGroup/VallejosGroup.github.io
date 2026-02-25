@@ -89,7 +89,46 @@ SPARRAv4 will be soon deployed by PHS across Scotland, replacing SPARRAv3.
   
 # Stratified performance
 
-TBC
+We carried out a retrospective analysis to comprehensively evaluate how SPARRA 
+(versions 3 and 4) performs across population subgroups defined by age, sex, 
+ethnicity, socioeconomic deprivation, and geographic location (rural vs urban, 
+island vs mainland residence). 
+
+<br>
+
+We considered differences in overall predictive performance (including 
+discrimination and calibration) and score distribution, using causal methods to 
+identify effects mediated through age, sex, and deprivation.
+
+<br>
+
+Our online dashboard enables researchers, practitioners and members of the 
+public to explore these results interactively.
+
+<br>
+
+In addition to <strong>[The Alan Turing Institute](https://www.turing.ac.uk)</strong> 
+and <strong>[Health Data Research UK](https://www.hdruk.ac.uk)</strong>, this 
+work was also supported by 
+<strong>[The Health Foundation](https://www.health.org.uk/funding-and-partnerships/our-partnerships/data-driven-systems-and-health-inequalities)</strong>
+as part of the Data-Driven Systems and Health Inequalities programme. 
+
+<br>
+
+<ul style="list-style-type: circle;"> 
+  <li>
+  Paper: <a href="https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000675"><strong>Thoma et al (2024), PLoS Digital Health </strong></a. 
+  </li>
+  <li>
+  Code: <strong><a href="https://github.com/Public-Health-Scotland/sparra-performance-analysis">Publicly available in GitHub</a </strong>.
+  </li>
+  <li>
+  R package: <strong><a href="https://github.com/Public-Health-Scotland/sparra-performance-analysis">Publicly available in GitHub</a </strong>.
+  </li>
+  <li>
+  Online dashboard: <strong><a href="https://cran.r-project.org/web/packages/SPARRAfairness/index.html">Available in CRAN</a </strong>.
+  </li>
+</ul>
 
 # Related work inspired by SPARRA
 
@@ -97,9 +136,10 @@ TBC
 
 # Group members
 
-Several current and former members of the Biomedical Data Science research group 
+Current and former members of the Biomedical Data Science research group 
 have contributed to this project:
 
+- Dr Catalina Vallejos (group leader)
 - Dr James Liley (former PDRA)
 - Dr Ioanna Thoma (former PDRA)
 - Louis Chislett (PhD student)
