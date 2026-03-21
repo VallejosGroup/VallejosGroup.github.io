@@ -15,11 +15,11 @@
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.2.1",
-    "astro": "^6.0.4",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^6.0.8",
     "async": "^3.2.6",
-    "bibtex-parse-js": "^0.0.23",
-    "tailwindcss": "^4.2.1"
+    "bibtex-parse-js": "^0.0.24",
+    "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
     "prettier": "3.8.1",
