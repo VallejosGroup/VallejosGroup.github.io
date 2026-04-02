@@ -1,7 +1,8 @@
 import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
 const membersCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.md", base: "./src/content/members" }),
   schema: z.object({
     name: z.string(),
     role: z.string(),
@@ -18,7 +19,7 @@ const membersCollection = defineCollection({
 });
 
 const softwareCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.md", base: "./src/content/software" }),
   schema: z.object({
     name: z.string(),
     description: z.string(),
@@ -37,7 +38,7 @@ const softwareCollection = defineCollection({
 });
 
 const alumniCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.md", base: "./src/content/alumni" }),
   schema: z.object({
     name: z.string(),
     role: z.string(),
@@ -55,7 +56,7 @@ const alumniCollection = defineCollection({
 });
 
 const newsCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.md", base: "./src/content/news" }),
   schema: z.object({
     title: z.string().optional(),
     date: z.coerce.date(),
@@ -65,7 +66,7 @@ const newsCollection = defineCollection({
 });
 
 const pagesCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
@@ -75,7 +76,7 @@ const pagesCollection = defineCollection({
 });
 
 const projectsCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),

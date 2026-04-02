@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getEntry } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 
 const cata = await getEntry('pages', 'cata');
-const { Content } = await cata.render();
+const { Content } = await render(cata);
 ---
 <Layout title={cata.data.title} description={cata.data.description}>
 
