@@ -8,10 +8,7 @@ import bibtexParse from "bibtex-parse-js";
  */
 export function parseBibTeX() {
   try {
-    // Get the current directory and construct path to BibTeX file
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = path.dirname(__filename);
-    const bibPath = path.join(__dirname, "../../public/assets/papers.bib");
+    const bibPath = path.join(process.cwd(), "public/assets/papers.bib");
     const bibContent = fs.readFileSync(bibPath, "utf8");
 
     // Parse the BibTeX content

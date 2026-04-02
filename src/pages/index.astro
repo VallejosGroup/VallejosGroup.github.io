@@ -42,7 +42,7 @@ const recentNews = sortedNews.slice(0, 3);
         {
           recentNews.map((news) => (
             <li key={news.id} class="news-item">
-              <a href={`/news/${news.slug}`} class="news-link">
+              <a href={`/news/${news.id}`} class="news-link">
                 {news.data.title || "Untitled Post"}
               </a>
               <time class="news-date">

@@ -16,7 +16,7 @@ const sortedProjects = projects.sort((a, b) => {
 
     <div class="projects-grid">
       {sortedProjects.map((project) => (
-        <a href={`/projects/${project.slug}`} class="project-card-link">
+        <a href={`/projects/${project.id}`} class="project-card-link">
           <div class="project-card">
             <h3>{project.data.title}</h3>
             <div>

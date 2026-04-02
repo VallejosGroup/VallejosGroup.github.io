@@ -25,7 +25,7 @@ const sortedNews = newsItems.sort(
                 {news.data.inline ? (
                   <p>{news.data.title || "Untitled Post"}</p>
                 ) : (
-                  <a href={`/news/${news.slug}`}>
+                  <a href={`/news/${news.id}`}>
                     <p>{news.data.title || "Untitled Post"}</p>
                   </a>
                 )}
