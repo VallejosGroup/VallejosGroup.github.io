@@ -43,11 +43,11 @@ Welcome to the group! Follow these steps to add your profile:
 2. **Add a 3:4 aspect ratio image to `public/assets/members`**:
    - Use tools like Photoshop or online crop tools. Images must be in `.jpg`, `.png`, or directly uploaded as `.webp`.
   
->  **Note**: a 3:4 aspect ratio image can be generated via `imagemagik` using
+>  **Note**: a 3:4 aspect ratio image can be generated via `ImageMagick` using
 > the following command* (replacing < filename > with the  actual filename):
 
 ```bash
-$ magick convert <filename>.jpg -gravity center -crop 3:4 <filename>.jpg
+magick convert <filename>.jpg -gravity center -crop 3:4 <filename>.jpg
 ```
 
 3. **Add your profile in `src/content/members/`**:
@@ -56,7 +56,7 @@ $ magick convert <filename>.jpg -gravity center -crop 3:4 <filename>.jpg
 4. **Commit and push changes**:
    ```bash
    git add -A
-   git commit -am "Add my profile"
+   git commit -m "Add my profile"
    git push -u origin main
    ```
 
@@ -83,7 +83,7 @@ News posts are managed in the `src/content/news/` directory. Each post is a mark
 4. **Commit and push your changes**:
    ```bash
    git add -A
-   git commit -am "Add news post about something"
+   git commit -m "Add news post about something"
    git push -u origin main
    ```
 
@@ -93,7 +93,7 @@ Publications are managed via a BibTeX file at `public/assets/papers.bib`. Add yo
 
 ## Local Setup 💻
 
-Local development requires `node` and `npm`. Clone the repository and set it up:
+Local development requires `node`, `npm`, and ImageMagick (`magick`) for local image conversion. Clone the repository and set it up:
 
 ```bash
 npm install

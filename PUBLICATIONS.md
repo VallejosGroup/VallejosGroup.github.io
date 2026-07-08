@@ -85,13 +85,17 @@ Each entry should include these fields for optimal display:
 
 ### Group Member Highlighting
 
-The system automatically bolds group member names in author lists. Current members:
+The system automatically bolds configured group member names in author lists. Current highlighted names and aliases:
 
 - Catalina A. Vallejos
+- Catalina A Vallejos
+- Vallejos, Catalina A.
 - Nathan Constantine-Cooke
+- Constantine-Cooke, Nathan
 - Karla Monterrubio-Gómez
+- Monterrubio-Gómez, Karla
 
-To add new members, edit the `groupMembers` array in `src/components/Publication.astro`.
+To add new members or aliases, edit the `groupMembers` array in `src/components/Publication.astro`.
 
 ### Search and Filtering
 
