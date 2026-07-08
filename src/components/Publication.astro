@@ -34,12 +34,18 @@ const groupMembers = [
 ];
 
 function formatAuthors(authors: string) {
-  let formatted = authors;
+  let formatted = authors
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
   groupMembers.forEach((member) => {
     const regex = new RegExp(
       `\\b${member.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`,
       "gi",
     );
+    formatted = formatted.replace(regex, (match) => `<strong>${match}</strong>`);
   });
   return formatted;
 }
