@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import bibtexParse from "bibtex-parse-js";
+import bibtexParse from "@orcid/bibtex-parse-js";
 
 /**
  * Parse BibTeX file and return formatted publications grouped by year
