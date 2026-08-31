@@ -1,6 +1,49 @@
 ---
 ---
 
+ @article{Finazzi_2026,
+   abbr = {bioRxiv},
+   bibtex_show={true},
+   title = {Benchmarking computational tools for locus-specific analysis of transposable elements in single-cell RNA-seq datasets},
+   url = {http://dx.doi.org/10.64898/2026.02.26.708244},
+   DOI = {10.64898/2026.02.26.708244},
+   publisher = {openRxiv},
+   author = {Finazzi, Veronica and Vallejos, Catalina A. and Scialdone, Antonio},
+   year = {2026},
+   month = Feb,
+   abstract = {Background: Transposable elements (TEs) are increasingly recognized as regulators of gene expression and cellular identity in development and disease. Single-cell RNA-sequencing (scRNA-seq) enables the analysis of their transcription at cellular resolution, but the repetitive nature of TEs and their frequent overlap with genes create substantial mapping ambiguity. Although several tools quantify TE expression, few support locus-specific analysis, and their performance in single-cell data has not been systematically evaluated.
+     Results: We present a comprehensive benchmarking framework for locus-level TE quantification in short-read scRNA-seq, combining real datasets with simulations that provide read-level ground truth. TE-derived reads constitute a considerable fraction of the transcriptome and capture meaningful biological structure. Our simulations reveal that older, sequence-diverged insertions can be quantified with relatively high accuracy, whereas young TEs remain intrinsically difficult to resolve due to unreliable assignment of multi-mapping reads. We observe pronounced family-specific biases and identify gene-TE disambiguation as a major unresolved challenge. Among evaluated methods, SoloTE (unique-mapper mode) and Stellarscope (with an expectation-maximization-based reallocation of multi-mappers) showed comparable performance, while including multi-mappers generally increased false positives without substantially improving locus-level accuracy.
+     Conclusions: Our benchmark delineates the fundamental limits imposed by short-read scRNA-seq on locus-specific TE quantification, providing practical guidance for prospective users. Suggested best practices include focusing locus-level analyses on older insertions, applying unique-mapper strategies to improve precision, aggregating counts at the subfamily level for young TEs, and explicitly checking for gene-TE overlaps. Our workflow is fully reproducible and extensible, providing a foundation for evaluating emerging methods aimed at resolving TE transcription at single-locus resolution.}
+  }
+
+@misc{https://doi.org/10.48550/arxiv.2606.24678,
+  abbr = {arXiv},
+  bibtex_show={true},
+  doi  =  {10.48550/ARXIV.2606.24678},
+  url  =  {https://arxiv.org/abs/2606.24678},
+  author  =  {Velasco-Pardo, Víctor and Constantine-Cooke, Nathan and Lees, Charlie W. and Vallejos, Catalina A.},
+  keywords  =  {Methodology (stat.ME), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  title  =  {Landmarking with Latent Class Mixed Models for Dynamic Prediction of Time-to-event Data with Heterogeneous Biomarker Trajectories},
+  publisher  =  {arXiv},
+  year  =  {2026},
+  copyright  =  {Creative Commons Attribution 4.0 International},
+  abstract = {The increasing ability to securely access electronic health records (EHR) has created unprecedented opportunities to monitor the health trajectories of large heterogeneous patient populations throughout their lifetime. Repeated measurements of time-varying covariates (such as biomarkers measured via routine blood tests) can inform dynamic risk prediction of time-to-event outcomes, updating risk estimates as new information becomes available. Existing dynamic risk prediction approaches often assume homogeneous longitudinal trajectories across individuals. This assumption is not met when there is heterogeneity driven by latent subgroup structure (e.g. due to unobserved confounders), as is often the case with real-world biomedical data. At present, accounting for such heterogeneity is only available in joint latent class models for longitudinal and time-to-event data, but they are computationally intensive, often prohibitively so for large-scale data, such as those present in EHR settings. To address these challenges, we propose a novel landmarking approach that integrates latent class mixed models (LCMMs) to capture latent heterogeneity in longitudinal trajectories. Our method is implemented in a modular R package, landmaRk, which is available on CRAN and allows users to flexibly specify the components of a landmarking analysis, beyond our proposed approach. Through simulation studies, we demonstrate improvements in prediction performance in the presence of latent heterogeneity compared to traditional landmarking strategies, while remaining computationally efficient for large datasets. We also provide a proof-of-concept illustration using real data.}
+}
+
+@misc{https://doi.org/10.48550/arxiv.2608.00271,
+  abbr = {arXiv},
+  bibtex_show={true},
+  doi  =  {10.48550/ARXIV.2608.00271},
+  url  =  {https://arxiv.org/abs/2608.00271},
+  author  =  {Sierra, Begoña B. and McLean, Colin and Hall, Peter S. and Friedrich-Welz, Sarah and Vallejos, Catalina A.},
+  keywords  =  {Machine Learning (stat.ML), Machine Learning (cs.LG), FOS: Computer and information sciences},
+  title  =  {A reproducible and extensible framework for benchmarking competing risks survival models},
+  publisher  =  {arXiv},
+  year  =  {2026},
+  copyright  =  {Creative Commons Attribution 4.0 International},
+  abstract = {A wide range of statistical and machine learning methods have been proposed for survival analysis with competing risks, where the occurrence of one event (i.e., cancer death) precludes the occurrence of other events (i.e., cardiovascular disease death). Despite these methodological advances, their systematic evaluation and adoption are limited by the lack of comprehensive, reproducible and extensible benchmarking frameworks. We developed an open-source benchmarking framework for competing risks models that enables their systematic comparison across multiple datasets under different aspects of performance; calibration, discrimination, overall prediction error and clinical utility. We additionally introduce an extension of SHAP for competing risks, allowing model-agnostic interpretability of covariates contributions over time. All our code is publicly available via GitHub:https://github.com/BBolosSierra/CompRisksBenchmark}
+}
+
 @article{Constantine_Cooke_2026,
   abbr = {Gut},
   bibtex_show={true},
