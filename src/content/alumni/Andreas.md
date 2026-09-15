@@ -3,7 +3,7 @@ name: Chantriolnt-Andreas Kapourani
 role: Cross-Disciplinary Post-doctoral Fellow
 img: assets/img/alumni/andreas
 years: "2018-2022"
-after: "Associate Director of Data Science with Relation Therapeutics"
+after: "Associate Director of Data Science, Relation Therapeutics"
 importance: 3
 website: "https://andreaskapou.github.io/"
 scholar: "https://scholar.google.co.uk/citations?user=RXTwUEsAAAAJ&hl=en"

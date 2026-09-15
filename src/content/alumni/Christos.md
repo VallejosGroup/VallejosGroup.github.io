@@ -4,7 +4,7 @@ name: "Christos Maniatis"
 role: "PhD Student"
 img: assets/img/alumni/christos
 importance: 5
-after: "Machine Learning Engineer at Etcembly Ltd"
+after: "Machine Learning Engineer, Etcembly"
 years: "2019-2022"
 #website: "https://www.facebook.com"
 #scholar: "https://google.com"
