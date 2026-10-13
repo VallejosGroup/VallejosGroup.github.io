@@ -22,7 +22,7 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "prettier": "3.9.9",
+    "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.0",
     "prettier-plugin-tailwindcss": "0.8.1"
   }
